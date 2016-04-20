@@ -77,6 +77,11 @@ var API = {
             return loader.get({
                 url:"users.json"
             })
+        },
+        currentUser:function(){
+            return loader.get({
+                url:"currentUser.json"
+            })
         }
     }
 };

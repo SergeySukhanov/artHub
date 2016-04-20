@@ -12,27 +12,31 @@ var Router = Backbone.Router.extend({
         "":"auth",
         "auth":"auth",
         "dashboard":"dashboard",
-        "dashboard/:action":"dashboard",
+        "dashboard/:id":"dashboard",
         "account":"account",
         "account/:action":"account"
     },
 
     before:{
         "*any":function(frag, args, next){
+            var self = this;
             tools.toggleToken(config.startProperties);
             if(token.getItem()){
-                if(frag === "" || frag === "auth"){
-                    config.routers.mainRouter.navigate("dashboard", {trigger:true});
-                }
+                API.user.currentUser().then(function(currentUser){
+                    config.models.currentUser = new UserModel(currentUser);
+                    if(frag === "" || frag === "auth"){
+                        config.routers.mainRouter.navigate("dashboard/" + config.models.currentUser.get("id"), {trigger:true});
+                    }
 
-                if(!tools.loadLayout(config.startProperties)){
-                    this.layoutComponents().then(function(){
-                        tools.toggleLoadLayout(config.startProperties, true);
+                    if(!tools.loadLayout(config.startProperties)){
+                        self.layoutComponents().then(function(){
+                            tools.toggleLoadLayout(config.startProperties, true);
+                            next();
+                        });
+                    }else{
                         next();
-                    });
-                }else{
-                    next();
-                }
+                    }
+                })
             }else{
                 tools.toggleLoadLayout(config.startProperties, false);
                 if(frag === "" || frag !== "auth"){
@@ -46,7 +50,12 @@ var Router = Backbone.Router.extend({
     layoutComponents:function(){
         return templateManager.load(["layout/header", "layout/workspace", "layout/footer"]).then(function(){
             new HeaderTemplate({
-                template:config.templates["layout/header"]
+                template:config.templates["layout/header"],
+                data:function(){
+                    return {
+                        currentUser:config.models.currentUser
+                    }
+                }
             });
             new FooterTemplate({
                 template:config.templates["layout/footer"]
@@ -65,18 +74,11 @@ var Router = Backbone.Router.extend({
         });
     },
 
-    dashboard:function(action){
-        var template;
-        if(!action){
-            template = "dashboard/dashboard";
-        }else{
-            template = "dashboard/" + action;
-        }
-
-        templateManager.load(template).then(function(tmpl){
+    dashboard:function(id){
+        templateManager.load("dashboard/dashboard").then(function(tmpl){
             new DashboardView({
                 template:tmpl,
-                action:action
+                id:id
             });
         });
     },
