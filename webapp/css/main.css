@@ -1,0 +1,33 @@
+*{
+    margin:0;
+    padding:0;
+    border:0;
+}
+
+html, body{
+    height: 100%;
+}
+
+#wrapper{
+    min-height: 100%;
+}
+
+#lightbox-container{
+    display: none;
+}
+
+#notifications-container{
+    display: none;
+}
+
+#header-container{
+
+}
+
+#workspace-container{
+
+}
+
+#footer-container{
+
+}
