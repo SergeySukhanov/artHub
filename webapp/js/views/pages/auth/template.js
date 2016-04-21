@@ -19,7 +19,7 @@ var AuthTemplate = Ractive.extend({
                 var exists = model.get("exists");
                 if(exists){
                     model.authentification().then(function(){
-                        config.routers.mainRouter.navigate("dashboard", {trigger:true});
+                        config.routers.mainRouter.navigate("", {trigger:true});
                     });
                 }else{
                     model.registration();

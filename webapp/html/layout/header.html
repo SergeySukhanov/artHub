@@ -1,15 +1,17 @@
 <div class="ah_header-inner clearfix">
-    <div class="small-3 columns ah_brand">
-        <h1>Art Hub</h1>
+    <div class="small-2 columns ah_brand">
+        <h1><a href="#dashboard/{{currentUser.id}}">Art Hub</a></h1>
     </div>
-    <div class="small-6 columns ah_main-menu">
+    <div class="small-10 columns ah_main-menu">
+        <div class="ah_simple-search">
+            <input type="text"/>
+        </div>
         <ul class="ah_inner-main-menu">
-            <li><a href="#dashboard">Dashboard</a></li>
-            <li><a href="#account">Account</a></li>
+            <li><a href="#search">search</a></li>
+            <li><a href="#gallery">gallery</a></li>
+            <li><a href="#settings">settings</a></li>
             <li><a href="javascript:void(0);" on-click="loadPicture">Load picture</a></li>
+            <li><a href="javascript:void(0);" on-click="logout">Exit</a></li>
         </ul>
-    </div>
-    <div class="small-3 columns ah_account-menu">
-        <a href="javascript:void(0);" on-click="logout">Exit</a>
     </div>
 </div>

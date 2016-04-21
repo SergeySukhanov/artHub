@@ -40,7 +40,7 @@ var DashboardView = Backbone.View.extend({
         this.template = options.template;
         this.action = options.action;
         if(!config.startProperties.fillAccount){
-            config.routers.mainRouter.navigate("account", {trigger:true});
+            this.render();
         }else{
             this.render();
         }

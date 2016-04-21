@@ -1,0 +1,27 @@
+{
+  "name": "artHub",
+  "homepage": "https://github.com/SergeySukhanov/artHub",
+  "authors": [
+    "sergey.n.sukhanov <sergey.n.sukhanov@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.2.3",
+    "backbone": "~1.3.3",
+    "backbone-async-route-filter": "*",
+    "lodash": "~4.11.1",
+    "foundation": "~5.5.3",
+    "ractive-backbone": "ractive-adaptors-backbone#~0.3.0",
+    "ractive": "~0.7.3"
+  }
+}

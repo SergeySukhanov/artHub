@@ -13,8 +13,10 @@ var Router = Backbone.Router.extend({
         "auth":"auth",
         "dashboard":"dashboard",
         "dashboard/:id":"dashboard",
-        "account":"account",
-        "account/:action":"account"
+        "search":"search",
+        "gallery":"gallery",
+        "gallery/:action":"gallery",
+        "settings":"settings"
     },
 
     before:{
@@ -23,7 +25,7 @@ var Router = Backbone.Router.extend({
             tools.toggleToken(config.startProperties);
             if(token.getItem()){
                 API.user.currentUser().then(function(currentUser){
-                    config.models.currentUser = new UserModel(currentUser);
+                    config.models.currentUser = new UserModel(currentUser.user);
                     if(frag === "" || frag === "auth"){
                         config.routers.mainRouter.navigate("dashboard/" + config.models.currentUser.get("id"), {trigger:true});
                     }
@@ -82,6 +84,10 @@ var Router = Backbone.Router.extend({
             });
         });
     },
+
+    search:function(){
+
+    },
     account:function(action){
         var template;
         if(!action){
@@ -96,5 +102,11 @@ var Router = Backbone.Router.extend({
                 action:action
             });
         });
+    },
+    gallery:function(action){
+
+    },
+    settings:function(){
+
     }
 });
