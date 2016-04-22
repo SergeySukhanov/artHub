@@ -1,5 +1,32 @@
 {
     "gallery":[
-
+        {
+            "id":"photo_1",
+            "author":"id_artist_1",
+            "title":"Photo 1",
+            "description":"long text",
+            "public":true,
+            "url":"image/url",
+            "cost":1000,
+            "datePublication":12458539487,
+            "parent":null
+        },
+        {
+            "id":"folder_1",
+            "author":"id_artist_1",
+            "title":"Folder 1",
+            "public":true
+        },
+        {
+            "id":"photo_2",
+            "author":"id_artist_1",
+            "title":"Photo 2",
+            "description":"long text",
+            "public":true,
+            "url":"image/url",
+            "cost":10000,
+            "datePublication":12458539487,
+            "parent":"folder_1"
+        }
     ]
 }

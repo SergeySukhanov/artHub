@@ -50,5 +50,9 @@ var UserModel = Backbone.Model.extend({
                 model.set("exists", false);
             }
         });
+    },
+
+    initialize:function(){
+
     }
 });

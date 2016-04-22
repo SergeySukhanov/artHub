@@ -16,14 +16,15 @@ var BaseView = Backbone.View.extend({
     render:function(){
         var self = this;
         var base = new BaseTemplate({
-            el:this.el,
-            template:this.template,
-            data:this.data
+            el:self.el,
+            template:self.template,
+            data:self.data
         });
-
-        base.on("complete", function(){
-            new self.params.controller(this);
-        })
+        if(self.params.controller){
+            base.on("complete", function(){
+                new self.params.controller(this);
+            })
+        }
     },
 
     initialize:function(options){

@@ -6,3 +6,9 @@
  *
  * © 2016 All Rights Reserved
  */
+
+var PictureModel = Backbone.Model.extend({
+    initialize:function(){
+
+    }
+});

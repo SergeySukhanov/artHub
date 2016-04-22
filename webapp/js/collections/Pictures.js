@@ -6,3 +6,7 @@
  *
  * © 2016 All Rights Reserved
  */
+
+var PicturesCollection = Backbone.Collection.extend({
+    model:PictureModel
+});
