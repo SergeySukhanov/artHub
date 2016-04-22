@@ -11,8 +11,18 @@
     $.when(templateManager.load("layout/layout"))
         .then(function(tmpl){
             tools.toggleToken(config.startProperties);
-            new LayoutView({
-                template:tmpl
+            new BaseView({
+                id:"layout",
+                el:"body",
+                template:tmpl,
+                params:{
+                    controller:LayoutViewController
+                },
+                data:function(){
+                    return {
+                        config:config
+                    }
+                }
             })
         })
         .then(function(){

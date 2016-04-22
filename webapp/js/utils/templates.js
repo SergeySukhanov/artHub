@@ -13,7 +13,6 @@ var _loader = function(template){
         dataType: config.templateManager.dataType,
         success:function(tmpl){
             config.templates[template] = tmpl;
-            console.log("success");
         }
     });
 };

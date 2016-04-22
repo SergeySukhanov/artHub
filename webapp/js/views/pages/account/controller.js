@@ -7,6 +7,16 @@
  * © 2016 All Rights Reserved
  */
 
-var AccountController = function(){
+var AccountController = function(ins){
+    var _render = function(){
+        _handlers()
+    };
+    var _handlers = function(){
 
+    };
+
+    var _initialize = function(){
+        _render();
+    };
+    _initialize();
 };

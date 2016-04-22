@@ -1,17 +1,13 @@
 /**
  *
  * @author SNSukhanov <sergey.n.sukhanov@firstlinesoftware.com>
- * @version 04/19/2016
+ * @version 04/22/2016
  * @see
  *
  * © 2016 All Rights Reserved
  */
 
-var LayoutTemplate = Ractive.extend({
-    el:"body",
+var BaseTemplate = Ractive.extend({
     adapt:["Backbone"],
-    magic:true,
-    oncomplete:function(){
-
-    }
+    magic:true
 });

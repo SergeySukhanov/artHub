@@ -37,5 +37,44 @@ var tools = {
         prop.header = flag;
         prop.footer = flag;
         prop.workspace = flag;
+    },
+
+    layoutComponents:function(){
+        return templateManager.load(["layout/header", "layout/workspace", "layout/footer"]).then(function(){
+            new BaseView({
+                id:"header",
+                el:"#header-container",
+                template:config.templates["layout/header"],
+                params:{
+                    controller:HeaderViewController
+                },
+                data:function(){
+                    return {
+                        currentUser:config.models.currentUser
+                    }
+                }
+            });
+            new BaseView({
+                id:"footer",
+                el:"#footer-container",
+                template:config.templates["layout/footer"],
+                params:{
+                    controller:FooterViewController
+                }
+            });
+            new BaseView({
+                id:"workspace",
+                el:"#workspace-container",
+                template:config.templates["layout/workspace"],
+                params:{
+                    controller:WorkspaceViewController
+                }
+            });
+        })
+    },
+
+    restrictions:function(id, callback){
+        var data = null;
+        callback(data);
     }
 };

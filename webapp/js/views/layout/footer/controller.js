@@ -6,3 +6,18 @@
  *
  * © 2016 All Rights Reserved
  */
+
+var FooterViewController = function(ins){
+    var _render = function(){
+        _handlers()
+    };
+    var _handlers = function(){
+
+    };
+
+    var _initialize = function(){
+        _render();
+    };
+
+    _initialize();
+};

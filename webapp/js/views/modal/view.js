@@ -11,9 +11,6 @@ var ModalView = Backbone.View.extend({
     template:null,
     partial:null,
     controller:null,
-    enableControllers:{
-        loadPicture:LoadPictureController
-    },
 
     render:function(){
         var self = this;
@@ -30,7 +27,7 @@ var ModalView = Backbone.View.extend({
         });
 
         modal.on("complete", function(){
-            new self.enableControllers[self.controller](this);
+            new self.controller(this);
         })
     },
     initialize:function(options){

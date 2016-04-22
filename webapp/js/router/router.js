@@ -14,14 +14,15 @@ var Router = Backbone.Router.extend({
         "dashboard":"dashboard",
         "dashboard/:id":"dashboard",
         "search":"search",
+        "search/:action":"search",
         "gallery":"gallery",
         "gallery/:action":"gallery",
+        "gallery/:action/:id":"item",
         "settings":"settings"
     },
 
     before:{
         "*any":function(frag, args, next){
-            var self = this;
             tools.toggleToken(config.startProperties);
             if(token.getItem()){
                 API.user.currentUser().then(function(currentUser){
@@ -31,7 +32,7 @@ var Router = Backbone.Router.extend({
                     }
 
                     if(!tools.loadLayout(config.startProperties)){
-                        self.layoutComponents().then(function(){
+                        tools.layoutComponents().then(function(){
                             tools.toggleLoadLayout(config.startProperties, true);
                             next();
                         });
@@ -48,45 +49,54 @@ var Router = Backbone.Router.extend({
             }
         }
     },
-
-    layoutComponents:function(){
-        return templateManager.load(["layout/header", "layout/workspace", "layout/footer"]).then(function(){
-            new HeaderTemplate({
-                template:config.templates["layout/header"],
+    auth:function(){
+        templateManager.load("auth/auth").then(function(tmpl){
+            new BaseView({
+                id:"auth",
+                el:"#auth-container",
+                template:tmpl,
+                params:{
+                    controller:AuthController
+                },
                 data:function(){
                     return {
-                        currentUser:config.models.currentUser
+                        config:config,
+                        user:new UserModel()
                     }
                 }
             });
-            new FooterTemplate({
-                template:config.templates["layout/footer"]
-            });
-            new WorkspaceTemplate({
-                template:config.templates["layout/workspace"]
-            });
-        })
-    },
-
-    auth:function(){
-        templateManager.load("auth/auth").then(function(tmpl){
-            new AuthView({
-                template:tmpl
-            });
         });
     },
-
     dashboard:function(id){
         templateManager.load("dashboard/dashboard").then(function(tmpl){
-            new DashboardView({
+            new BaseView({
+                id:"dashboard",
+                el:"#workspace-inner-container",
                 template:tmpl,
-                id:id
+                params:{
+                    id:id,
+                    controller:DashboardController
+                },
+                data:function(){
+                    return {
+                        config:config
+                    }
+                }
             });
         });
     },
-
-    search:function(){
-
+    search:function(action){
+        templateManager.load("search/search").then(function(tmpl){
+            new BaseView({
+                id:"search",
+                el:"#workspace-inner-container",
+                template:tmpl,
+                params:{
+                    action:action,
+                    controller:SearchController
+                }
+            })
+        });
     },
     account:function(action){
         var template;
@@ -97,16 +107,60 @@ var Router = Backbone.Router.extend({
         }
 
         templateManager.load(template).then(function(tmpl){
-            new AccountView({
+            new BaseView({
+                id:"account",
+                el:"#workspace-inner-container",
                 template:tmpl,
-                action:action
+                params:{
+                    action:action,
+                    controller:AccountController
+                }
             });
         });
     },
     gallery:function(action){
-
+        var template;
+        if(!action){
+            template = "gallery/gallery";
+        }else{
+            template = "gallery/" + action;
+        }
+        templateManager.load(template).then(function(tmpl){
+            new BaseView({
+                id:"gallery",
+                el:"#workspace-inner-container",
+                template:tmpl,
+                params:{
+                    action:action,
+                    controller:GalleryController
+                }
+            })
+        });
+    },
+    item:function(action, id){
+        templateManager.load("gallery/item").then(function(tmpl){
+            new BaseView({
+                id:"galleryItem",
+                el:"#workspace-inner-container",
+                template:tmpl,
+                params:{
+                    action:action,
+                    id:id,
+                    controller:GalleryItemController
+                }
+            })
+        });
     },
     settings:function(){
-
+        templateManager.load("settings/settings").then(function(tmpl){
+            new BaseView({
+                id:"settings",
+                el:"#workspace-inner-container",
+                template:tmpl,
+                params:{
+                    controller:SettingsController
+                }
+            })
+        });
     }
 });

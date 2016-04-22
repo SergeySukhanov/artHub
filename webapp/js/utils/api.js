@@ -70,18 +70,31 @@ var API = {
     user:{
         checkExists:function(){
             return loader.get({
-                url:"users.json"
+                url:"usersLogin.json"
             })
         },
         auth:function(){
             return loader.get({
-                url:"users.json"
+                url:"usersLogin.json"
             })
         },
         currentUser:function(){
             return loader.get({
                 url:"currentUser.json"
             })
+        },
+        gallery:function(){
+            return loader.get({
+                url:"gallery.json"
+            })
+        },
+        users:function(){
+            return loader.get({
+                url:"users.json"
+            })
+        },
+        search:function(){
+
         }
     }
 };

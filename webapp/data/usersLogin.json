@@ -1,0 +1,36 @@
+{
+    "users":[
+        {
+            "login":"SergeySukhanov",
+            "password":"password"
+        },
+        {
+            "login":"AntonPetrov",
+            "password":"password"
+        },
+        {
+            "login":"ArseniyValts",
+            "password":"password"
+        },
+        {
+            "login":"NikitaGorlov",
+            "password":"password"
+        },
+        {
+            "login":"IlyaSviridov",
+            "password":"password"
+        },
+        {
+            "login":"ArtemWan",
+            "password":"password"
+        },
+        {
+            "login":"SergeyTrofimov",
+            "password":"password"
+        },
+        {
+            "login":"PavelAratov",
+            "password":"password"
+        }
+    ]
+}

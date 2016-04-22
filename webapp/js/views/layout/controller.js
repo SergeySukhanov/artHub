@@ -7,6 +7,17 @@
  * © 2016 All Rights Reserved
  */
 
-var LayoutViewController = function(){
+var LayoutViewController = function(ins){
+    var _render = function(){
+        _handlers()
+    };
+    var _handlers = function(){
 
+    };
+
+    var _initialize = function(){
+        _render();
+    };
+
+    _initialize();
 };

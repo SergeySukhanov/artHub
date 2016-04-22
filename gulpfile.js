@@ -12,5 +12,5 @@ var bower = require('gulp-bower');
 
 gulp.task('bower', function() {
     return bower()
-        .pipe(gulp.dest('webapp/js/libs/'))
+        .pipe(gulp.dest('webapp/js/lib/'))
 });
