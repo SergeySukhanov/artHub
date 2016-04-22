@@ -2,7 +2,6 @@
  *
  * @author SNSukhanov <sergey.n.sukhanov@firstlinesoftware.com>
  * @version 04/21/2016
- * @see
  *
  * © 2016 All Rights Reserved
  */
@@ -12,7 +11,9 @@ var SettingsController = function(ins){
         _handlers()
     };
     var _handlers = function(){
+        ins.on({
 
+        });
     };
 
     var _initialize = function(){

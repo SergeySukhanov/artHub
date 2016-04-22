@@ -2,20 +2,19 @@
  *
  * @author SNSukhanov <sergey.n.sukhanov@firstlinesoftware.com>
  * @version 04/19/2016
- * @see
  *
  * © 2016 All Rights Reserved
  */
 
 var tools = {
     toggleToken:function(prop){
+        var statement = prop.token = false;
+
         if(token.getItem()){
-            prop.token = true;
-        }else{
-            prop.token = false;
+            statement = true;
         }
 
-        return prop;
+        return statement;
     },
 
     toggleButtons:function(elem, val){
@@ -23,11 +22,13 @@ var tools = {
     },
 
     loadLayout:function(prop){
+        var statement = false;
+
         if(prop.header || prop.footer || prop.workspace){
-            return true;
-        }else{
-            return false;
+            statement = true;
         }
+
+        return statement
     },
     logout:function(){
         token.removeItem();

@@ -2,7 +2,6 @@
  *
  * @author SNSukhanov <sergey.n.sukhanov@firstlinesoftware.com>
  * @version 04/19/2016
- * @see
  *
  * © 2016 All Rights Reserved
  */
@@ -14,7 +13,7 @@ var AuthController = function(ins){
     var _handlers = function(){
         var model = ins.get("user");
         ins.on({
-            auth:function(event){
+            auth:function(){
                 var exists = model.get("exists");
                 if(exists){
                     model.authentification().then(function(){
@@ -24,7 +23,7 @@ var AuthController = function(ins){
                     model.registration();
                 }
             },
-            checkField:function(event){
+            checkField:function(){
                 model.checkExists().then(function(){
                     var exists = model.get("exists");
                     if(exists){
