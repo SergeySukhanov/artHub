@@ -15,7 +15,15 @@
             "id":"folder_1",
             "author":"id_artist_1",
             "title":"Folder 1",
-            "public":true
+            "public":true,
+            "parent":null
+        },
+        {
+            "id":"folder_2",
+            "author":"id_artist_1",
+            "title":"Folder 2",
+            "public":true,
+            "parent":"folder_1"
         },
         {
             "id":"photo_2",
@@ -27,6 +35,73 @@
             "cost":10000,
             "datePublication":12458539487,
             "parent":"folder_1"
+        },
+        {
+            "id":"photo_22",
+            "author":"id_artist_1",
+            "title":"Photo 22",
+            "description":"long text",
+            "public":true,
+            "url":"image/url",
+            "cost":10000,
+            "datePublication":12458539487,
+            "parent":"folder_2"
+        },
+        {
+            "id":"photo_24",
+            "author":"id_artist_1",
+            "title":"Photo 24",
+            "description":"long text",
+            "public":true,
+            "url":"image/url",
+            "cost":10000,
+            "datePublication":12458539487,
+            "parent":"folder_2"
+        },
+        {
+            "id":"photo_23",
+            "author":"id_artist_1",
+            "title":"Photo 23",
+            "description":"long text",
+            "public":true,
+            "url":"image/url",
+            "cost":10000,
+            "datePublication":12458539487,
+            "parent":"folder_2"
+        },
+        {
+            "id":"photo_3",
+            "author":"id_artist_1",
+            "title":"Photo 3",
+            "description":"long text",
+            "public":true,
+            "url":"image/url",
+            "cost":10000,
+            "datePublication":12458539487,
+            "parent":"folder_1"
+        },
+        {
+            "id":"photo_6",
+            "author":"id_artist_1",
+            "title":"Photo 6",
+            "description":"long text",
+            "public":true,
+            "url":"image/url",
+            "cost":10000,
+            "datePublication":12458539487,
+            "parent":"folder_1"
+        },
+        {
+            "id":"photo_4",
+            "author":"id_artist_1",
+            "title":"Photo 4",
+            "description":"long text",
+            "public":true,
+            "url":"image/url",
+            "cost":10000,
+            "datePublication":12458539487,
+            "parent":null
         }
+
     ]
 }

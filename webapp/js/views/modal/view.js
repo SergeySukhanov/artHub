@@ -31,10 +31,10 @@ var ModalView = Backbone.View.extend({
     },
     initialize:function(options){
         var self = this;
-        self.partial = options.template;
         self.controller = options.controller;
-        templateManager.load("modal/base").then(function(tmpl){
-            self.template = tmpl;
+        templateManager.load(["modal/base", "modal/" + options.template]).then(function(base, partial){
+            self.template = base;
+            self.partial = partial;
             self.render();
         });
     }

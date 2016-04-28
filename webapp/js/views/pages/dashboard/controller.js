@@ -9,18 +9,42 @@
 
 var DashboardController = function(ins){
     var _render = function(){
+        _galleryComponent();
         _handlers()
     };
-    var _handlers = function(){
 
+    var _galleryComponent = function(){
+        templateManager.load(["components/galleryComponent", "components/treeGallery", "components/foldersGallery"]).then(function(gallery, tree, folders){
+            API.user.gallery().then(function(data){
+                var treeCollection = new PicturesCollection(tools.createTreeStruture(data.gallery));
+                var foldersCollection = new PicturesCollection(tools.currentFolder(data.gallery, null));
+                new BaseView({
+                    id:"galleryComponent",
+                    el:".ah_gallery-component",
+                    data:{
+                        tree:treeCollection,
+                        currentFolder:foldersCollection
+                    },
+                    template:gallery,
+                    partials:{
+                        treeGallery:tree,
+                        foldersGallery:folders
+                    },
+                    params:{
+                        controller:FoldersController
+                    }
+                });
+            });
+        });
+    };
+
+    var _handlers = function(){
         ins.on({
             editAccount:function(){
-                templateManager.load("modal/editAccount").then(function(tmpl){
-                    new ModalView({
-                        template:tmpl,
-                        controller:EditAccountController
-                    });
-                })
+                new ModalView({
+                    template:"editAccount",
+                    controller:EditAccountController
+                });
             }
         });
     };
