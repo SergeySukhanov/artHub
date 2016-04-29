@@ -22,6 +22,8 @@
     "lodash": "~4.11.1",
     "foundation": "~5.5.3",
     "ractive-backbone": "ractive-adaptors-backbone#~0.3.0",
-    "ractive": "~0.7.3"
+    "ractive": "~0.7.3",
+      "backbone.subroute": "~0.4.6",
+      "d3": "~3.5.16"
   }
 }

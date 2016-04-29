@@ -11,7 +11,7 @@ var tools = {
         var statement = prop.token = false;
 
         if(token.getItem()){
-            statement = true;
+            statement = prop.token = true;
         }
 
         return statement;

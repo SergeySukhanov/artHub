@@ -93,7 +93,9 @@ var API = {
             })
         },
         search:function(){
-
+            return loader.get({
+                url:"../api"
+            })
         }
     }
 };

@@ -7,10 +7,21 @@
  * © 2016 All Rights Reserved
  */
 
-var gulp = require('gulp');
+var gulp = require("gulp");
+var server = require('gulp-develop-server');
 var bower = require('gulp-bower');
 
-gulp.task('bower', function() {
-    return bower()
-        .pipe(gulp.dest('webapp/js/lib/'))
+gulp.task('server:start', function(){
+    server.listen({path:'./server.js'});
 });
+
+gulp.task('server:restart', function(){
+    gulp.watch(['./server.js'], server.restart);
+});
+
+gulp.task('bower', function(){
+    return bower()
+        .pipe(gulp.dest('webapp/js/libs'));
+});
+
+gulp.task('start', ['bower', 'server:start']);

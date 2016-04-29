@@ -27,5 +27,8 @@
         .then(function(){
             config.routers.mainRouter = new Router();
             Backbone.history.start({trigger:true});
+            API.user.search().then(function(data){
+                console.log(data);
+            })
         })
 })();
