@@ -1,3 +1,4 @@
+@import "header.css";
 @import "workspace.css";
 
 *{
@@ -24,6 +25,8 @@ html, body{
 
 #header-container{
     position: relative;
+    height: 50px;
+    background: #1f275f;
 }
 
 #workspace-container{

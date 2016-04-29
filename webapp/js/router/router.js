@@ -79,7 +79,8 @@ var Router = Backbone.Router.extend({
                 },
                 data:function(){
                     return {
-                        config:config
+                        config:config,
+                        currentUser:config.models.currentUser
                     }
                 }
             });

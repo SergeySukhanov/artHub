@@ -4,3 +4,53 @@
 .ah_dashboard-inner{
     height: 100%;
 }
+
+.ah_top_dashboard{
+    position: relative;
+    height: 250px;
+    margin-bottom: 20px;
+}
+
+.ah_back {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-size: contain;
+}
+
+.ah_user-info {
+    position: relative;
+}
+
+.ah_avatar {
+    width: 150px;
+    height: 150px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: #d4d4d4;
+    border-radius: 150px;
+    display: inline-block;
+    margin-top: 40px;
+    margin-left: 57px;
+}
+
+p.ah_name {
+    color: #ffffff;
+    vertical-align: top;
+    font-size: 45px;
+    margin: 0;
+}
+
+p.ah_city{
+    color: #ffffff;
+    vertical-align: top;
+    font-size: 25px;
+    margin: 0;
+}
+
+.ah_inner-user-info{
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 57px;
+    margin-left: 20px;
+}

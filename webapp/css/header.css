@@ -1,0 +1,70 @@
+.ah_header-inner{
+    height: 100%;
+}
+
+.ah_brand{
+    height: 100%;
+    text-align:center;
+}
+
+.ah_brand h1{
+    font-size: 35px;
+    margin: 0;
+    font-weight: 700;
+}
+
+.ah_brand a{
+    color:#ffffff;
+}
+
+.ah_main-menu{
+    height:100%;
+    text-align: right;
+}
+
+.ah_simple-search{
+    display: inline-block;
+}
+
+.ah_simple-search input[type=text]{
+    height: 28px;
+    margin: 0;
+    padding-left: 20px;
+    margin-top: 11px;
+}
+
+.ah_inner-main-menu {
+    list-style-type: none;
+    color: #ffffff;
+    display: inline-block;
+    margin: 0;
+    height: 100%;
+    margin-left: 40px;
+}
+
+.ah_inner-main-menu li{
+   display: inline-block;
+}
+
+.ah_inner-main-menu a {
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 15px;
+    display: block;
+    padding: 7px 0;
+    margin: 0 7px;
+}
+
+.ah_inner-main-menu a:hover{
+    text-decoration: underline;
+}
+
+.ah_inner-main-menu a.ah_modal-button-header {
+    background-color: #3a78be;
+    padding: 7px 24px;
+    margin: 0px 40px;
+}
+
+.ah_inner-main-menu a.ah_modal-button-header:hover{
+    text-decoration: none;
+}

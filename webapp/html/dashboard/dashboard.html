@@ -1,4 +1,16 @@
 <div class="ah_dashboard-inner">
+    {{#currentUser}}
+    <div class="ah_top_dashboard">
+        <div class="ah_back" style="background-image:url({{back}})"></div>
+        <div class="ah_user-info">
+            <div class="ah_avatar" style="background-image:url({{avatar}})"></div>
+            <div class="ah_inner-user-info">
+                <p class="ah_name">{{firstName}} {{lastName}}</p>
+                <p class="ah_city">{{city}}</p>
+            </div>
+        </div>
+    </div>
+    {{/currentUser}}
     <div class="ah_gallery-component">
 
     </div>
