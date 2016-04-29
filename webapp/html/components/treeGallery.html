@@ -1,3 +1,20 @@
-<div>
-    tree
+<div class="ah_tree-component">
+    <div class="ah_root-tree-folder">
+        <div class="ah_row-tree">
+            <span data-id="root" class="ah_toggle-elem-folder">Root</span>
+            <div data-body="root" class="ah_body-folder">
+                {{#tree}}
+                    <div class="ah_row-tree">
+                        {{#if showType === "picture"}}
+                        <span data-id="{{id}}" class="ah_toggle-elem-photo">{{title}}</span>
+                        {{/if}}
+                        {{#if showType === "folder"}}
+                        <span data-id="{{id}}" class="ah_toggle-elem-folder">{{title}}</span>
+                            {{> itemTree}}
+                        {{/if}}
+                    </div>
+                {{/tree}}
+            </div>
+        </div>
+    </div>
 </div>

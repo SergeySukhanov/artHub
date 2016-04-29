@@ -10,14 +10,26 @@
 var foldersModule = {
     tree:function(ins){
         var _initialize = function(){
-            console.log(ins)
+            _handlers();
+        };
+
+        var _handlers = function(){
+            ins.on({
+
+            });
         };
 
         _initialize();
     },
     folders:function(ins){
         var _intialize = function(){
-            console.log(ins);
+            _handlers();
+        };
+
+        var _handlers = function(){
+            ins.on({
+
+            });
         };
 
         _intialize();

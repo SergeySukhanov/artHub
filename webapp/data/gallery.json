@@ -6,24 +6,29 @@
             "title":"Photo 1",
             "description":"long text",
             "public":true,
-            "url":"image/url",
+            "url":"images/image1.jpg",
             "cost":1000,
             "datePublication":12458539487,
-            "parent":null
+            "parent":null,
+            "showType":"picture"
         },
         {
             "id":"folder_1",
             "author":"id_artist_1",
             "title":"Folder 1",
+            "url":"images/folder.png",
             "public":true,
-            "parent":null
+            "parent":null,
+            "showType":"folder"
         },
         {
             "id":"folder_2",
             "author":"id_artist_1",
             "title":"Folder 2",
             "public":true,
-            "parent":"folder_1"
+            "parent":"folder_1",
+            "showType":"folder",
+            "url":"images/folder.png"
         },
         {
             "id":"photo_2",
@@ -31,10 +36,11 @@
             "title":"Photo 2",
             "description":"long text",
             "public":true,
-            "url":"image/url",
+            "url":"images/image2.jpg",
             "cost":10000,
             "datePublication":12458539487,
-            "parent":"folder_1"
+            "parent":"folder_1",
+            "showType":"picture"
         },
         {
             "id":"photo_22",
@@ -42,10 +48,11 @@
             "title":"Photo 22",
             "description":"long text",
             "public":true,
-            "url":"image/url",
+            "url":"images/image3.jpeg",
             "cost":10000,
             "datePublication":12458539487,
-            "parent":"folder_2"
+            "parent":"folder_2",
+            "showType":"picture"
         },
         {
             "id":"photo_24",
@@ -53,10 +60,11 @@
             "title":"Photo 24",
             "description":"long text",
             "public":true,
-            "url":"image/url",
+            "url":"images/image4.jpg",
             "cost":10000,
             "datePublication":12458539487,
-            "parent":"folder_2"
+            "parent":"folder_2",
+            "showType":"picture"
         },
         {
             "id":"photo_23",
@@ -64,10 +72,11 @@
             "title":"Photo 23",
             "description":"long text",
             "public":true,
-            "url":"image/url",
+            "url":"images/image5.jpg",
             "cost":10000,
             "datePublication":12458539487,
-            "parent":"folder_2"
+            "parent":"folder_2",
+            "showType":"picture"
         },
         {
             "id":"photo_3",
@@ -75,10 +84,11 @@
             "title":"Photo 3",
             "description":"long text",
             "public":true,
-            "url":"image/url",
+            "url":"images/image6.jpg",
             "cost":10000,
             "datePublication":12458539487,
-            "parent":"folder_1"
+            "parent":"folder_1",
+            "showType":"picture"
         },
         {
             "id":"photo_6",
@@ -86,10 +96,11 @@
             "title":"Photo 6",
             "description":"long text",
             "public":true,
-            "url":"image/url",
+            "url":"images/image7.jpg",
             "cost":10000,
             "datePublication":12458539487,
-            "parent":"folder_1"
+            "parent":"folder_1",
+            "showType":"picture"
         },
         {
             "id":"photo_4",
@@ -97,10 +108,35 @@
             "title":"Photo 4",
             "description":"long text",
             "public":true,
-            "url":"image/url",
+            "url":"images/image8.jpg",
             "cost":10000,
             "datePublication":12458539487,
-            "parent":null
+            "parent":null,
+            "showType":"picture"
+        },
+        {
+            "id":"photo_42",
+            "author":"id_artist_1",
+            "title":"Photo 42",
+            "description":"long text",
+            "public":true,
+            "url":"images/image9.jpg",
+            "cost":10000,
+            "datePublication":12458539487,
+            "parent":null,
+            "showType":"picture"
+        },
+        {
+            "id":"photo_44",
+            "author":"id_artist_1",
+            "title":"Photo 44",
+            "description":"long text",
+            "public":true,
+            "url":"images/image10.jpg",
+            "cost":10000,
+            "datePublication":12458539487,
+            "parent":null,
+            "showType":"picture"
         }
 
     ]

@@ -14,9 +14,7 @@ var FoldersController = function(ins){
         _handlers()
     };
     var _handlers = function(){
-        ins.on({
 
-        });
     };
 
     var _initialize = function(){

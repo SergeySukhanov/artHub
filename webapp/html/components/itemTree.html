@@ -1,0 +1,16 @@
+{{#if children.length}}
+<div data-body="{{id}}" class="ah_body-folder">
+    {{#children}}
+    <div class="ah_row-tree">
+        {{#if showType === "picture"}}
+        <span data-id="{{id}}" class="ah_toggle-elem-photo">{{title}}</span>
+        {{/if}}
+
+        {{#if showType === "folder"}}
+        <span data-id="{{id}}" class="ah_toggle-elem-folder">{{title}}</span>
+        {{ > itemTree}}
+        {{/if}}
+    </div>
+    {{/children}}
+</div>
+{{/if}}

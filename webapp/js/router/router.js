@@ -32,6 +32,7 @@ var Router = Backbone.Router.extend({
 
                     if(!tools.loadLayout(config.startProperties)){
                         tools.layoutComponents().then(function(){
+                            tools.calculateLayoutHeight();
                             tools.toggleLoadLayout(config.startProperties, true);
                             next();
                         });

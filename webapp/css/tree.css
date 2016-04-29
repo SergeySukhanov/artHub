@@ -1,0 +1,17 @@
+.ah_row-tree .ah_body-folder {
+    padding-left: 23px;
+}
+
+.ah_toggle-elem-folder, .ah_toggle-elem-photo {
+    display: inline-block;
+    padding: 2px 12px;
+}
+
+.ah_tree-gallery{
+    display: inline-block;
+    width: 250px;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    border-right: 1px solid #b3b3b3;
+}

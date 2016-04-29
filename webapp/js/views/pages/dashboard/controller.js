@@ -14,8 +14,9 @@ var DashboardController = function(ins){
     };
 
     var _galleryComponent = function(){
-        templateManager.load(["components/galleryComponent", "components/treeGallery", "components/foldersGallery"]).then(function(gallery, tree, folders){
+        templateManager.load(["components/galleryComponent", "components/treeGallery", "components/foldersGallery", "components/itemTree"]).then(function(gallery, tree, folders, item){
             API.user.gallery().then(function(data){
+                var defaultCollectionOfPictures = new PicturesCollection(data.gallery);
                 var treeCollection = new PicturesCollection(tools.createTreeStruture(data.gallery));
                 var foldersCollection = new PicturesCollection(tools.currentFolder(data.gallery, null));
                 new BaseView({
@@ -23,10 +24,12 @@ var DashboardController = function(ins){
                     el:".ah_gallery-component",
                     data:{
                         tree:treeCollection,
-                        currentFolder:foldersCollection
+                        currentFolder:foldersCollection,
+                        defaultGallery:defaultCollectionOfPictures
                     },
                     template:gallery,
                     partials:{
+                        itemTree:item,
                         treeGallery:tree,
                         foldersGallery:folders
                     },
