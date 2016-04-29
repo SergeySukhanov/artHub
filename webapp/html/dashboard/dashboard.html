@@ -1,16 +1,17 @@
 <div class="ah_dashboard-inner">
-    <div class="ah_header-dashboard small-12">
-        <div class="ah_avatar">
-            <img src="images/avatar.jpg">
-        </div>
-        <div class="ah_name">
-            <h3>Sergey Sukhanov</h3>
-        </div>
-        <div class="ah_active-edit">
-            <a href="javascript:void(0)" on-click="editAccount">Edit account</a>
+    {{#currentUser}}
+    <div class="ah_top_dashboard">
+        <div class="ah_back" style="background-image:url({{back}})"></div>
+        <div class="ah_user-info">
+            <div class="ah_avatar" style="background-image:url({{avatar}})"></div>
+            <div class="ah_inner-user-info">
+                <p class="ah_name">{{firstName}} {{lastName}}</p>
+                <p class="ah_city">{{city}}</p>
+            </div>
         </div>
     </div>
-    <div class="ah_body-dashboard small-12">
+    {{/currentUser}}
+    <div class="ah_gallery-component">
 
     </div>
 </div>

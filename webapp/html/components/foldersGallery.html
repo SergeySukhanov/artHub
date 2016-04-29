@@ -1,0 +1,19 @@
+<div class="ah_folder-component">
+    {{#currentFolder}}
+        {{#if showType === "folder"}}
+            <div data-id="{{id}}" class="ah_item-gallery ah_item-gallery-folder">
+                <div class="ah_img-item-gallery" style="background-image: url({{url}});"></div>
+                <p>{{title}}</p>
+            </div>
+        {{/if}}
+        {{#if showType === "picture"}}
+    <div data-id="{{id}}" class="ah_item-gallery ah_item-gallery-picture">
+        <div class="ah_img-item-gallery" style="background-image: url({{url}});">
+
+        </div>
+        <p>{{title}}</p>
+        <small>{{datePublication}}</small>
+    </div>
+        {{/if}}
+    {{/currentFolder}}
+</div>

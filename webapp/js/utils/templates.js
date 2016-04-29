@@ -26,21 +26,18 @@ var _loadIsString = function(data){
             return  config.templates[data];
         })
     }else{
-        return _loader(data);
+        return _loader(data).then(function(d){
+            return d;
+        });
     }
 };
 
 
 
 var _loadIsArray = function(data){
-    return _loadIsString(data[0]).then(function(tmpl){
-        config.templates[data[0]] = tmpl;
-        data.shift();
-        if(data.length > 0){
-           return  _loadIsArray(data);
-        }
-    });
+    return _.map(data, _loadIsString);
 };
+
 
 
 var templateManager = {
@@ -50,7 +47,7 @@ var templateManager = {
         }
 
         if(_.isArray(data)){
-            return _loadIsArray(data);
+            return $.when.apply($, _loadIsArray(data));
         }
 
         if(_.isObject(data)){

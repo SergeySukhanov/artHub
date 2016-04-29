@@ -9,6 +9,7 @@
 var BaseView = Backbone.View.extend({
     el:null,
     template:null,
+    partials:null,
     params:{},
     data:null,
 
@@ -17,7 +18,8 @@ var BaseView = Backbone.View.extend({
         var base = new BaseTemplate({
             el:self.el,
             template:self.template,
-            data:self.data
+            data:self.data,
+            partials:self.partials
         });
         if(self.params.controller){
             base.on("complete", function(){
@@ -31,6 +33,7 @@ var BaseView = Backbone.View.extend({
         self.id = options.id;
         self.el = options.el;
         self.template = options.template;
+        self.partials = options.partials;
         self.params = options.params;
         self.data = options.data;
         tools.restrictions(self.id, function(){

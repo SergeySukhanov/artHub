@@ -17,12 +17,15 @@ var HeaderViewController = function(ins){
                 tools.logout();
             },
             loadPicture:function(){
-                templateManager.load("modal/loadPicture").then(function(tmpl){
-                    new ModalView({
-                        template:tmpl,
-                        controller:LoadPictureController
-                    });
+                new ModalView({
+                    template:"loadPicture",
+                    controller:LoadPictureController
                 });
+
+                new NotificationView({
+                    template:"successLoadPicture",
+                    controller:SuccessController
+                })
             }
         });
     };

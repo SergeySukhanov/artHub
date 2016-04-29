@@ -8,10 +8,12 @@
 
 var tools = {
     toggleToken:function(prop){
-        var statement = prop.token = false;
+        var statement;
 
         if(token.getItem()){
             statement = prop.token = true;
+        }else{
+            statement = prop.token = false;
         }
 
         return statement;
@@ -41,11 +43,11 @@ var tools = {
     },
 
     layoutComponents:function(){
-        return templateManager.load(["layout/header", "layout/workspace", "layout/footer"]).then(function(){
+        return templateManager.load(["layout/header", "layout/workspace", "layout/footer"]).then(function(header, workspace, footer){
             new BaseView({
                 id:"header",
                 el:"#header-container",
-                template:config.templates["layout/header"],
+                template:header,
                 params:{
                     controller:HeaderViewController
                 },
@@ -58,7 +60,7 @@ var tools = {
             new BaseView({
                 id:"footer",
                 el:"#footer-container",
-                template:config.templates["layout/footer"],
+                template:footer,
                 params:{
                     controller:FooterViewController
                 }
@@ -66,12 +68,111 @@ var tools = {
             new BaseView({
                 id:"workspace",
                 el:"#workspace-container",
-                template:config.templates["layout/workspace"],
+                template:workspace,
                 params:{
                     controller:WorkspaceViewController
                 }
             });
+
+            tools.calculateLayoutHeight();
         })
+    },
+
+    rootId:function(data){
+        return data.split("_")[0];
+    },
+
+    createTreeStruture:function(data){
+        var result = {};
+
+        var folders = _.filter(data, function(elem){
+            if(tools.rootId(elem.id) === "folder"){
+                return elem;
+            }
+        });
+        var photo = _.filter(data, function(elem){
+            if(tools.rootId(elem.id) === "photo"){
+                return elem;
+            }
+        });
+
+        var parentFolder = function(elem){
+            return _.find(folders, function(innerElem){
+                if(innerElem.id === elem.parent){
+                    if(!innerElem.children){
+                        innerElem.children = [];
+                        innerElem.children.push(elem);
+                        if(!innerElem.parent){
+                            return innerElem;
+                        }else{
+                            _.find(folders, function(elem){
+                                if((elem.id === innerElem.parent) && elem.children){
+                                    var elemFind = _.filter(elem.children, function(child){
+                                        if(child.id === innerElem.id){
+                                            return child;
+                                        }
+                                    });
+                                    if(!elemFind.length){
+                                        parentFolder(innerElem);
+                                    }
+                                }
+                            });
+                        }
+                    }else{
+                        innerElem.children.push(elem);
+                        if(innerElem.parent){
+                            _.find(folders, function(elem){
+                                if((elem.id === innerElem.parent) && elem.children){
+                                    var elemFind = _.filter(elem.children, function(child){
+                                        if(child.id === innerElem.id){
+                                            return child;
+                                        }
+                                    });
+                                    if(!elemFind.length){
+                                        parentFolder(innerElem);
+                                    }
+                                }
+                            });
+                        }
+                    }
+                }
+            });
+        };
+
+        result = _.map(photo, function(elem){
+            if(!elem.parent){
+                return elem;
+            }else{
+                return parentFolder(elem);
+            }
+        });
+
+        return _.compact(result);
+    },
+
+    currentFolder:function(data, parent){
+        return _.compact(_.map(data, function(elem){
+            if(elem.parent === parent){
+                return elem;
+            }
+        }));
+
+
+    },
+
+    calculateLayoutHeight:function(){
+        var body = $("body");
+        var header = $("#header-container");
+        var workspace = $("#workspace-container");
+        var footer = $("#footer-container");
+
+        var heightWrapper = body.outerHeight();
+        var heightHeader = header.outerHeight();
+        var heightFooter = footer.outerHeight();
+
+        workspace.css({
+            height:heightWrapper - (heightHeader + heightFooter)
+        });
     },
 
     restrictions:function(id, callback){

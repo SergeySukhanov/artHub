@@ -31,10 +31,10 @@ var NotificationView = Backbone.View.extend({
     },
     initialize:function(options){
         var self = this;
-        self.partial = options.template;
         self.controller = options.controller;
-        templateManager.load("notifications/base").then(function(tmpl){
-            self.template = tmpl;
+        templateManager.load(["notifications/base", "notifications/" + options.template]).then(function(base, partial){
+            self.template = base;
+            self.partial = partial;
             self.render();
         });
     }
