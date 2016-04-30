@@ -8,7 +8,6 @@
 .ah_top_dashboard{
     position: relative;
     height: 250px;
-    margin-bottom: 20px;
 }
 
 .ah_back {
@@ -46,6 +45,8 @@ p.ah_city{
     vertical-align: top;
     font-size: 25px;
     margin: 0;
+    position: relative;
+    margin-top: -14px;
 }
 
 .ah_inner-user-info{
@@ -53,4 +54,18 @@ p.ah_city{
     vertical-align: top;
     margin-top: 57px;
     margin-left: 20px;
+}
+
+a.ah_edit-account {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    color: #ffffff;
+    font-size: 15px;
+    background-color: #147D6E;
+    padding: 6px 20px;
+    font-family: Oswald;
+    border-radius: 4px;
 }

@@ -69,21 +69,24 @@ var Router = Backbone.Router.extend({
     },
     dashboard:function(id){
         templateManager.load("dashboard/dashboard").then(function(tmpl){
-            new BaseView({
-                id:"dashboard",
-                el:"#workspace-inner-container",
-                template:tmpl,
-                params:{
-                    id:id,
-                    controller:DashboardController
-                },
-                data:function(){
-                    return {
-                        config:config,
-                        currentUser:config.models.currentUser
+            API.user.userInfo(id).then(function(user){
+                new BaseView({
+                    id:"dashboard",
+                    el:"#workspace-inner-container",
+                    template:tmpl,
+                    params:{
+                        id:id,
+                        controller:DashboardController
+                    },
+                    data:function(){
+                        return {
+                            config:config,
+                            currentUser:config.models.currentUser,
+                            user:new UserModel(user)
+                        }
                     }
-                }
-            });
+                });
+            })
         });
     },
     search:function(action){

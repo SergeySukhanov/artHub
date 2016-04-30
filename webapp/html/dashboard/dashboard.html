@@ -1,5 +1,5 @@
 <div class="ah_dashboard-inner">
-    {{#currentUser}}
+    {{#user}}
     <div class="ah_top_dashboard">
         <div class="ah_back" style="background-image:url({{back}})"></div>
         <div class="ah_user-info">
@@ -9,8 +9,11 @@
                 <p class="ah_city">{{city}}</p>
             </div>
         </div>
+        {{#if user.id === currentUser.id}}
+        <a class="ah_edit-account" href="javascript:void(0)" on-click="editAccount">Edit account</a>
+        {{/if}}
     </div>
-    {{/currentUser}}
+    {{/user}}
     <div class="ah_gallery-component">
 
     </div>

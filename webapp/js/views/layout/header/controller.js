@@ -21,11 +21,6 @@ var HeaderViewController = function(ins){
                     template:"loadPicture",
                     controller:LoadPictureController
                 });
-
-                new NotificationView({
-                    template:"successLoadPicture",
-                    controller:SuccessController
-                })
             }
         });
     };

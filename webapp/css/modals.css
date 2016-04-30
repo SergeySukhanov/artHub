@@ -1,0 +1,17 @@
+.ah_base-modal-container {
+    width: 70%;
+    margin: 0 auto;
+    display: block;
+    background: #ffffff;
+    margin-top: 10%;
+}
+
+.ah_close {
+    background: #20649E;
+    text-align: right;
+    padding: 5px 20px;
+}
+
+.ah_close a{
+    color:#ffffff;
+}

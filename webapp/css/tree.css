@@ -7,11 +7,17 @@
     padding: 2px 12px;
 }
 
-.ah_tree-gallery{
+.ah_tree-gallery {
     display: inline-block;
     width: 250px;
     height: 100%;
     position: absolute;
     left: 0;
-    border-right: 1px solid #b3b3b3;
+    border-right: 1px solid #B0B0B0;
+}
+
+.ah_tools-tree-gallery {
+    background: #20649E;
+    padding: 10px;
+    height: 45px;
 }

@@ -14,7 +14,20 @@ var FoldersController = function(ins){
         _handlers()
     };
     var _handlers = function(){
-
+        ins.on({
+            newFolder:function(event){
+                new ModalView({
+                    template:"newFolder",
+                    controller:NewFolderController
+                })
+            },
+            newPicture:function(event){
+                new ModalView({
+                    template:"loadPicture",
+                    controller:LoadPictureController
+                });
+            }
+        });
     };
 
     var _initialize = function(){

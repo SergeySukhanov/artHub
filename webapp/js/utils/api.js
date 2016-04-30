@@ -92,6 +92,11 @@ var API = {
                 url:"users.json"
             })
         },
+        userInfo:function(id){
+            return loader.get({
+                url:"user_" + id + ".json"
+            });
+        },
         search:function(){
             return loader.get({
                 url:"../api"

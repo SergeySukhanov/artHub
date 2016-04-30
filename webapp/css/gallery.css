@@ -6,8 +6,9 @@
     height:100%;
 }
 
-.ah_current-folders-gallery{
+.ah_current-folders-gallery {
     margin-left: 250px;
+    display: inline-block;
 }
 
 .ah_item-gallery-picture.ah_item-gallery {
@@ -67,3 +68,8 @@
     position: absolute;
 }
 
+.ah_tools-current-folders-gallery {
+    background: #20649E;
+    padding: 10px;
+    height: 45px;
+}
