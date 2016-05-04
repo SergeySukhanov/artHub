@@ -34,6 +34,10 @@ var UserModel = Backbone.Model.extend({
             }
         })
     },
+
+    fullName:function(){
+        return this.get("firstName") + " " + this.get("lastName");
+    },
     checkExists:function(){
         var model = this;
         var exists = false;

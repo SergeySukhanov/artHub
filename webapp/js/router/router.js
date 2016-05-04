@@ -8,31 +8,35 @@
 
 var Router = Backbone.Router.extend({
     routes:{
-        "":"auth",
-        "auth":"auth",
-        "dashboard":"dashboard",
-        "dashboard/:id":"dashboard",
-        "search":"search",
-        "search/:action":"search",
+        "":"dashboard",
         "gallery":"gallery",
+        "dashboard":"dashboard",
         "gallery/:action":"gallery",
         "gallery/:action/:id":"item",
-        "settings":"settings"
+        "news":"news",
+        "people":"people",
+
+        "auth":"auth",
+
+        "search":"search",
+        "search/:action":"search",
+        "settings":"settings",
+        ":id":"account",
+        ":id/:action":"account"
     },
 
     before:{
         "*any":function(frag, args, next){
-            tools.toggleToken(config.startProperties);
+            tools.toggleToken();
             if(token.getItem()){
                 API.user.currentUser().then(function(currentUser){
                     config.models.currentUser = new UserModel(currentUser.user);
-                    if(frag === "" || frag === "auth"){
-                        config.routers.mainRouter.navigate("dashboard/" + config.models.currentUser.get("id"), {trigger:true});
+                    if(frag === "auth"){
+                        config.routers.mainRouter.navigate("dashboard", {trigger:true});
                     }
 
                     if(!tools.loadLayout(config.startProperties)){
                         tools.layoutComponents().then(function(){
-                            tools.calculateLayoutHeight();
                             tools.toggleLoadLayout(config.startProperties, true);
                             next();
                         });
@@ -41,11 +45,16 @@ var Router = Backbone.Router.extend({
                     }
                 })
             }else{
-                tools.toggleLoadLayout(config.startProperties, false);
-                if(frag === "" || frag !== "auth"){
-                    config.routers.mainRouter.navigate("auth", {trigger:true});
+
+
+                if(!tools.loadLayout(config.startProperties)){
+                    tools.layoutComponents().then(function(){
+                        tools.toggleLoadLayout(config.startProperties, true);
+                        next();
+                    });
+                }else{
+                    next();
                 }
-                next();
             }
         }
     },
@@ -53,7 +62,7 @@ var Router = Backbone.Router.extend({
         templateManager.load("auth/auth").then(function(tmpl){
             new BaseView({
                 id:"auth",
-                el:"#auth-container",
+                el:"#workspace-inner-container",
                 template:tmpl,
                 params:{
                     controller:AuthController
@@ -68,25 +77,30 @@ var Router = Backbone.Router.extend({
         });
     },
     dashboard:function(id){
-        templateManager.load("dashboard/dashboard").then(function(tmpl){
-            API.user.userInfo(id).then(function(user){
-                new BaseView({
-                    id:"dashboard",
-                    el:"#workspace-inner-container",
-                    template:tmpl,
-                    params:{
-                        id:id,
-                        controller:DashboardController
-                    },
-                    data:function(){
-                        return {
-                            config:config,
-                            currentUser:config.models.currentUser,
-                            user:new UserModel(user)
-                        }
+        templateManager.load(["dashboard/dashboard", "dashboard/news", "dashboard/pictures", "dashboard/people"]).then(function(dashboard, news, pictures, people){
+            new BaseView({
+                id:"dashboard",
+                el:"#workspace-inner-container",
+                template:dashboard,
+                partials:{
+                    news:news,
+                    pictures:pictures,
+                    people:people
+                },
+                params:{
+                    id:id,
+                    controller:DashboardController
+                },
+                data:function(){
+                    return {
+                        config:config,
+                        currentUser:config.models.currentUser,
+                        news:[],
+                        people:[],
+                        pictures:[]
                     }
-                });
-            })
+                }
+            });
         });
     },
     search:function(action){
@@ -102,24 +116,50 @@ var Router = Backbone.Router.extend({
             })
         });
     },
-    account:function(action){
-        var template;
-        if(!action){
-            template = "account/account";
-        }else{
-            template = "account/" + action;
-        }
-
-        templateManager.load(template).then(function(tmpl){
+    people:function(){
+        templateManager.load("people/people").then(function(tmpl){
             new BaseView({
-                id:"account",
+                id:"people",
                 el:"#workspace-inner-container",
                 template:tmpl,
                 params:{
-                    action:action,
-                    controller:AccountController
+                    controller:PeopleController
                 }
-            });
+            })
+        });
+    },
+    account:function(id, action){
+        templateManager.load("account/account").then(function(tmpl){
+            API.user.userInfo(id).then(function(user){
+                new BaseView({
+                    id:"account",
+                    el:"#workspace-inner-container",
+                    template:tmpl,
+                    params:{
+                        id:id,
+                        controller:AccountController
+                    },
+                    data:function(){
+                        return {
+                            config:config,
+                            currentUser:config.models.currentUser,
+                            user:new UserModel(user)
+                        }
+                    }
+                });
+            })
+        });
+    },
+    news:function(){
+        templateManager.load("news/news").then(function(tmpl){
+            new BaseView({
+                id:"news",
+                el:"#workspace-inner-container",
+                template:tmpl,
+                params:{
+                    controller:NewsController
+                }
+            })
         });
     },
     gallery:function(action){

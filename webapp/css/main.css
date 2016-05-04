@@ -1,5 +1,6 @@
 @import url(https://fonts.googleapis.com/css?family=Oswald:400,300,700|Ubuntu+Condensed&subset=latin,cyrillic-ext);
 @import "header.css";
+@import "footer.css";
 @import "workspace.css";
 @import "modals.css";
 
@@ -37,16 +38,26 @@ html, body{
     z-index: 3;
 }
 
-#header-container{
+#header-container {
     position: relative;
     height: 50px;
     background: #20649E;
+    z-index: 3;
+    box-shadow: 0px 0px 4px -1px #232323;
 }
 
-#workspace-container{
+#workspace-container {
     position: relative;
+    z-index: 2;
 }
 
-#footer-container{
+#footer-container {
     position: relative;
+    z-index: 3;
+}
+
+p.ah_empty {
+    font-size: 20px;
+    color: #949494;
+    text-align: center;
 }

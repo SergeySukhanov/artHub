@@ -1,17 +1,23 @@
 <div class="ah_header-inner clearfix">
     <div class="small-2 columns ah_brand">
-        <h1><a href="#dashboard/{{currentUser.id}}">ArtHub</a></h1>
+        <h1><a href="#">ArtHub</a></h1>
     </div>
     <div class="small-10 columns ah_main-menu">
-        <div class="ah_simple-search">
-            <input type="text"/>
-        </div>
         <ul class="ah_inner-main-menu">
-            <li><a href="#search">search</a></li>
+            {{#config.startProperties.token}}
+            <li><a href="#news">news</a></li>
             <li><a href="#gallery">gallery</a></li>
+            <li><a href="#people">people</a></li>
             <li><a href="#settings">settings</a></li>
             <li><a href="javascript:void(0);" class="ah_modal-button-header" on-click="loadPicture">Load picture</a></li>
+            <li><a href="#{{currentUser.id}}">{{currentUser.firstName}} {{currentUser.lastName}}</a></li>
             <li><a href="javascript:void(0);" on-click="logout">Exit</a></li>
+            {{else}}
+            <li><a href="#gallery">news</a></li>
+            <li><a href="#gallery">gallery</a></li>
+            <li><a href="#people">people</a></li>
+            <li><a href="#auth">Log in</a></li>
+            {{/config.startProperties.token}}
         </ul>
     </div>
 </div>

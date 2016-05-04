@@ -1,0 +1,11 @@
+<div class="ah_people-shortlist">
+    {{#people}}
+    <div class="ah_people-item">
+        <div data-id="{{id}}" class="ah_img-people-item" style="background-image: url({{avatar}})">
+            <small>{{this.fullName()}}</small>
+        </div>
+    </div>
+    {{else}}
+    <p class="ah_empty">people not found</p>
+    {{/people}}
+</div>

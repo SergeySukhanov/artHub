@@ -9,47 +9,37 @@
 
 var DashboardController = function(ins){
     var _render = function(){
-        _galleryComponent();
-        _handlers()
-    };
+        _handlers();
 
-    var _galleryComponent = function(){
-        templateManager.load(["components/galleryComponent", "components/treeGallery", "components/foldersGallery", "components/itemTree"]).then(function(gallery, tree, folders, item){
-            API.user.gallery().then(function(data){
-                var defaultCollectionOfPictures = new PicturesCollection(data.gallery);
-                var treeCollection = new PicturesCollection(tools.createTreeStruture(data.gallery));
-                var foldersCollection = new PicturesCollection(tools.currentFolder(data.gallery, null));
-                new BaseView({
-                    id:"galleryComponent",
-                    el:".ah_gallery-component",
-                    data:{
-                        tree:treeCollection,
-                        currentFolder:foldersCollection,
-                        defaultGallery:defaultCollectionOfPictures
-                    },
-                    template:gallery,
-                    partials:{
-                        itemTree:item,
-                        treeGallery:tree,
-                        foldersGallery:folders
-                    },
-                    params:{
-                        controller:FoldersController
-                    }
-                });
-            });
+        _loadNews().then(function(data){
+            console.log(data.news);
+            ins.set("news", data.news);
+        });
+        _loadPictures().then(function(data){
+            console.log(data.gallery);
+            var pictures = tools.onlyPhoto(data.gallery);
+            ins.set("pictures", new PicturesCollection(pictures));
+        });
+        _loadPeople().then(function(data){
+            console.log(data.users);
+            ins.set("people", new UsersCollection(data.users));
         });
     };
 
     var _handlers = function(){
         ins.on({
-            editAccount:function(){
-                new ModalView({
-                    template:"editAccount",
-                    controller:EditAccountController
-                });
-            }
+
         });
+    };
+
+    var _loadNews = function(){
+        return API.user.news();
+    };
+    var _loadPictures = function(){
+        return API.user.gallery();
+    };
+    var _loadPeople = function(){
+        return API.user.users();
     };
 
     var _initialize = function(){

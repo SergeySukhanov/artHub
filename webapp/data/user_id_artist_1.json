@@ -1,0 +1,13 @@
+{
+    "id":"id_artist_1",
+    "login":"SergeySukhanov",
+    "avatar":"images/avatar.png",
+    "back":"images/back.jpg",
+    "firstName":"Sergey",
+    "lastName":"Sukhanov",
+    "password":"password",
+    "city":"Saint-Petersburg",
+    "gallery":[],
+    "dateOfBirth":"09/07/1989",
+    "type":"artist"
+}

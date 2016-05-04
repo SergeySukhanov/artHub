@@ -7,18 +7,18 @@
     </div>
     <div class="ah_auth-form">
         <div class="ah_row">
-            <label for="inputLogin"> <b>Login:</b>
+            <label for="inputLogin"> <b>Login</b>
                 <input id="inputLogin" type="text" placeholder="Enter your login..." value="{{user.login}}" on-blur="checkField"/>
             </label>
         </div>
         <div class="ah_row">
-            <label for="inputPassword"><b>Password:</b>
+            <label for="inputPassword"><b>Password</b>
                 <input id="inputPassword" type="password" placeholder="Enter your password..." value="{{user.password}}"/>
             </label>
         </div>
         {{^user.exists}}
         <div class="ah_row">
-            <label for="inputRepeatPassword"><b>Repeat password:</b>
+            <label for="inputRepeatPassword"><b>Repeat password</b>
                 <input id="inputRepeatPassword" type="password" placeholder="Enter your password yet..." value="{{user.repeatPassword}}"/>
             </label>
         </div>

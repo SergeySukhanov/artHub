@@ -1,4 +1,6 @@
+@import "auth.css";
 @import "dashboard.css";
+@import "account.css";
 
 .ah_workspace-inner{
     height:100%;
