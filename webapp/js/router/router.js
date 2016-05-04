@@ -76,7 +76,7 @@ var Router = Backbone.Router.extend({
             });
         });
     },
-    dashboard:function(id){
+    dashboard:function(){
         templateManager.load(["dashboard/dashboard", "dashboard/news", "dashboard/pictures", "dashboard/people"]).then(function(dashboard, news, pictures, people){
             new BaseView({
                 id:"dashboard",
@@ -88,7 +88,6 @@ var Router = Backbone.Router.extend({
                     people:people
                 },
                 params:{
-                    id:id,
                     controller:DashboardController
                 },
                 data:function(){
@@ -129,7 +128,13 @@ var Router = Backbone.Router.extend({
         });
     },
     account:function(id, action){
-        templateManager.load("account/account").then(function(tmpl){
+        var template;
+        if(!action){
+            template = "account/account";
+        }else{
+            template = "account/" + action;
+        }
+        templateManager.load(template).then(function(tmpl){
             API.user.userInfo(id).then(function(user){
                 new BaseView({
                     id:"account",
@@ -137,6 +142,7 @@ var Router = Backbone.Router.extend({
                     template:tmpl,
                     params:{
                         id:id,
+                        action:action,
                         controller:AccountController
                     },
                     data:function(){

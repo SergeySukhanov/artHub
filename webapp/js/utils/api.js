@@ -6,6 +6,10 @@
  * © 2016 All Rights Reserved
  */
 
+var apiConfig = {
+    rootPath:"data/"
+};
+
 var errorApi = function(e){
     console.log(e);
 };
@@ -37,7 +41,7 @@ var loader = {
 
         return $.ajax({
             beforeSend:options.beforeSend || function(){},
-            url:config.api.rootPath + url,
+            url:apiConfig.rootPath + url,
             contentType:options.contentType || "application/json;encoding=utf-8",
             data:options.data || {},
             dataType:options.dataType || "json",

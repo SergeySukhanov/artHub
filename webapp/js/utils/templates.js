@@ -6,12 +6,21 @@
  * © 2016 All Rights Reserved
  */
 
+var templateConfig = {
+    rootPath:"html/",
+    dataType:"html",
+    fileType:".html"
+};
+
 var _loader = function(template){
     return $.ajax({
-        url: config.templateManager.rootPath + template + config.templateManager.fileType,
-        dataType: config.templateManager.dataType,
+        url: templateConfig.rootPath + template + templateConfig.fileType,
+        dataType: templateConfig.dataType,
         success:function(tmpl){
             config.templates[template] = tmpl;
+        },
+        error:function(e){
+            console.log(e);
         }
     });
 };
@@ -32,13 +41,9 @@ var _loadIsString = function(data){
     }
 };
 
-
-
 var _loadIsArray = function(data){
     return _.map(data, _loadIsString);
 };
-
-
 
 var templateManager = {
     load:function(data){

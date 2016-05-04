@@ -3,12 +3,12 @@
 <head>
     <title>Art hub</title>
     <!--------------------------LIBS------------------------>
-    <script src="js/libs/jquery/dist/jquery.min.js"></script>
-    <script src="js/libs/lodash/dist/lodash.min.js"></script>
-    <script src="js/libs/backbone/backbone-min.js"></script>
-    <script src="js/libs/ractive/ractive.min.js"></script>
-    <script src="js/libs/ractive-backbone/dist/ractive-adaptors-backbone.min.js"></script>
-    <script src="js/libs/backbone-async-route-filter/backbone-async-route-filter.js"></script>
+    <script src="js/vendor/jquery/dist/jquery.min.js"></script>
+    <script src="js/vendor/lodash/dist/lodash.min.js"></script>
+    <script src="js/vendor/backbone/backbone-min.js"></script>
+    <script src="js/vendor/ractive/ractive.min.js"></script>
+    <script src="js/vendor/ractive-backbone/dist/ractive-adaptors-backbone.min.js"></script>
+    <script src="js/vendor/backbone-async-route-filter/backbone-async-route-filter.js"></script>
 
     <!--------------------------APP------------------------->
     <!--utils-->
@@ -24,8 +24,11 @@
     <!--models and collections-->
     <script src="js/models/User.js"></script>
     <script src="js/models/Picture.js"></script>
+    <script src="js/models/Article.js"></script>
+
     <script src="js/collections/Users.js"></script>
     <script src="js/collections/Pictures.js"></script>
+    <script src="js/collections/Articles.js"></script>
     <!--views-->
     <script src="js/views/modal/controllers/loadPictureController.js"></script>
     <script src="js/views/modal/controllers/editAccountController.js"></script>
@@ -61,7 +64,7 @@
     <script src="js/starter.js"></script>
 
     <!-------------------------STYLES----------------------->
-    <link rel="stylesheet" href="js/libs/foundation/css/foundation.min.css"/>
+    <link rel="stylesheet" href="js/vendor/foundation/css/foundation.min.css"/>
     <link rel="stylesheet" href="css/main.css"/>
 
 </head>

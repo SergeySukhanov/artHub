@@ -7,14 +7,6 @@
  */
 
 var config = {
-    templateManager:{
-        rootPath:"html/",
-        dataType:"html",
-        fileType:".html"
-    },
-    api:{
-        rootPath:"data/"
-    },
     startProperties:{
         token:false,
         fillAccount:false,

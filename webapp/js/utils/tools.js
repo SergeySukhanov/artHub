@@ -148,7 +148,6 @@ var tools = {
 
         return _.compact(result);
     },
-
     currentFolder:function(data, parent){
         return _.compact(_.map(data, function(elem){
             if(elem.parent === parent){
