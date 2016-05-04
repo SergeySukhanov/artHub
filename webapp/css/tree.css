@@ -1,10 +1,16 @@
 .ah_row-tree .ah_body-folder {
-    padding-left: 23px;
+    padding-left: 10px;
 }
 
 .ah_toggle-elem-folder, .ah_toggle-elem-photo {
     display: inline-block;
-    padding: 2px 12px;
+    padding: 2px 18px 2px 18px;
+    cursor: pointer;
+}
+
+.ah_toggle-elem-folder.selected, .ah_toggle-elem-photo.selected {
+    background-color: #569DDB;
+    color: #ffffff;
 }
 
 .ah_tree-gallery {
@@ -16,8 +22,62 @@
     border-right: 1px solid #B0B0B0;
 }
 
+.ah_body-folder{
+    display: none;
+}
+
+.ah_row-tree {
+    position: relative;
+}
+
+.ah_row-tree input[type=text]{
+    background-color: #569DDB;
+    color: #ffffff;
+    padding: 2px 18px 2px 18px;
+    font-size: 17px;
+    display: inline-block;
+    height: 28px;
+    margin: 0;
+    width: 95px;
+    border: 0;
+}
+
 .ah_tools-tree-gallery {
     background: #20649E;
     padding: 10px;
     height: 45px;
+}
+
+.ah_tree-component{
+    padding-left: 18px;
+}
+
+.ah_toggle_icon_tree {
+    position: absolute;
+    display: inline-block;
+    background-color: #20649E;
+    width: 13px;
+    height: 13px;
+    color: #ffffff;
+    margin-top: 6px;
+    margin-left: 1px;
+    top: 1px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.ah_toggle_icon_tree b {
+    font-size: 14px;
+    position: relative;
+    top: -6px;
+    font-weight: 100;
+    left: 2px;
+}
+
+.ah_toggle_icon_tree b.minus {
+    font-size: 14px;
+    position: relative;
+    top: -7px;
+    font-weight: 100;
+    left: 4px;
 }

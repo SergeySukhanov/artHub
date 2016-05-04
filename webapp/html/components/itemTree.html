@@ -3,11 +3,13 @@
     {{#children}}
     <div class="ah_row-tree">
         {{#if showType === "picture"}}
-        <span data-id="{{id}}" class="ah_toggle-elem-photo">{{title}}</span>
+        <span data-id="{{id}}" class="ah_toggle-elem ah_toggle-elem-photo" on-doubleclick="changeNameTreeItem" on-click="selectTreeItem">{{title}}</span>
+        <input data-edit-id="{{id}}" type="text" value="{{title}}" autofocus on-blur="saveChangedName" style="display:none;"/>
         {{/if}}
 
         {{#if showType === "folder"}}
-        <span data-id="{{id}}" class="ah_toggle-elem-folder">{{title}}</span>
+        <span class="ah_toggle_icon_tree" on-click="toggleTree"><b>+</b></span><span data-id="{{id}}" class="ah_toggle-elem ah_toggle-elem-folder" on-doubleclick="changeNameTreeItem" on-click="selectTreeItem">{{title}}</span>
+        <input data-edit-id="{{id}}" type="text" value="{{title}}" autofocus on-blur="saveChangedName" style="display:none;"/>
         {{ > itemTree}}
         {{/if}}
     </div>
