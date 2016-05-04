@@ -1,0 +1,13 @@
+{
+    "id":"id_artist_2",
+    "login":"AntonPetrov",
+    "firstName":"Anton",
+    "avatar":"images/avatar2.png",
+    "back":"images/back2.jpg",
+    "lastName":"Petrov",
+    "password":"password",
+    "city":"Moscow",
+    "gallery":[],
+    "dateOfBirth":"05/01/1975",
+    "type":"artist"
+}
