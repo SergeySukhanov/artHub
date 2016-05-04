@@ -7,13 +7,13 @@
  */
 
 var tools = {
-    toggleToken:function(prop){
+    toggleToken:function(){
         var statement;
 
         if(token.getItem()){
-            statement = prop.token = true;
+            statement = config.startProperties.token = true;
         }else{
-            statement = prop.token = false;
+            statement = config.startProperties.token = false;
         }
 
         return statement;
@@ -53,6 +53,7 @@ var tools = {
                 },
                 data:function(){
                     return {
+                        config:config,
                         currentUser:config.models.currentUser
                     }
                 }
@@ -73,8 +74,6 @@ var tools = {
                     controller:WorkspaceViewController
                 }
             });
-
-            tools.calculateLayoutHeight();
         })
     },
 
@@ -158,6 +157,13 @@ var tools = {
         }));
 
 
+    },
+    onlyPhoto:function(data){
+        return _.filter(data, function(elem){
+            if(tools.rootId(elem.id) === "photo"){
+                return elem;
+            }
+        });
     },
 
     calculateLayoutHeight:function(){

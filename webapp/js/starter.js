@@ -9,26 +9,17 @@
 (function(){
     $.when(templateManager.load("layout/layout"))
         .then(function(tmpl){
-            tools.toggleToken(config.startProperties);
             new BaseView({
                 id:"layout",
                 el:"body",
                 template:tmpl,
                 params:{
                     controller:LayoutViewController
-                },
-                data:function(){
-                    return {
-                        config:config
-                    }
                 }
             })
         })
         .then(function(){
             config.routers.mainRouter = new Router();
             Backbone.history.start({trigger:true});
-            API.user.search().then(function(data){
-                console.log(data);
-            })
         })
 })();

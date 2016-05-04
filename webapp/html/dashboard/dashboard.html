@@ -1,20 +1,25 @@
 <div class="ah_dashboard-inner">
-    {{#user}}
-    <div class="ah_top_dashboard">
-        <div class="ah_back" style="background-image:url({{back}})"></div>
-        <div class="ah_user-info">
-            <div class="ah_avatar" style="background-image:url({{avatar}})"></div>
-            <div class="ah_inner-user-info">
-                <p class="ah_name">{{firstName}} {{lastName}}</p>
-                <p class="ah_city">{{city}}</p>
+    <div id="presentation" class="ah_top-head-back">
+        <h2>ArtHub</h2>
+    </div>
+    <div class="small-12 clearfix">
+        <div class="small-3 columns ah_dashboard-columns ah_news-dashboard">
+            <h3>News</h3>
+            <div id="newsShortList" class="ah_news-inner-dashboard">
+                {{> news}}
             </div>
         </div>
-        {{#if user.id === currentUser.id}}
-        <a class="ah_edit-account" href="javascript:void(0)" on-click="editAccount">Edit account</a>
-        {{/if}}
-    </div>
-    {{/user}}
-    <div class="ah_gallery-component">
-
+        <div class="small-5 columns ah_dashboard-columns ah-pictures-dashboard">
+            <h3>Pictures</h3>
+            <div id="picturesShortList" class="ah_pictures-inner-dashboard">
+                {{> pictures}}
+            </div>
+        </div>
+        <div class="small-4 columns ah_dashboard-columns ah-people-dashboard">
+            <h3>People</h3>
+            <div id="peopleShortList" class="ah_people-inner-dashboard">
+                {{> people}}
+            </div>
+        </div>
     </div>
 </div>
