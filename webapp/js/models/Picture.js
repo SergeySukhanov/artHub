@@ -11,7 +11,7 @@ var PictureModel = Backbone.Model.extend({
     datePicture:function(){
         var date = new Date(this.get("datePublication"));
 
-        date = (date.getMonth() + 1) + " " + date.getFullYear();
+        date = config.monthsShort[date.getMonth()] + " " + date.getFullYear();
 
         return date;
     },
