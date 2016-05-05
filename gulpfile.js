@@ -21,7 +21,7 @@ gulp.task('server:restart', function(){
 
 gulp.task('bower', function(){
     return bower()
-        .pipe(gulp.dest('webapp/js/lib'));
+        .pipe(gulp.dest('webapp/js/vendor'));
 });
 
 gulp.task('start', ['bower', 'server:start']);

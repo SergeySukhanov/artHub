@@ -2,27 +2,23 @@
     "users":[
         {
             "id":"id_artist_1",
+            "avatar":"images/avatar.png",
             "login":"SergeySukhanov",
             "firstName":"Sergey",
             "lastName":"Sukhanov",
             "password":"password",
-            "avatar":"images/avatar.png",
-            "back":"images/back.jpg",
             "city":"Saint-Petersburg",
-            "gallery":[],
             "dateOfBirth":"09/07/1989",
             "type":"artist"
         },
         {
             "id":"id_artist_2",
+            "avatar":"images/avatar.png",
             "login":"AntonPetrov",
             "firstName":"Anton",
-            "avatar":"images/avatar.png",
-            "back":"images/back.jpg",
             "lastName":"Petrov",
             "password":"password",
             "city":"Moscow",
-            "gallery":[],
             "dateOfBirth":"05/01/1975",
             "type":"artist"
         },
@@ -31,7 +27,6 @@
             "login":"ArseniyValts",
             "firstName":"Arseniy",
             "avatar":"images/avatar.png",
-            "back":"images/back.jpg",
             "lastName":"Valts",
             "password":"password",
             "city":"Tomsk",

@@ -79,6 +79,18 @@
             "showType":"picture"
         },
         {
+            "id":"photo_123",
+            "author":"id_artist_1",
+            "title":"Photo 123",
+            "description":"long text",
+            "public":true,
+            "url":"images/image5.jpg",
+            "cost":10000,
+            "datePublication":12458539487,
+            "parent":"folder_2",
+            "showType":"picture"
+        },
+        {
             "id":"photo_3",
             "author":"id_artist_1",
             "title":"Photo 3",
@@ -115,6 +127,18 @@
             "showType":"picture"
         },
         {
+            "id":"photo_12",
+            "author":"id_artist_1",
+            "title":"Photo 12",
+            "description":"long text",
+            "public":true,
+            "url":"images/image8.jpg",
+            "cost":10000,
+            "datePublication":12458539487,
+            "parent":null,
+            "showType":"picture"
+        },
+        {
             "id":"photo_42",
             "author":"id_artist_1",
             "title":"Photo 42",
@@ -127,9 +151,9 @@
             "showType":"picture"
         },
         {
-            "id":"photo_44",
+            "id":"photo_441",
             "author":"id_artist_1",
-            "title":"Photo 44",
+            "title":"Photo 441",
             "description":"long text",
             "public":true,
             "url":"images/image10.jpg",

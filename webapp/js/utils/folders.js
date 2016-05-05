@@ -8,60 +8,90 @@
  */
 
 var foldersModule = {
-    tree:function(ins){
-        var _initialize = function(){
-            _handlers();
-        };
+    rootId:function(data){
+        return data.split("_")[0];
+    },
+    createTreeStruture:function(data){
+        var result = {};
 
-        var _handlers = function(){
-            ins.on({
-                toggleTree:function(event){
-                    var body = $(event.node).siblings(".ah_body-folder");
-                    var toggleSimbol = $(event.node).children();
-                    if(toggleSimbol.hasClass("minus")){
-                        toggleSimbol.text("+");
-                        toggleSimbol.removeClass("minus");
+        var folders = _.filter(data, function(elem){
+            if(foldersModule.rootId(elem.id) === "folder"){
+                return elem;
+            }
+        });
+        var photo = _.filter(data, function(elem){
+            if(foldersModule.rootId(elem.id) === "photo"){
+                return elem;
+            }
+        });
+
+        var parentFolder = function(elem){
+            return _.find(folders, function(innerElem){
+                if(innerElem.id === elem.parent){
+                    if(!innerElem.children){
+                        innerElem.children = [];
+                        innerElem.children.push(elem);
+                        if(!innerElem.parent){
+                            return innerElem;
+                        }else{
+                            _.find(folders, function(elem){
+                                if((elem.id === innerElem.parent) && elem.children){
+                                    var elemFind = _.filter(elem.children, function(child){
+                                        if(child.id === innerElem.id){
+                                            return child;
+                                        }
+                                    });
+                                    if(!elemFind.length){
+                                        parentFolder(innerElem);
+                                    }
+                                }
+                            });
+                        }
                     }else{
-                        toggleSimbol.text("-");
-                        toggleSimbol.addClass("minus");
+                        innerElem.children.push(elem);
+                        if(innerElem.parent){
+                            _.find(folders, function(elem){
+                                if((elem.id === innerElem.parent) && elem.children){
+                                    var elemFind = _.filter(elem.children, function(child){
+                                        if(child.id === innerElem.id){
+                                            return child;
+                                        }
+                                    });
+                                    if(!elemFind.length){
+                                        parentFolder(innerElem);
+                                    }
+                                }
+                            });
+                        }
                     }
-                    body.slideToggle(100);
-                },
-
-                changeNameTreeItem:function(event){
-                    var id = $(event.node).data("id");
-                    var input = $("[data-edit-id=" + id + "]")
-                    $(event.node).hide();
-                    input.show();
-                },
-
-                selectTreeItem:function(event){
-                    $(this.el).find(".selected").removeClass("selected");
-                    $(event.node).addClass("selected")
-                },
-
-                saveChangedName:function(event){
-                    var id = $(event.node).data("edit-id");
-                    var node = $("[data-id=" + id + "]")
-                    $(event.node).hide();
-                    node.show();
                 }
             });
         };
 
-        _initialize();
+        result = _.map(photo, function(elem){
+            if(!elem.parent){
+                return elem;
+            }else{
+                return parentFolder(elem);
+            }
+        });
+
+        return _.compact(result);
     },
-    folders:function(ins){
-        var _intialize = function(){
-            _handlers();
-        };
+    currentFolder:function(data, parent){
+        return _.compact(_.map(data, function(elem){
+            if(elem.parent === parent){
+                return elem;
+            }
+        }));
 
-        var _handlers = function(){
-            ins.on({
 
-            });
-        };
-
-        _intialize();
+    },
+    onlyPhoto:function(data){
+        return _.filter(data, function(elem){
+            if(foldersModule.rootId(elem.id) === "photo"){
+                return elem;
+            }
+        });
     }
 };

@@ -32,10 +32,12 @@ var tools = {
 
         return statement
     },
+
     logout:function(){
         token.removeItem();
         config.routers.mainRouter.navigate("auth", {trigger:true});
     },
+
     toggleLoadLayout:function(prop, flag){
         prop.header = flag;
         prop.footer = flag;
@@ -77,94 +79,6 @@ var tools = {
         })
     },
 
-    rootId:function(data){
-        return data.split("_")[0];
-    },
-
-    createTreeStruture:function(data){
-        var result = {};
-
-        var folders = _.filter(data, function(elem){
-            if(tools.rootId(elem.id) === "folder"){
-                return elem;
-            }
-        });
-        var photo = _.filter(data, function(elem){
-            if(tools.rootId(elem.id) === "photo"){
-                return elem;
-            }
-        });
-
-        var parentFolder = function(elem){
-            return _.find(folders, function(innerElem){
-                if(innerElem.id === elem.parent){
-                    if(!innerElem.children){
-                        innerElem.children = [];
-                        innerElem.children.push(elem);
-                        if(!innerElem.parent){
-                            return innerElem;
-                        }else{
-                            _.find(folders, function(elem){
-                                if((elem.id === innerElem.parent) && elem.children){
-                                    var elemFind = _.filter(elem.children, function(child){
-                                        if(child.id === innerElem.id){
-                                            return child;
-                                        }
-                                    });
-                                    if(!elemFind.length){
-                                        parentFolder(innerElem);
-                                    }
-                                }
-                            });
-                        }
-                    }else{
-                        innerElem.children.push(elem);
-                        if(innerElem.parent){
-                            _.find(folders, function(elem){
-                                if((elem.id === innerElem.parent) && elem.children){
-                                    var elemFind = _.filter(elem.children, function(child){
-                                        if(child.id === innerElem.id){
-                                            return child;
-                                        }
-                                    });
-                                    if(!elemFind.length){
-                                        parentFolder(innerElem);
-                                    }
-                                }
-                            });
-                        }
-                    }
-                }
-            });
-        };
-
-        result = _.map(photo, function(elem){
-            if(!elem.parent){
-                return elem;
-            }else{
-                return parentFolder(elem);
-            }
-        });
-
-        return _.compact(result);
-    },
-    currentFolder:function(data, parent){
-        return _.compact(_.map(data, function(elem){
-            if(elem.parent === parent){
-                return elem;
-            }
-        }));
-
-
-    },
-    onlyPhoto:function(data){
-        return _.filter(data, function(elem){
-            if(tools.rootId(elem.id) === "photo"){
-                return elem;
-            }
-        });
-    },
-
     calculateLayoutHeight:function(){
         var body = $("body");
         var header = $("#header-container");
@@ -183,5 +97,18 @@ var tools = {
     restrictions:function(id, callback){
         var data = null;
         callback(data);
+    },
+
+    preloader:{
+        open:function(el){
+            new Ractive({
+                el:el,
+                template:"<div class='preloader'><img src='images/preloaders/puff.svg'/></div>",
+                append:true
+            })
+        },
+        close:function(el){
+            $(el).find(".preloader").remove();
+        }
     }
 };

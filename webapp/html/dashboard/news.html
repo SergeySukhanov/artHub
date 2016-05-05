@@ -1,7 +1,9 @@
 <div class="ah_news-shortlist">
     {{#news}}
-
-    {{else}}
-     <p class="ah_empty">news not found</p>
+        <div data-id="{{id}}" class="ah_article-item-short">
+            <img src="{{image}}"/>
+            <h5>{{title}}</h5>
+            <p>{{this.dateArticle()}}</p>
+        </div>
     {{/news}}
 </div>

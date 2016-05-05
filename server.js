@@ -19,12 +19,11 @@ var port = 8080;
 //app.use(bodyParser.urlencoded({extended:true}));
 //app.use(bodyParser.json());
 app.use(express.static('webapp'));
-//app.use('/api', router);
 
 app.get('/', function(req, res){
     res.send(null);
 });
 
-app.listen(port, function(){
-    console.log("http://localhost:" + port);
+app.listen(1234, function(){
+    console.log("http://localhost:1234");
 });

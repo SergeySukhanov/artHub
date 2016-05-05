@@ -15,3 +15,16 @@
 .ah_close a{
     color:#ffffff;
 }
+
+.ah_inner-show-picture {
+    min-height: 400px;
+}
+
+.ah_inner-show-picture h3 {
+    font-family: Oswald;
+    margin-left: 15px;
+    padding: 10px 0px;
+    font-size: 30px;
+    color: #444444;
+}
+

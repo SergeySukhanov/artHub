@@ -93,4 +93,47 @@
 
 .ah_sections-dashboard {
     height: 348px;
+    background: #ffffff;
+}
+
+.ah_news-inner-dashboard {
+    height: 100%;
+}
+
+.ah_news-shortlist {
+    height: 87%;
+    overflow-y: auto;
+}
+
+.ah_article-item-short {
+    padding: 5px 10px;
+    border-bottom: 1px solid #bbbbbb;
+    height: 81px;
+    position: relative;
+}
+
+.ah_article-item-short img {
+    float: left;
+    width: 60px;
+    height: 60px;
+    margin-right: 10px;
+}
+
+.ah_article-item-short h5 {
+    font-size: 13px;
+}
+
+.ah_news-inner-dashboard, .ah_pictures-inner-dashboard, .ah_people-inner-dashboard,
+.ah_events-inner-dashboard, .ah_lots-inner-dashboard, .ah_groups-inner-dashboard{
+    position: relative;
+    height: 100%;
+}
+
+.ah_article-item-short p {
+    font-size: 11px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin: 2px 16px;
+    color: #9a9a9a;
 }

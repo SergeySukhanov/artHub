@@ -1,5 +1,67 @@
 {
-    "news":[
+    "articlesShortList":[
+        {
+            "id":"id_article_1",
+            "title":"Iris Van Herpen Is Revolutionizing the Look and Tech of Fashion",
+            "datePublication":1451768400000,
+            "image":"images/articles/article1.jpg"
 
+        },
+        {
+            "id":"id_article_2",
+            "title":"Famous for His Rocking Chair, Sam Maloof Made Furniture That Had Soul",
+            "datePublication":1453323600000,
+            "image":"images/articles/article2.jpg"
+
+        },
+        {
+            "id":"id_article_3",
+            "title":"Grab Your Pitchfork and Take an 'American Gothic'-Themed Road Trip",
+            "datePublication":1455656400000,
+            "image":"images/articles/article3.jpg"
+
+        },
+        {
+            "id":"id_article_4",
+            "title":"Fashion Photographer Klaus Mitteldorf Captures the Chaos of Modern Identity",
+            "datePublication":1455656400000,
+            "image":"images/articles/article4.jpg"
+
+        },
+        {
+            "id":"id_article_5",
+            "title":"Calling All Those in the Market for Skateboard Jewelry, Czech Marionettes or Other Quirky Crafts",
+            "datePublication":1458162000000,
+            "image":"images/articles/article5.jpg"
+
+        },
+        {
+            "id":"id_article_6",
+            "title":"These Stunning Satellite Images Turn Earth Into Art",
+            "datePublication":1458680400000,
+            "image":"images/articles/article6.jpg"
+
+        },
+        {
+            "id":"id_article_7",
+            "title":"Harken Back to the Glory Days When 'Time' Magazine Was King",
+            "datePublication":1460754000000,
+            "image":"images/articles/article7.jpg"
+
+        },
+        {
+            "id":"id_article_8",
+            "title":"This Haunting Exhibit Unearths the Stories of Syria’s Slain",
+            "datePublication":1460926800000,
+            "image":"images/articles/article8.jpg"
+
+        },
+        {
+            "id":"id_article_9",
+            "title":"To Truly Experience Robert Irwin, You Simply Must View His Artworks in Person",
+            "datePublication":1464469200000,
+            "image":"images/articles/article9.jpg"
+
+        }
     ]
 }

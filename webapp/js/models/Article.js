@@ -3,7 +3,14 @@
  */
 
 var ArticleModel = Backbone.Model.extend({
-    initialize:function(){
 
+    dateArticle:function(){
+        var date = new Date(this.get("datePublication"));
+
+        date = config.monthsShort[date.getMonth()] + " " + date.getFullYear();
+
+        return date;
+    },
+    initialize:function(){
     }
 });

@@ -11,8 +11,7 @@ var Router = Backbone.Router.extend({
         "":"dashboard",
         "gallery":"gallery",
         "dashboard":"dashboard",
-        "gallery/:action":"gallery",
-        "gallery/:action/:id":"item",
+        "gallery/:id":"item",
         "news":"news",
         "people":"people",
 
@@ -77,16 +76,12 @@ var Router = Backbone.Router.extend({
         });
     },
     dashboard:function(){
-        templateManager.load(["dashboard/dashboard", "dashboard/news", "dashboard/pictures", "dashboard/people"]).then(function(dashboard, news, pictures, people){
+        templateManager.load(["dashboard/dashboard"]).then(function(dashboard){
             new BaseView({
                 id:"dashboard",
                 el:"#workspace-inner-container",
                 template:dashboard,
-                partials:{
-                    news:news,
-                    pictures:pictures,
-                    people:people
-                },
+                partials:{},
                 params:{
                     controller:DashboardController
                 },
@@ -168,33 +163,25 @@ var Router = Backbone.Router.extend({
             })
         });
     },
-    gallery:function(action){
-        var template;
-        if(!action){
-            template = "gallery/gallery";
-        }else{
-            template = "gallery/" + action;
-        }
-        templateManager.load(template).then(function(tmpl){
+    gallery:function(){
+        templateManager.load("gallery/gallery").then(function(tmpl){
             new BaseView({
                 id:"gallery",
                 el:"#workspace-inner-container",
                 template:tmpl,
                 params:{
-                    action:action,
                     controller:GalleryController
                 }
             })
         });
     },
-    item:function(action, id){
+    item:function(id){
         templateManager.load("gallery/item").then(function(tmpl){
             new BaseView({
                 id:"galleryItem",
                 el:"#workspace-inner-container",
                 template:tmpl,
                 params:{
-                    action:action,
                     id:id,
                     controller:GalleryItemController
                 }

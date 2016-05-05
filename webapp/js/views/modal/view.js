@@ -10,6 +10,7 @@ var ModalView = Backbone.View.extend({
     template:null,
     partial:null,
     controller:null,
+    data:{},
 
     render:function(){
         var self = this;
@@ -20,6 +21,7 @@ var ModalView = Backbone.View.extend({
             },
             data:function(){
                 return {
+                    data:self.data,
                     config:config
                 }
             }
@@ -32,6 +34,7 @@ var ModalView = Backbone.View.extend({
     initialize:function(options){
         var self = this;
         self.controller = options.controller;
+        self.data = options.data;
         templateManager.load(["modal/base", "modal/" + options.template]).then(function(base, partial){
             self.template = base;
             self.partial = partial;

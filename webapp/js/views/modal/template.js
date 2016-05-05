@@ -8,6 +8,8 @@
 
 var ModalTemplate = Ractive.extend({
     el:"#modal-container",
+    magic:true,
+    adapt:["Backbone"],
     oncomplete:function(){
         var ins = this;
         $(ins.el).fadeIn(100);

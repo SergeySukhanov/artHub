@@ -1,0 +1,22 @@
+{{#data}}
+<div class="ah_inner-show-picture">
+    <h3>{{this.title}}</h3>
+    <div class="small-12 clearfix">
+        <div class="small-5 columns">
+            <img src="{{this.url}}"/>
+        </div>
+        <div class="small-7 columns">
+            <p class="ah_description">{{this.description}}</p>
+            <p class="ah_date-and-cost">
+                <span><b>Created:</b>{{this.datePicture()}}</span>
+                <span><b>Cost:</b>{{this.costPicture()}}</span>
+            </p>
+            <div class="ah_actions-item">
+                <a href="javascript:void(0)">Put in basket</a>
+                <a href="#gallery/{{id}}">Go page of picture</a>
+                <a href="#{{author}}">Go author page</a>
+            </div>
+        </div>
+    </div>
+</div>
+{{/data}}

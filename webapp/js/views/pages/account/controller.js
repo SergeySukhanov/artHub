@@ -16,8 +16,8 @@ var AccountController = function(ins){
         templateManager.load(["components/galleryComponent", "components/treeGallery", "components/foldersGallery", "components/itemTree"]).then(function(gallery, tree, folders, item){
             API.user.gallery().then(function(data){
                 var defaultCollectionOfPictures = new PicturesCollection(data.gallery);
-                var treeCollection = new PicturesCollection(tools.createTreeStruture(data.gallery));
-                var foldersCollection = new PicturesCollection(tools.currentFolder(data.gallery, null));
+                var treeCollection = new PicturesCollection(foldersModule.createTreeStruture(data.gallery));
+                var foldersCollection = new PicturesCollection(foldersModule.currentFolder(data.gallery, null));
                 new BaseView({
                     id:"galleryComponent",
                     el:".ah_gallery-component",

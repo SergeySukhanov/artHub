@@ -1,11 +1,9 @@
 <div class="ah_pictures-shortlist">
     {{#pictures}}
-    <div class="ah_picture-item">
+    <div class="ah_picture-item" on-click="showPicture:{{this}}">
         <div data-id="{{id}}" class="ah_img-picture-item" style="background-image: url({{url}})">
             <small>{{title}}</small>
         </div>
     </div>
-    {{else}}
-    <p class="ah_empty">pictures not found</p>
     {{/pictures}}
 </div>
