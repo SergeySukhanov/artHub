@@ -81,13 +81,11 @@ var tools = {
 
     calculateLayoutHeight:function(){
         var body = $("body");
-        var header = $("#header-container");
         var workspace = $("#workspace-container");
-        var footer = $("#footer-container");
 
         var heightWrapper = body.outerHeight();
-        var heightHeader = header.outerHeight();
-        var heightFooter = footer.outerHeight();
+        var heightHeader = 50;
+        var heightFooter = 50;
 
         workspace.css({
             height:heightWrapper - (heightHeader + heightFooter)

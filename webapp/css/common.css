@@ -13,3 +13,9 @@
     top: 30%;
     position: relative;
 }
+
+p.ah_empty {
+    font-size: 20px;
+    color: #949494;
+    text-align: center;
+}

@@ -2,7 +2,11 @@
     {{#news}}
         <div data-id="{{id}}" class="ah_article-item-short">
             <img src="{{image}}"/>
-            <h5>{{title}}</h5>
+            {{#if url}}
+            <h5><a href="{{url}}">{{title}}</a></h5>
+            {{else}}
+            <h5><a href="#articles/{{id}}">{{title}}</a></h5>
+            {{/if}}
             <p>{{this.dateArticle()}}</p>
         </div>
     {{/news}}
