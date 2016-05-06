@@ -1,17 +1,33 @@
-<div class="ah_inner-account-home">
-    <div class="small-10 columns ah_columns">
+<div class="ah_inner-account-home small-12 clearfix">
+    <div class="small-10 columns ah_columns-clear">
         <div class="ah_folders-account-tools">
-
+            <a href="javascript:void(0);" on-click="newFolder">New folder</a>
+            <a href="javascript:void(0);" on-click="newPicture">New picture</a>
         </div>
         <div class="ah_folders-account">
-            {{#folders}}
-                <div>
-                    {{title}}
+            {{#config.params.parent}}
+            <a href="javascript:void(0)" on-click="backFolder">Back</a>
+            {{/config.params.parent}}
+            {{#currentFolder}}
+            {{#if showType === "folder"}}
+            <div data-id="{{id}}" class="ah_item-gallery ah_item-gallery-folder" on-click="openFolder">
+                <div class="ah_img-item-gallery" style="background-image: url({{url}});"></div>
+                <p>{{title}}</p>
+            </div>
+            {{/if}}
+            {{#if showType === "picture"}}
+            <div data-id="{{id}}" class="ah_item-gallery ah_item-gallery-picture" on-click="showPicture:{{this}}">
+                <div class="ah_img-item-gallery" style="background-image: url({{url}});">
+
                 </div>
-            {{/folders}}
+                <p>{{title}}</p>
+                <small>{{datePublication}}</small>
+            </div>
+            {{/if}}
+            {{/currentFolder}}
         </div>
     </div>
-    <div class="small-2 columns ah_columns">
+    <div class="small-2 columns ah_columns-clear border-left">
         <h3>Friends</h3>
         <div class="ah_friends-account">
             {{#friends}}

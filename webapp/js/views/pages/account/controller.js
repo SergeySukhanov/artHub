@@ -30,10 +30,13 @@ var AccountController = function(ins, view){
                 data:{
                     action:view.params.action,
                     gallery:[],
-                    folders:[],
+                    currentFolder:[],
                     tree:[],
                     feedback:{},
-                    friends:[]
+                    friends:[],
+                    params:{
+                        parent:null
+                    }
                 },
                 params:{
                     action:view.params.action,

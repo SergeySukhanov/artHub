@@ -33,7 +33,6 @@ var DashboardController = function(ins){
                     template:"showPicture",
                     controller:ShowPictureController,
                     data:item
-
                 });
             },
             userPage:function(event){

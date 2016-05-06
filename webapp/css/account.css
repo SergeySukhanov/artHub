@@ -9,7 +9,6 @@
 .ah_user-info {
     position: relative;
     height: 100%;
-    width: 75%;
     display: inline-block;
 }
 ul.ah_my-menu a {
@@ -45,7 +44,6 @@ ul.ah_my-menu {
     vertical-align: top;
     height: 99%;
     margin: 0;
-    width: 25%;
     background: #20649e;
     list-style-type: none;
     text-align: center;
@@ -99,4 +97,27 @@ a.ah_edit-account {
     padding: 6px 20px;
     font-family: Oswald;
     border-radius: 4px;
+}
+
+.ah_inner-account-home h3{
+    background-color: #20649e;
+    margin: 0;
+    color: #ffffff;
+    font-family: Oswald;
+    font-size: 19px;
+    text-align: center;
+    padding: 1px 0px 2px;
+}
+
+.ah_folders-account-tools{
+    background-color: #20649e;
+    margin: 0;
+    padding: 2px 0px 3px;
+}
+
+.ah_folders-account-tools a {
+    color: #ffffff;
+    margin-left: 20px;
+    font-size: 14px;
+    text-decoration: underline;
 }

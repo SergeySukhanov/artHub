@@ -87,11 +87,28 @@ var foldersModule = {
 
 
     },
+
+    parentId:function(data, id){
+        return _.find(data, function(elem){
+            if(elem.id === id){
+                return elem.parent;
+            }
+        });
+    },
+
     onlyPhoto:function(data){
         return _.filter(data, function(elem){
             if(foldersModule.rootId(elem.id) === "photo"){
                 return elem;
             }
         });
+    },
+
+    prevFolder:function(data, id){
+        return _.find(_.map(data, function(elem){
+            if(elem.id === id){
+                return foldersModule.currentFolder(data, elem.parent);
+            }
+        }));
     }
 };

@@ -1,7 +1,7 @@
 <div class="ah_account-inner">
     {{#user}}
     <div class="ah_top_account">
-        <div class="ah_user-info small-9 columns">
+        <div class="ah_user-info small-10 columns">
             <div class="ah_avatar" style="background-image:url({{avatar}})"></div>
             <div class="ah_inner-user-info">
                 <p class="ah_name">{{firstName}} {{lastName}}</p>
@@ -10,7 +10,7 @@
         </div>
 
         {{#if user.id === currentUser.id}}
-        <ul class="ah_my-menu small-3 columns">
+        <ul class="ah_my-menu small-2 columns">
             <li><a href="#{{id}}">My account</a></li>
             <li><a href="#{{id}}/friends">My friends</a></li>
             <li><a href="#{{id}}/gallery">My gallery</a></li>

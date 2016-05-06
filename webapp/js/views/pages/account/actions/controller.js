@@ -13,7 +13,42 @@ var DashboardActionsController = function(ins, view){
     };
     var _handlers = function(){
         ins.on({
-
+            newFolder:function(event){
+                new ModalView({
+                    template:"newFolder",
+                    controller:NewFolderController
+                })
+            },
+            newPicture:function(event){
+                new ModalView({
+                    template:"loadPicture",
+                    controller:LoadPictureController
+                });
+            },
+            backFolder:function(event){
+                var gallery = ins.get("gallery");
+                var parent = ins.get("config.params.parent");
+                var el = foldersModule.parentId(gallery, parent);
+                ins.set("currentFolder", new PicturesCollection(foldersModule.prevFolder(gallery, parent)));
+                if(el){
+                    ins.set("config.params.parent", el.parent);
+                }else{
+                    ins.set("config.params.parent", null);
+                }
+            },
+            openFolder:function(event){
+                console.log(event);
+                var gallery = ins.get("gallery");
+                ins.set("currentFolder", new PicturesCollection(foldersModule.currentFolder(gallery, event.context.id)))
+                ins.set("config.params.parent", event.context.id);
+            },
+            showPicture:function(event, item){
+                new ModalView({
+                    template:"showPicture",
+                    controller:ShowPictureController,
+                    data:item
+                });
+            }
         });
     };
 
@@ -37,11 +72,11 @@ var DashboardActionsController = function(ins, view){
                     ins.set("friends", users);
                 });
                 API.user.gallery().then(function(data){
-                   var gallery = new PicturesCollection(data.gallery);
+                   var gallery = data.gallery;
                    var folders = new PicturesCollection(foldersModule.currentFolder(data.gallery, null));
 
-                    ins.set("folders", folders);
-                    ins.set("gallery", folders);
+                    ins.set("currentFolder", folders);
+                    ins.set("gallery", gallery);
                 });
             })();
 
