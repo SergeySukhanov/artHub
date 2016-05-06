@@ -9,7 +9,7 @@
 $(document).ready(function(){
     $.when(templateManager.load("layout/layout"))
         .then(function(tmpl){
-            new BaseView({
+            config.views.layout = new BaseView({
                 id:"layout",
                 el:"body",
                 template:tmpl,
@@ -22,6 +22,7 @@ $(document).ready(function(){
             tools.calculateLayoutHeight();
             $(window).resize(function(){
                 tools.calculateLayoutHeight();
+                tools.calculateDashboardfeed();
             });
             config.routers.mainRouter = new Router();
             Backbone.history.start({trigger:true});

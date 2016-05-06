@@ -1,6 +1,6 @@
-<div class="ah_dashboard-inner">
+<div class="ah_account-inner">
     {{#user}}
-    <div class="ah_top_dashboard">
+    <div class="ah_top_account">
         <div class="ah_user-info small-9 columns">
             <div class="ah_avatar" style="background-image:url({{avatar}})"></div>
             <div class="ah_inner-user-info">
@@ -11,16 +11,16 @@
 
         {{#if user.id === currentUser.id}}
         <ul class="ah_my-menu small-3 columns">
-            <li><a href="#">My account</a></li>
-            <li><a href="#">My friends</a></li>
-            <li><a href="#">My gallery</a></li>
-            <li><a href="#">My feedback</a></li>
+            <li><a href="#{{id}}">My account</a></li>
+            <li><a href="#{{id}}/friends">My friends</a></li>
+            <li><a href="#{{id}}/gallery">My gallery</a></li>
+            <li><a href="#{{id}}/feedback">My feedback</a></li>
             <li><a class="ah_edit-account" href="javascript:void(0)" on-click="editAccount">Edit account</a></li>
         </ul>
         {{/if}}
     </div>
     {{/user}}
-    <div class="ah_gallery-component">
+    <div class="ah_account-action">
 
     </div>
 </div>

@@ -35,7 +35,12 @@ var tools = {
 
     logout:function(){
         token.removeItem();
-        config.routers.mainRouter.navigate("auth", {trigger:true});
+        config.models.currentUser = null;
+        if(location.hash === ""){
+            config.routers.mainRouter.navigate("dashboard", {trigger:true});
+        }else{
+            config.routers.mainRouter.navigate("", {trigger:true});
+        }
     },
 
     toggleLoadLayout:function(prop, flag){
@@ -46,7 +51,7 @@ var tools = {
 
     layoutComponents:function(){
         return templateManager.load(["layout/header", "layout/workspace", "layout/footer"]).then(function(header, workspace, footer){
-            new BaseView({
+            config.views.header = new BaseView({
                 id:"header",
                 el:"#header-container",
                 template:header,
@@ -60,7 +65,7 @@ var tools = {
                     }
                 }
             });
-            new BaseView({
+            config.views.footer = new BaseView({
                 id:"footer",
                 el:"#footer-container",
                 template:footer,
@@ -68,7 +73,7 @@ var tools = {
                     controller:FooterViewController
                 }
             });
-            new BaseView({
+            config.views.workspace = new BaseView({
                 id:"workspace",
                 el:"#workspace-container",
                 template:workspace,
@@ -88,7 +93,15 @@ var tools = {
         var heightFooter = 50;
 
         workspace.css({
-            height:heightWrapper - (heightHeader + heightFooter)
+            "min-height":heightWrapper - (heightHeader + heightFooter)
+        });
+    },
+    calculateDashboardfeed:function(){
+        var wrapper = $(".ah_main-dashboard");
+        var feed = $(".ah_feed-dashboard");
+
+        feed.css({
+            width:wrapper.outerWidth() - 600
         });
     },
 

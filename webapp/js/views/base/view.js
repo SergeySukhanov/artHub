@@ -12,6 +12,7 @@ var BaseView = Backbone.View.extend({
     partials:null,
     params:{},
     data:null,
+    ins:null,
 
     render:function(){
         var self = this;
@@ -23,9 +24,10 @@ var BaseView = Backbone.View.extend({
         });
         if(self.params.controller){
             base.on("complete", function(){
-                new self.params.controller(this);
+                new self.params.controller(this, self);
             })
         }
+        self.ins = base;
     },
 
     initialize:function(options){

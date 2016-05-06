@@ -6,10 +6,41 @@
  * © 2016 All Rights Reserved
  */
 
-var AccountController = function(ins){
+var AccountController = function(ins, view){
     var _render = function(){
-        _galleryComponent();
+//        _galleryComponent();
+        _component();
         _handlers()
+    };
+
+    var _component = function(){
+        var templates = [];
+        var action = view.params.action;
+        if(action){
+            templates.push("account/" + action);
+        }else{
+            templates.push("account/home");
+        }
+        templateManager.load(templates).then(function(tmpl){
+            new BaseView({
+                id:"accountComponent",
+                el:".ah_account-action",
+                template:tmpl,
+                partials:{},
+                data:{
+                    action:view.params.action,
+                    gallery:[],
+                    folders:[],
+                    tree:[],
+                    feedback:{},
+                    friends:[]
+                },
+                params:{
+                    action:view.params.action,
+                    controller:DashboardActionsController
+                }
+            });
+        });
     };
 
     var _galleryComponent = function(){
@@ -39,6 +70,8 @@ var AccountController = function(ins){
             });
         });
     };
+
+
 
     var _handlers = function(){
         ins.on({

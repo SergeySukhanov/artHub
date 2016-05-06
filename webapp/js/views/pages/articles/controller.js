@@ -7,7 +7,7 @@
  * © 2016 All Rights Reserved
  */
 
-var NewsController = function(ins){
+var ArticlesController = function(ins){
     var _render = function(){
         _handlers()
     };

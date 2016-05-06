@@ -5,7 +5,7 @@
     height: 100%;
 }
 
-.ah_top-head-back {
+.ah_top-dashboard {
     background: #2b5994;
     height: 200px;
     box-shadow: 0px -2px 4px -2px #232323 inset;
@@ -13,7 +13,7 @@
     position: relative;
 }
 
-.ah_top-head-back h2 {
+.ah_top-dashboard h2 {
     text-align: center;
     color: #ffffff;
     font-size: 83px;
@@ -23,88 +23,53 @@
     margin: 0;
 }
 
-.ah_dashboard-columns {
-    padding: 0;
-    border-left: 1px solid #ffffff;
-    height: 100%;
+.ah_main-dashboard {
+    padding-bottom: 40px;
 }
 
-.ah_dashboard-columns:first-child{
-    border:0;
+.ah_section-dashboard {
+    height: 350px;
 }
 
-.ah_dashboard-columns h3 {
-    background-color: #20649E;
-    color: #ffffff;
-    text-align: center;
-    font-family: Oswald;
+.ah_inner-feed-dashboard.ah_section-dashboard{
+    height: auto;
+}
+
+.ah_columns-side{
+    border-bottom:1px solid #284467;
+}
+
+.ah_inner-section-dashboard{
+    position: relative;
+}
+
+.ah_columns-side .ah_inner-section-dashboard {
+    overflow-y: scroll;
+    height: 92%;
+}
+
+.ah_section-dashboard h3 {
+    background-color: #20649e;
     margin: 0;
-    padding: 5px 0px;
-}
-
-.ah_picture-item {
-    width: 25%;
-    height: 100px;
-    display: inline-block;
-}
-.ah_img-picture-item {
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    cursor: pointer;
-}
-
-.ah_img-picture-item:hover{
-
-}
-
-.ah_img-picture-item small {
-    font-size: 12px;
     color: #ffffff;
-    background-color: rgba(76, 76, 76, 0.5);
-    padding: 2px 13px;
-    font-weight: 700;
-    cursor: pointer;
+    font-family: Oswald;
+    font-size: 19px;
+    text-align: center;
+    padding: 1px 0px 2px;
 }
 
-.ah_people-item {
-    width: 20%;
-    height: 70px;
+.ah_columns {
     display: inline-block;
     vertical-align: top;
+    width: 300px;
 }
 
-.ah_img-people-item {
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    border-left: 1px solid #2B5994;
-    border-collapse: collapse;
-    border-bottom: 1px solid #2B5994;
-    background-color: #333333;
+.ah_news-shortlist, .ah_events-shortlist, .ah_people-shortlist, .ah_lots-shortlist, .ah_pictures-shortlist{
+    position: relative;
+    z-index: 1;
 }
 
-.ah_img-people-item small{
-    background: #232323;
-    font-size: 12px;
-    color: #FFFFFF;
-    display: none;
-}
-
-.ah_sections-dashboard {
-    height: 348px;
-    background: #ffffff;
-}
-
-.ah_news-inner-dashboard {
-    height: 100%;
-}
-
-.ah_news-shortlist {
-    height: 87%;
-    overflow-y: auto;
-}
-
+/*articles*/
 .ah_article-item-short {
     padding: 5px 10px;
     border-bottom: 1px solid #bbbbbb;
@@ -121,12 +86,7 @@
 
 .ah_article-item-short h5 {
     font-size: 13px;
-}
-
-.ah_news-inner-dashboard, .ah_pictures-inner-dashboard, .ah_people-inner-dashboard,
-.ah_events-inner-dashboard, .ah_lots-inner-dashboard, .ah_groups-inner-dashboard{
-    position: relative;
-    height: 100%;
+    height: 55px;
 }
 
 .ah_article-item-short p {
@@ -136,4 +96,63 @@
     right: 0;
     margin: 2px 16px;
     color: #9a9a9a;
+}
+
+/*pictures*/
+
+.ah_pictures-shortlist,
+.ah_people-shortlist{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
+    align-content: stretch;
+}
+
+.ah_picture-item {
+    width: 200px;
+    height: 200px;
+}
+
+.ah_picture-item .ah_img-picture-item{
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    cursor: pointer;
+}
+.ah_img-picture-item small {
+    font-size: 12px;
+    color: #ffffff;
+    background-color: rgba(76, 76, 76, 0.5);
+    padding: 2px 13px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.ah_people-item {
+    width: 95px;
+    height: 95px;
+    margin-top: 10px;
+}
+
+.ah_img-people-item {
+    width: 80%;
+    height: 80%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    cursor: pointer;
+    margin: 0 auto;
+}
+
+.ah_img-people-item small {
+    font-size: 12px;
+    color: #3a3a3a;
+    display: inline-block;
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-top: 100%;
 }

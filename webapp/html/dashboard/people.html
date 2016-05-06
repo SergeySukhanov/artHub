@@ -1,9 +1,9 @@
 <div class="ah_people-shortlist">
     {{#people}}
-    <div class="ah_people-item">
-        <div data-id="{{id}}" class="ah_img-people-item" style="background-image: url({{avatar}})">
-            <small>{{this.fullName()}}</small>
-        </div>
+    <div class="ah_people-item" on-click="userPage">
+            <div data-id="{{id}}" class="ah_img-people-item" style="background-image: url({{avatar}})">
+                <small>{{this.fullName()}}</small>
+            </div>
     </div>
     {{/people}}
 </div>

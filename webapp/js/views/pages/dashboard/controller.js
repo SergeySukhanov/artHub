@@ -13,7 +13,7 @@ var DashboardController = function(ins){
 
         _loadNews().then(function(data){
             ins.set("news", new ArticlesCollection(data.articlesShortList));
-            tools.preloader.close("#newsShortList");
+            tools.preloader.close("#articlesShortList");
         });
         _loadPictures().then(function(data){
             var pictures = foldersModule.onlyPhoto(data.gallery);
@@ -35,6 +35,9 @@ var DashboardController = function(ins){
                     data:item
 
                 });
+            },
+            userPage:function(event){
+                config.routers.mainRouter.navigate(event.context.id, {trigger:true});
             }
         });
     };
@@ -50,7 +53,7 @@ var DashboardController = function(ins){
     };
 
     var _initialize = function(){
-        tools.preloader.open("#newsShortList");
+        tools.preloader.open("#articlesShortList");
         tools.preloader.open("#picturesShortList");
         tools.preloader.open("#peopleShortList");
         tools.preloader.open("#eventsShortList");
@@ -61,6 +64,7 @@ var DashboardController = function(ins){
             ins.partials.pictures = pictures;
             ins.partials.people = people;
             _render();
+            tools.calculateDashboardfeed();
         });
     };
 

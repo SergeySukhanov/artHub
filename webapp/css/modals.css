@@ -28,3 +28,18 @@
     color: #444444;
 }
 
+.ah_put-in-basket a{
+    background-color: #147D6E;
+    border-radius: 7px;
+    color: #ffffff;
+    padding: 10px 20px;
+}
+.ah_actions-item > div{
+    margin-bottom: 10px;
+}
+
+.ah_actions-item a{
+    font-family: "Ubuntu Condensed";
+    font-size: 20px;
+}
+

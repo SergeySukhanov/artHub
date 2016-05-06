@@ -12,9 +12,15 @@
                 <span><b>Cost:</b>{{this.costPicture()}}</span>
             </p>
             <div class="ah_actions-item">
-                <a href="javascript:void(0)">Put in basket</a>
-                <a href="#gallery/{{id}}">Go page of picture</a>
-                <a href="#{{author}}">Go author page</a>
+                <div class="ah_put-in-basket">
+                    <a href="javascript:void(0)">Put in basket</a>
+                </div>
+                <div class="ah_go-page-picture">
+                    <a href="#gallery/{{id}}">Go picture's page</a>
+                </div>
+                <div class="ah_go-page-author">
+                    <a href="#{{author}}">Go author's page</a>
+                </div>
             </div>
         </div>
     </div>

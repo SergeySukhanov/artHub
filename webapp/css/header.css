@@ -18,38 +18,33 @@
     color:#ffffff;
 }
 
-.ah_main-menu{
+.ah_main-menu, .ah_account-menu{
     height:100%;
-    text-align: right;
     font-weight: 100;
     font-family: "Ubuntu Condensed";
 }
 
-.ah_simple-search{
-    display: inline-block;
+.ah_main-menu{
+    text-align: center;
 }
 
-.ah_simple-search input[type=text]{
-    height: 28px;
-    margin: 0;
-    padding-left: 20px;
-    margin-top: 11px;
+.ah_account-menu{
+    text-align: right;
 }
 
-.ah_inner-main-menu {
+.ah_main-menu ul, .ah_account-menu ul {
     list-style-type: none;
     color: #ffffff;
-    display: inline-block;
     margin: 0;
     height: 100%;
-    margin-left: 40px;
+    display: inline-block;
 }
 
-.ah_inner-main-menu li{
+.ah_main-menu li, .ah_account-menu li{
    display: inline-block;
 }
 
-.ah_inner-main-menu a {
+.ah_main-menu a, .ah_account-menu a {
     color: #ffffff;
     font-weight: 700;
     font-size: 18px;
@@ -58,13 +53,22 @@
     margin: 0 7px;
 }
 
-.ah_inner-main-menu a.ah_modal-button-header {
+.ah_main-menu a.ah_modal-button-header {
     background-color: #147D6E;
     padding: 3px 21px 6px;
-    margin: 0px 40px;
+    margin: 0 40px;
     border-radius: 7px;
 }
 
-.ah_inner-main-menu a.ah_modal-button-header:hover{
+.ah_main-menu a.ah_modal-button-header:hover{
     text-decoration: none;
+}
+
+.ah_avatar-header{
+    display: inline-block;
+}
+
+.ah_avatar-header img {
+    width: 36px;
+    height: 36px;
 }

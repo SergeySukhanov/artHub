@@ -1,44 +1,42 @@
 <div class="ah_dashboard-inner">
-    <div id="presentation" class="ah_top-head-back">
+    <div class="small-12 ah_top-dashboard">
         <h2>ArtHub</h2>
     </div>
-    <div class="small-12 clearfix ah_sections-dashboard">
-        <div class="small-3 columns ah_dashboard-columns ah_news-dashboard">
-            <h3>News</h3>
-            <div id="newsShortList" class="ah_news-inner-dashboard">
-                {{> news}}
+    <div class="small-12 clearfix ah_main-dashboard">
+        <div class="small-12 columns ah_columns ah_columns-side border-right">
+            <div class="small-12 ah_articles-dashboard ah_section-dashboard">
+                <h3>Articles</h3>
+                <div id="articlesShortList" class="ah_inner-section-dashboard">
+                    {{> news}}
+                </div>
+            </div>
+            <div class="small-12 ah_events-dashboard ah_section-dashboard">
+                <h3>Events</h3>
+                <div id="eventsShortList"class="ah_inner-section-dashboard">
+                    {{> events}}
+                </div>
             </div>
         </div>
-        <div class="small-5 columns ah_dashboard-columns ah-pictures-dashboard">
-            <h3>Pictures</h3>
-            <div id="picturesShortList" class="ah_pictures-inner-dashboard">
-                {{> pictures}}
+        <div class="small-12 columns ah_columns ah_feed-dashboard">
+            <div class="small-12 ah_inner-feed-dashboard ah_section-dashboard">
+                <h3>Feed</h3>
+                <div id="picturesShortList" class="ah_inner-section-dashboard">
+                    {{> pictures}}
+                </div>
             </div>
         </div>
-        <div class="small-4 columns ah_dashboard-columns ah-people-dashboard">
-            <h3>People</h3>
-            <div id="peopleShortList" class="ah_people-inner-dashboard">
-                {{> people}}
+        <div class="small-12 columns ah_columns ah_columns-side border-left">
+            <div class="small-12 ah_people-dashboard ah_section-dashboard">
+                <h3>People</h3>
+                <div id="peopleShortList" class="ah_inner-section-dashboard">
+                    {{> people}}
+                </div>
             </div>
-        </div>
-    </div>
-    <div class="small-12 clearfix ah_sections-dashboard">
-        <div class="small-3 columns ah_dashboard-columns ah_events-dashboard">
-            <h3>Events</h3>
-            <div id="eventsShortList" class="ah_events-inner-dashboard">
-
-            </div>
-        </div>
-        <div class="small-5 columns ah_dashboard-columns ah_lots-dashboard">
-            <h3>Lots</h3>
-            <div id="lotsShortList" class="ah_lots-inner-dashboard">
-
-            </div>
-        </div>
-        <div class="small-4 columns ah_dashboard-columns ah_groups-dashboard">
-            <h3>Groups</h3>
-            <div id="groupsShortList" class="ah_groups-inner-dashboard">
-
+            <div class="small-12 ah_lots-dashboard ah_section-dashboard">
+                <h3>Lots</h3>
+                <div id="lotsShortList" class="ah_inner-section-dashboard">
+                    {{> lots}}
+                </div>
             </div>
         </div>
     </div>

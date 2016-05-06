@@ -1,22 +1,28 @@
 <div class="ah_header-inner clearfix">
     <div class="small-2 columns ah_brand">
-        <h1><a href="#">ArtHub</a></h1>
+        <h1><a href="#dashboard">ArtHub</a></h1>
     </div>
-    <div class="small-10 columns ah_main-menu">
-        <ul class="ah_inner-main-menu">
-            {{#config.startProperties.token}}
-            <li><a href="#news">news</a></li>
+    <div class="small-7 columns ah_main-menu">
+        <ul>
+            <li><a href="#articles">articles</a></li>
             <li><a href="#gallery">gallery</a></li>
             <li><a href="#people">people</a></li>
-            <li><a href="#settings">settings</a></li>
+            {{#config.startProperties.token}}
+            <li><a href="#settings">settings</a>
             <li><a href="javascript:void(0);" class="ah_modal-button-header" on-click="loadPicture">Load picture</a></li>
-            <li><a href="#{{currentUser.id}}">{{currentUser.firstName}} {{currentUser.lastName}}</a></li>
+            {{/config.startProperties.token}}
+        </ul>
+    </div>
+    <div class="small-3 columns ah_account-menu">
+        <ul>
+            {{#config.startProperties.token}}
+            <li>
+                <a href="#{{currentUser.id}}">
+                    <span class="ah_avatar-header"><img src="{{currentUser.avatar}}"/></span>
+                    {{currentUser.firstName}} {{currentUser.lastName}}</a></li>
             <li><a href="javascript:void(0);" on-click="logout">Exit</a></li>
             {{else}}
-            <li><a href="#news">news</a></li>
-            <li><a href="#gallery">gallery</a></li>
-            <li><a href="#people">people</a></li>
-            <li><a href="#auth">Log in</a></li>
+            <li><a href="#auth">Log in</a>
             {{/config.startProperties.token}}
         </ul>
     </div>

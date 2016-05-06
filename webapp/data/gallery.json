@@ -14,7 +14,7 @@
         },
         {
             "id":"folder_1",
-            "author":"id_artist_1",
+            "author":"id_artist_2",
             "title":"Folder 1",
             "url":"images/folder.png",
             "public":true,
@@ -23,7 +23,7 @@
         },
         {
             "id":"folder_2",
-            "author":"id_artist_1",
+            "author":"id_artist_2",
             "title":"Folder 2",
             "public":true,
             "parent":"folder_1",
@@ -32,7 +32,7 @@
         },
         {
             "id":"photo_2",
-            "author":"id_artist_1",
+            "author":"id_artist_2",
             "title":"Photo 2",
             "description":"long text",
             "public":true,
@@ -128,7 +128,7 @@
         },
         {
             "id":"photo_12",
-            "author":"id_artist_1",
+            "author":"id_artist_2",
             "title":"Photo 12",
             "description":"long text",
             "public":true,

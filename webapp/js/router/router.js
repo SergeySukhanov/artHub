@@ -11,8 +11,9 @@ var Router = Backbone.Router.extend({
         "":"dashboard",
         "gallery":"gallery",
         "dashboard":"dashboard",
-        "gallery/:id":"item",
-        "news":"news",
+        "gallery/:id":"itemPicture",
+        "articles":"articles",
+        "articles/:id":"itemArticle",
         "people":"people",
 
         "auth":"auth",
@@ -27,6 +28,9 @@ var Router = Backbone.Router.extend({
     before:{
         "*any":function(frag, args, next){
             tools.toggleToken();
+            if(config.modal){
+                config.modal.fire("closeModal");
+            }
             if(token.getItem()){
                 API.user.currentUser().then(function(currentUser){
                     config.models.currentUser = new UserModel(currentUser.user);
@@ -40,12 +44,11 @@ var Router = Backbone.Router.extend({
                             next();
                         });
                     }else{
+                        config.views.header.ins.set("currentUser", config.models.currentUser);
                         next();
                     }
                 })
             }else{
-
-
                 if(!tools.loadLayout(config.startProperties)){
                     tools.layoutComponents().then(function(){
                         tools.toggleLoadLayout(config.startProperties, true);
@@ -123,13 +126,7 @@ var Router = Backbone.Router.extend({
         });
     },
     account:function(id, action){
-        var template;
-        if(!action){
-            template = "account/account";
-        }else{
-            template = "account/" + action;
-        }
-        templateManager.load(template).then(function(tmpl){
+        templateManager.load("account/account").then(function(tmpl){
             API.user.userInfo(id).then(function(user){
                 new BaseView({
                     id:"account",
@@ -151,14 +148,14 @@ var Router = Backbone.Router.extend({
             })
         });
     },
-    news:function(){
-        templateManager.load("news/news").then(function(tmpl){
+    articles:function(){
+        templateManager.load("articles/articles").then(function(tmpl){
             new BaseView({
-                id:"news",
+                id:"articles",
                 el:"#workspace-inner-container",
                 template:tmpl,
                 params:{
-                    controller:NewsController
+                    controller:ArticlesController
                 }
             })
         });
@@ -175,7 +172,20 @@ var Router = Backbone.Router.extend({
             })
         });
     },
-    item:function(id){
+    itemArticle:function(id){
+        templateManager.load("articles/item").then(function(tmpl){
+            new BaseView({
+                id:"articleItem",
+                el:"#workspace-inner-container",
+                template:tmpl,
+                params:{
+                    id:id,
+                    controller:ArticlesItemController
+                }
+            })
+        });
+    },
+    itemPicture:function(id){
         templateManager.load("gallery/item").then(function(tmpl){
             new BaseView({
                 id:"galleryItem",

@@ -27,6 +27,8 @@ var ModalView = Backbone.View.extend({
             }
         });
 
+        config.modal = modal;
+
         modal.on("complete", function(){
             new self.controller(this);
         })
