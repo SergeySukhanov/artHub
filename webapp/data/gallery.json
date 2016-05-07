@@ -31,6 +31,15 @@
             "url":"images/folder.png"
         },
         {
+            "id":"folder_3",
+            "author":"id_artist_2",
+            "title":"Folder 2122",
+            "public":true,
+            "parent":"folder_2",
+            "showType":"folder",
+            "url":"images/folder.png"
+        },
+        {
             "id":"photo_2",
             "author":"id_artist_2",
             "title":"Photo 2",
@@ -43,7 +52,7 @@
             "showType":"picture"
         },
         {
-            "id":"photo_22",
+            "id":"photo_3",
             "author":"id_artist_1",
             "title":"Photo 22",
             "description":"long text",
@@ -55,7 +64,7 @@
             "showType":"picture"
         },
         {
-            "id":"photo_24",
+            "id":"photo_4",
             "author":"id_artist_1",
             "title":"Photo 24",
             "description":"long text",
@@ -67,7 +76,7 @@
             "showType":"picture"
         },
         {
-            "id":"photo_23",
+            "id":"photo_5",
             "author":"id_artist_1",
             "title":"Photo 23",
             "description":"long text",
@@ -79,7 +88,7 @@
             "showType":"picture"
         },
         {
-            "id":"photo_123",
+            "id":"photo_6",
             "author":"id_artist_1",
             "title":"Photo 123",
             "description":"long text",
@@ -91,7 +100,7 @@
             "showType":"picture"
         },
         {
-            "id":"photo_3",
+            "id":"photo_7",
             "author":"id_artist_1",
             "title":"Photo 3",
             "description":"long text",
@@ -103,7 +112,7 @@
             "showType":"picture"
         },
         {
-            "id":"photo_6",
+            "id":"photo_8",
             "author":"id_artist_1",
             "title":"Photo 6",
             "description":"long text",
@@ -115,7 +124,7 @@
             "showType":"picture"
         },
         {
-            "id":"photo_4",
+            "id":"photo_9",
             "author":"id_artist_1",
             "title":"Photo 4",
             "description":"long text",
@@ -127,7 +136,7 @@
             "showType":"picture"
         },
         {
-            "id":"photo_12",
+            "id":"photo_10",
             "author":"id_artist_2",
             "title":"Photo 12",
             "description":"long text",
@@ -139,7 +148,7 @@
             "showType":"picture"
         },
         {
-            "id":"photo_42",
+            "id":"photo_11",
             "author":"id_artist_1",
             "title":"Photo 42",
             "description":"long text",
@@ -151,7 +160,7 @@
             "showType":"picture"
         },
         {
-            "id":"photo_441",
+            "id":"photo_12",
             "author":"id_artist_1",
             "title":"Photo 441",
             "description":"long text",

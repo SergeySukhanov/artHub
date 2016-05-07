@@ -99,6 +99,10 @@ a.ah_edit-account {
     border-radius: 4px;
 }
 
+.ah_create-menu{
+    display: inline-block;
+}
+
 .ah_inner-account-home h3{
     background-color: #20649e;
     margin: 0;
@@ -109,10 +113,22 @@ a.ah_edit-account {
     padding: 1px 0px 2px;
 }
 
+.ah_folders-account {
+    position: relative;
+    z-index: 1;
+    padding: 25px 15px;
+}
+
+.ah_folders-account > a{
+    position: absolute;
+    top: 0;
+}
+
 .ah_folders-account-tools{
     background-color: #20649e;
     margin: 0;
-    padding: 2px 0px 3px;
+    position: relative;
+    z-index: 2;
 }
 
 .ah_folders-account-tools a {
@@ -121,3 +137,37 @@ a.ah_edit-account {
     font-size: 14px;
     text-decoration: underline;
 }
+
+.ah_create-menu > a {
+    display: block;
+    padding: 4px 25px 3px;
+    background-color: #147D6E;
+    text-decoration: none;
+    font-size: 15px;
+    font-family: Oswald;
+}
+
+.ah_create-menu-inner {
+    position: absolute;
+    background-color: #FFFFFF;
+    padding: 0px 0px;
+    left: 0;
+    width: 190px;
+    box-shadow: 0px 0px 6px 0px #616060;
+}
+
+.ah_create-menu-inner > a {
+    color: #232322;
+    display: block;
+    font-size: 18px;
+    text-decoration: none;
+    padding: 10px 21px;
+    border-bottom: 1px solid #9A9A9A;
+    margin: 0;
+}
+
+.ah_create-menu-inner > a:hover{
+    background-color: #147D6E;
+    color:#ffffff;
+}
+

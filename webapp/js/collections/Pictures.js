@@ -7,5 +7,14 @@
  */
 
 var PicturesCollection = Backbone.Collection.extend({
-    model:PictureModel
+    model:PictureModel,
+
+    initialize:function(){
+        console.log(this);
+        this.on("change", function(){
+            console.log(this);
+        })
+    }
+
+
 });

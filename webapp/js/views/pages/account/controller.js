@@ -8,7 +8,6 @@
 
 var AccountController = function(ins, view){
     var _render = function(){
-//        _galleryComponent();
         _component();
         _handlers()
     };
@@ -35,12 +34,13 @@ var AccountController = function(ins, view){
                     feedback:{},
                     friends:[],
                     params:{
-                        parent:null
+                        parent:null,
+                        show:false
                     }
                 },
                 params:{
                     action:view.params.action,
-                    controller:DashboardActionsController
+                    controller:AccountActionsController
                 }
             });
         });

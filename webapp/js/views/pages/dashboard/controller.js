@@ -58,10 +58,12 @@ var DashboardController = function(ins){
         tools.preloader.open("#eventsShortList");
         tools.preloader.open("#lotsShortList");
         tools.preloader.open("#groupsShortList");
-        templateManager.load(["dashboard/news", "dashboard/pictures", "dashboard/people"]).then(function(news, pictures, people){
+        templateManager.load(["dashboard/news", "dashboard/pictures", "dashboard/people", "dashboard/lots", "dashboard/events"]).then(function(news, pictures, people, lots, events){
             ins.partials.news = news;
             ins.partials.pictures = pictures;
             ins.partials.people = people;
+            ins.partials.lots = lots;
+            ins.partials.events = events;
             _render();
             tools.calculateDashboardfeed();
         });

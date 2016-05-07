@@ -1,27 +1,37 @@
 <div class="ah_inner-account-home small-12 clearfix">
     <div class="small-10 columns ah_columns-clear">
         <div class="ah_folders-account-tools">
-            <a href="javascript:void(0);" on-click="newFolder">New folder</a>
-            <a href="javascript:void(0);" on-click="newPicture">New picture</a>
+            <div class="ah_create-menu">
+                <a data-toggle="false" href="javascript:void(0)" on-click="openMenuCreate">New</a>
+                <div class="ah_create-menu-inner" style="display:none;">
+                    <a href="javascript:void(0);" on-click="newFolder">New folder</a>
+                    <a href="javascript:void(0);" on-click="newPicture">New picture</a>
+                </div>
+            </div>
         </div>
         <div class="ah_folders-account">
-            {{#config.params.parent}}
+            {{#config.params.show}}
             <a href="javascript:void(0)" on-click="backFolder">Back</a>
             {{/config.params.parent}}
             {{#currentFolder}}
             {{#if showType === "folder"}}
-            <div data-id="{{id}}" class="ah_item-gallery ah_item-gallery-folder" on-click="openFolder">
+            <div data-id="{{id}}" class="ah_item-gallery ah_item-gallery-folder" on-doubleclick="openFolder" on-click="selectItem">
+                <div class="ah_edit-item">
+                    <a href="javascript:void(0)" on-click="editFolder">Edit</a>
+                    <a href="javascript:void(0)" on-click="removeFolder">Remove</a>
+                </div>
                 <div class="ah_img-item-gallery" style="background-image: url({{url}});"></div>
                 <p>{{title}}</p>
             </div>
             {{/if}}
             {{#if showType === "picture"}}
-            <div data-id="{{id}}" class="ah_item-gallery ah_item-gallery-picture" on-click="showPicture:{{this}}">
-                <div class="ah_img-item-gallery" style="background-image: url({{url}});">
-
+            <div data-id="{{id}}" class="ah_item-gallery ah_item-gallery-picture" on-doubleclick="showPicture:{{this}}" on-click="selectItem">
+                <div class="ah_edit-item">
+                    <a href="javascript:void(0)" on-click="editPicture">Edit</a>
+                    <a href="javascript:void(0)" on-click="removePicture">Remove</a>
                 </div>
+                <div class="ah_img-item-gallery" style="background-image: url({{url}});"></div>
                 <p>{{title}}</p>
-                <small>{{datePublication}}</small>
             </div>
             {{/if}}
             {{/currentFolder}}

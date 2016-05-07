@@ -14,9 +14,14 @@ var LayoutViewController = function(ins){
         ins.on({
 
         });
+        $(window).resize(function(){
+            tools.calculateLayoutHeight();
+            tools.calculateDashboardfeed();
+        });
     };
 
     var _initialize = function(){
+        tools.calculateLayoutHeight();
         _render();
     };
 

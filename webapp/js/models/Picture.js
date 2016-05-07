@@ -7,6 +7,17 @@
  */
 
 var PictureModel = Backbone.Model.extend({
+    defaults:{
+        "id":null,
+        "author":null,
+        "title":null,
+        "url":"images/folder.png",
+        "public":true,
+        "parent":null,
+        "showType":null,
+        "cost":null,
+        "datePublication":null
+    },
 
     datePicture:function(){
         var date = new Date(this.get("datePublication"));

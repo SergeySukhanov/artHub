@@ -19,11 +19,6 @@ $(document).ready(function(){
             })
         })
         .then(function(){
-            tools.calculateLayoutHeight();
-            $(window).resize(function(){
-                tools.calculateLayoutHeight();
-                tools.calculateDashboardfeed();
-            });
             config.routers.mainRouter = new Router();
             Backbone.history.start({trigger:true});
         })

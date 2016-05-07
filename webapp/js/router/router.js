@@ -9,8 +9,8 @@
 var Router = Backbone.Router.extend({
     routes:{
         "":"dashboard",
-        "gallery":"gallery",
         "dashboard":"dashboard",
+        "gallery":"gallery",
         "gallery/:id":"itemPicture",
         "articles":"articles",
         "articles/:id":"itemArticle",

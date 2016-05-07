@@ -11,61 +11,74 @@
     display: inline-block;
 }
 
-.ah_item-gallery-picture.ah_item-gallery {
-    display: inline-block;
-    width: 200px;
-    height: 200px;
-    vertical-align: top;
-    border: 1px solid #9a9a9a;
-    margin: 0px 18px 25px;
-    overflow: hidden;
-    position: relative;
-}
 
-
-.ah_item-gallery-picture.ah_item-gallery p {
+.ah_item-gallery p {
     position: relative;
-    color: #ffffff;
+    color: #20649E;
     font-weight: 700;
-    background-color: rgba(35, 35, 35, 0.36);
     bottom: 0;
+    width: 220px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 10px 10px;
 }
 
-.ah_item-gallery-folder.ah_item-gallery {
+.ah_item-gallery {
     display: inline-block;
-    width: 200px;
-    height: 200px;
+    width: 220px;
+    height: 220px;
     vertical-align: top;
     margin: 0px 18px 25px;
     overflow: hidden;
     position: relative;
 }
 
+.ah_item-gallery.selected{
+    background-color: #16456D;
+    color:#ffffff;
+}
 
-.ah_item-gallery-folder.ah_item-gallery p {
+.ah_item-gallery.selected p{
+    color:#ffffff;
+}
+
+.ah_item-gallery .ah_edit-item{
+    display: none;
+}
+
+.ah_item-gallery.selected .ah_edit-item{
+    display: block;
+    position: absolute;
+    z-index: 3;
+    background-color: rgba(0, 0, 0, 0.31);
+    width: 100%;
+    text-align: right;
+}
+
+.ah_item-gallery.selected .ah_edit-item a{
+    color: #FFFFFF;
+    font-size: 13px;
+}
+
+
+/*.ah_item-gallery-folder.ah_item-gallery p {*/
+    /*position: relative;*/
+    /*color: #ffffff;*/
+    /*font-weight: 700;*/
+    /*margin: 0;*/
+    /*top: 62px;*/
+    /*padding-left: 29px;*/
+/*}*/
+
+.ah_item-gallery small{
+
+}
+.ah_img-item-gallery {
+    width: 100%;
+    height: 80%;
+    background-size: cover;
     position: relative;
-    color: #ffffff;
-    font-weight: 700;
-    margin: 0;
-    top: 62px;
-    padding-left: 29px;
-}
-
-.ah_item-gallery-picture.ah_item-gallery small{
-
-}
-.ah_item-gallery-folder .ah_img-item-gallery{
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    position: absolute;
-}
-
-.ah_item-gallery-picture .ah_img-item-gallery {
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    position: absolute;
 }
 
 .ah_tools-current-folders-gallery {
