@@ -31,6 +31,7 @@ var AccountActionsController = function(ins, view){
                 new ModalView({
                     template:"newFolder",
                     controller:NewFolderController,
+                    size:"medium",
                     data:{
                         currentFolder:ins.get("currentFolder"),
                         gallery:ins.get("gallery"),
@@ -43,6 +44,7 @@ var AccountActionsController = function(ins, view){
                 new ModalView({
                     template:"loadPicture",
                     controller:LoadPictureController,
+                    size:"medium",
                     data:{
                         currentFolder:ins.get("currentFolder"),
                         gallery:ins.get("gallery"),
@@ -81,16 +83,59 @@ var AccountActionsController = function(ins, view){
                 });
             },
 
-            editFolder:function(event){
-                console.log(event);
+            editFolder:function(event, item){
+                new ModalView({
+                    template:"editFolder",
+                    controller:EditFolderController,
+                    size:"small",
+                    data:{
+                        item:item
+                    }
+                });
             },
 
             removeFolder:function(event){
-                console.log(event);
+                var gallery = ins.get("gallery");
+                var currentFolder = ins.get("currentFolder");
+                var removeModel = currentFolder.where({id:event.context.id});
+                var removeIndex;
+
+                var childElems = foldersModule.currentFolder(gallery, event.context.id);
+
+                if(childElems.length){
+                    new ModalView({
+                        template:"confirmRemove",
+                        controller:ConfirmRemoveFolderController,
+                        size:"small",
+                        data:{
+                            currentFolder:ins.get("currentFolder"),
+                            gallery:ins.get("gallery"),
+                            id:event.context.id
+                        }
+                    })
+                }else{
+                    currentFolder.remove(removeModel);
+                    _.each(gallery, function(elem, index){
+                        if(elem.id === removeModel[0].attributes.id){
+                            removeIndex = index;
+                        }
+                    });
+
+                    gallery.splice(removeIndex, 1);
+                }
+
+
             },
 
-            editPicture:function(event){
-                console.log(event);
+            editPicture:function(event, item){
+                new ModalView({
+                    template:"editPicture",
+                    controller:EditPictureController,
+                    size:"small",
+                    data:{
+                        item:item
+                    }
+                });
             },
 
             removePicture:function(event){
@@ -99,7 +144,7 @@ var AccountActionsController = function(ins, view){
                 var removeModel = currentFolder.where({id:event.context.id});
                 var removeIndex;
 
-                currentFolder.remove(removeModel)
+                currentFolder.remove(removeModel);
                 _.each(gallery, function(elem, index){
                     if(elem.id === removeModel[0].attributes.id){
                         removeIndex = index;

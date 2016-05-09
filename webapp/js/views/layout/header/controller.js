@@ -17,10 +17,17 @@ var HeaderViewController = function(ins){
                 tools.logout();
             },
             loadPicture:function(){
-                new ModalView({
-                    template:"loadPicture",
-                    controller:LoadPictureController
-                });
+                API.user.gallery().then(function(data){
+                    new ModalView({
+                        template:"loadPicture",
+                        size:"medium",
+                        controller:LoadPictureController,
+                        data:{
+                            picture:new PictureModel(),
+                            gallery:data.gallery
+                        }
+                    });
+                })
             }
         });
     };

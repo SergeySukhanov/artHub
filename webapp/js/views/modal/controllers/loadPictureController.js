@@ -28,9 +28,11 @@ var LoadPictureController = function(ins){
                 model.set("author", config.models.currentUser.get("id"));
                 model.set("showType", "picture");
                 model.set("datePublication", Date.now());
+
                 gallery.push(model.attributes);
-                currentFolder.add(model);
-                console.log(currentFolder.length);
+                if(currentFolder){
+                    currentFolder.add(model);
+                }
                 ins.fire("closeModal");
             }
         })

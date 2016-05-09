@@ -43,3 +43,27 @@
     font-size: 20px;
 }
 
+
+.ah_inner{
+    padding: 20px 15px 30px;
+}
+
+.ah_inner h3 {
+    font-family: Oswald;
+    border-bottom: 1px solid #454545;
+    color: #454545;
+    margin-bottom: 20px;
+}
+
+.ah_confirm-remove p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.ah_inner a {
+    padding: 10px 30px;
+    color: #ffffff;
+    background-color: #20649E;
+    font-size: 18px;
+    text-align: center;
+}
