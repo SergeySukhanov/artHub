@@ -14,6 +14,7 @@ var AccountActionsController = function(ins, view){
     var _handlers = function(){
         ins.on({
             openMenuCreate:function(event){
+                event.original.stopPropagation();
                 var node = $(event.node);
                 var toggle = $(event.node).prop("data-toggle");
 
@@ -26,6 +27,10 @@ var AccountActionsController = function(ins, view){
                         node.prop("data-toggle", true);
                     });
                 }
+            },
+
+            closeMenu:function(){
+
             },
             newFolder:function(){
                 new ModalView({
@@ -151,6 +156,7 @@ var AccountActionsController = function(ins, view){
             },
 
             selectItem:function(event){
+                event.original.stopPropagation();
                 console.log(event);
                 var node = $(event.node);
 

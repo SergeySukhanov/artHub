@@ -12,11 +12,19 @@ var ModalTemplate = Ractive.extend({
     adapt:["Backbone"],
     oncomplete:function(){
         var ins = this;
-        $(ins.el).fadeIn(100);
+        $(ins.el).css("top", $(window).scrollTop()).fadeIn(100);
         ins.on("closeModal", function(){
+            $(document).off("keyup");
             $(ins.el).fadeOut(100, function(){
+                $("body").css("overflow", "auto");
                 ins.teardown();
             });
+        });
+
+        $(document).on("keyup", function(){
+            if(event.keyCode === 27){
+                ins.fire("closeModal");
+            }
         });
     }
 });

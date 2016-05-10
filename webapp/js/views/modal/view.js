@@ -11,8 +11,11 @@ var ModalView = Backbone.View.extend({
     partial:null,
     controller:null,
     data:{},
-    type:"large",
+    horizontal:0,
+    vertical:0,
+    size:0,
     name:null,
+    params:null,
 
     render:function(){
         var self = this;
@@ -30,41 +33,30 @@ var ModalView = Backbone.View.extend({
         });
 
         config.modal = modal;
-        self.calculateSize(modal, self.size);
+        self.calculateSize(modal, self.horizontal, self.vertical, self.size);
 
         modal.on("complete", function(){
+            $("body").css("overflow", "hidden");
             new ModalController(this, self.name);
         })
     },
 
-    calculateSize:function(modal, type){
+    calculateSize:function(modal, horizontal, vertical, size){
         var container = $(modal.el).find(".ah_base-modal-container");
-        switch(type){
-            case "small":(function(){
-                container.css({
-                    width:"30%"
-                });
-            })();
-                break;
-            case "medium":(function(){
-                container.css({
-                    width:"50%"
-                });
-            })();
-                break;
-            case "large":(function(){
-                container.css({
-                    width:"70%"
-                });
-            })();
-                break;
-        }
+        container.css({
+            "width": horizontal + "%",
+            "min-height":vertical + "%",
+            "margin-top":size + "%"
+        });
+
     },
 
     initialize:function(options){
         var self = this;
         self.data = options.data;
         self.size = options.size;
+        self.horizontal = options.horizontal;
+        self.vertical = options.vertical;
         self.name = options.template;
         templateManager.load(["modal/base", "modal/" + self.name]).then(function(base, partial){
             self.template = base;

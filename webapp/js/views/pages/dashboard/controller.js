@@ -31,7 +31,10 @@ var DashboardController = function(ins){
             showPicture:function(event, item){
                 new ModalView({
                     template:"showPicture",
-                    data:item
+                    data:item,
+                    size:1,
+                    vertical:95,
+                    horizontal:95
                 });
             },
             userPage:function(event){

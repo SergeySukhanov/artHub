@@ -71,3 +71,7 @@
     font-size: 18px;
     text-align: center;
 }
+
+.ah_inner-show-picture img{
+    width:100%;
+}

@@ -171,3 +171,40 @@ a.ah_edit-account {
     color:#ffffff;
 }
 
+.ah_inner-account-home{
+    padding: 20px 30px;
+}
+
+.ah_inner-account-home h3{
+    font-family: Oswald;
+    color: #2B5994;
+}
+
+.ah_inner-block{
+    font-family: "Ubuntu Condensed";
+}
+
+.ah_inner-block ul{
+    list-style-type: none;
+    font-size: 20px;
+    margin: 0;
+}
+
+.ah_inner-block li{
+    padding: 7px 0px;
+}
+
+
+.ah_inner-block .title{
+    font-weight: 700;
+    display: block;
+}
+
+.ah_inner-block .value{
+
+}
+
+
+
+
+

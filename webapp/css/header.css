@@ -66,6 +66,10 @@
 
 .ah_avatar-header{
     display: inline-block;
+    border-radius: 50px;
+    overflow: hidden;
+    vertical-align: middle;
+    margin-right: 10px;
 }
 
 .ah_avatar-header img {

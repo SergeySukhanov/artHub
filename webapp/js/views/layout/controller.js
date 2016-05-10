@@ -18,6 +18,13 @@ var LayoutViewController = function(ins){
             tools.calculateLayoutHeight();
             tools.calculateDashboardfeed();
         });
+
+        $(document).on("click", function(event){
+            $(".ah_create-menu > a").prop("data-toggle", false);
+            $(".ah_create-menu-inner").slideUp(100);
+
+            $(".ah_item-gallery").removeClass("selected");
+        });
     };
 
     var _initialize = function(){

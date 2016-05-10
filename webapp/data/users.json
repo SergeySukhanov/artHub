@@ -2,7 +2,7 @@
     "users":[
         {
             "id":"id_artist_1",
-            "avatar":"images/avatar.png",
+            "avatar":"images/avatar1.jpg",
             "login":"SergeySukhanov",
             "firstName":"Sergey",
             "lastName":"Sukhanov",
@@ -26,7 +26,7 @@
             "id":"id_artist_3",
             "login":"ArseniyValts",
             "firstName":"Arseniy",
-            "avatar":"images/avatar.png",
+            "avatar":"images/avatar2.png",
             "lastName":"Valts",
             "password":"password",
             "city":"Tomsk",
