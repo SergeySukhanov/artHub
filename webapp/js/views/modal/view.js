@@ -12,6 +12,7 @@ var ModalView = Backbone.View.extend({
     controller:null,
     data:{},
     type:"large",
+    name:null,
 
     render:function(){
         var self = this;
@@ -32,7 +33,7 @@ var ModalView = Backbone.View.extend({
         self.calculateSize(modal, self.size);
 
         modal.on("complete", function(){
-            new self.controller(this);
+            new ModalController(this, self.name);
         })
     },
 
@@ -62,10 +63,10 @@ var ModalView = Backbone.View.extend({
 
     initialize:function(options){
         var self = this;
-        self.controller = options.controller;
         self.data = options.data;
         self.size = options.size;
-        templateManager.load(["modal/base", "modal/" + options.template]).then(function(base, partial){
+        self.name = options.template;
+        templateManager.load(["modal/base", "modal/" + self.name]).then(function(base, partial){
             self.template = base;
             self.partial = partial;
             self.render();

@@ -1,20 +1,12 @@
 {
     "gallery":[
         {
-            "id":"photo_1",
-            "author":"id_artist_1",
-            "title":"Photo 1",
-            "description":"long text",
-            "public":true,
-            "url":"images/image1.jpg",
-            "cost":1000,
-            "datePublication":12458539487,
-            "parent":null,
-            "showType":"picture"
-        },
-        {
             "id":"folder_1",
-            "author":"id_artist_2",
+            "author":{
+                "id":"ad_artist_1",
+                "name":"Sergey Sukhanov",
+                "avatar":"images/avatar1.jpg"
+            },
             "title":"Folder 1",
             "url":"images/folder.png",
             "public":true,
@@ -23,7 +15,11 @@
         },
         {
             "id":"folder_2",
-            "author":"id_artist_2",
+            "author":{
+                "id":"ad_artist_1",
+                "name":"Sergey Sukhanov",
+                "avatar":"images/avatar1.jpg"
+            },
             "title":"Folder 2",
             "public":true,
             "parent":"folder_1",
@@ -32,7 +28,11 @@
         },
         {
             "id":"folder_3",
-            "author":"id_artist_2",
+            "author":{
+                "id":"ad_artist_1",
+                "name":"Sergey Sukhanov",
+                "avatar":"images/avatar1.jpg"
+            },
             "title":"Folder 2122",
             "public":true,
             "parent":"folder_2",
@@ -40,12 +40,32 @@
             "url":"images/folder.png"
         },
         {
+            "id":"photo_1",
+            "author":{
+                "id":"ad_artist_1",
+                "name":"Sergey Sukhanov",
+                "avatar":"images/avatar1.jpg"
+            },
+            "title":"Photo 1",
+            "description":"description text",
+            "public":true,
+            "url":"images/photos/image1.jpg",
+            "cost":1000,
+            "datePublication":12458539487,
+            "parent":null,
+            "showType":"picture"
+        },
+        {
             "id":"photo_2",
-            "author":"id_artist_2",
+            "author":{
+                "id":"ad_artist_1",
+                "name":"Sergey Sukhanov",
+                "avatar":"images/avatar1.jpg"
+            },
             "title":"Photo 2",
             "description":"long text",
             "public":true,
-            "url":"images/image2.jpg",
+            "url":"images/photos/image2.jpg",
             "cost":10000,
             "datePublication":12458539487,
             "parent":"folder_1",
@@ -53,11 +73,15 @@
         },
         {
             "id":"photo_3",
-            "author":"id_artist_1",
-            "title":"Photo 22",
+            "author":{
+                "id":"ad_artist_1",
+                "name":"Sergey Sukhanov",
+                "avatar":"images/avatar1.jpg"
+            },
+            "title":"Photo 3",
             "description":"long text",
             "public":true,
-            "url":"images/image3.jpeg",
+            "url":"images/photos/image3.jpeg",
             "cost":10000,
             "datePublication":12458539487,
             "parent":"folder_2",
@@ -65,11 +89,15 @@
         },
         {
             "id":"photo_4",
-            "author":"id_artist_1",
-            "title":"Photo 24",
+            "author":{
+                "id":"ad_artist_1",
+                "name":"Sergey Sukhanov",
+                "avatar":"images/avatar1.jpg"
+            },
+            "title":"Photo 4",
             "description":"long text",
             "public":true,
-            "url":"images/image4.jpg",
+            "url":"images/photos/image4.jpg",
             "cost":10000,
             "datePublication":12458539487,
             "parent":"folder_2",
@@ -77,11 +105,15 @@
         },
         {
             "id":"photo_5",
-            "author":"id_artist_1",
-            "title":"Photo 23",
+            "author":{
+                "id":"ad_artist_1",
+                "name":"Sergey Sukhanov",
+                "avatar":"images/avatar1.jpg"
+            },
+            "title":"Photo 5",
             "description":"long text",
             "public":true,
-            "url":"images/image5.jpg",
+            "url":"images/photos/image5.jpg",
             "cost":10000,
             "datePublication":12458539487,
             "parent":"folder_2",
@@ -89,11 +121,15 @@
         },
         {
             "id":"photo_6",
-            "author":"id_artist_1",
-            "title":"Photo 123",
+            "author":{
+                "id":"ad_artist_1",
+                "name":"Sergey Sukhanov",
+                "avatar":"images/avatar1.jpg"
+            },
+            "title":"Photo 6",
             "description":"long text",
             "public":true,
-            "url":"images/image5.jpg",
+            "url":"images/photos/image6.jpg",
             "cost":10000,
             "datePublication":12458539487,
             "parent":"folder_2",
@@ -101,11 +137,15 @@
         },
         {
             "id":"photo_7",
-            "author":"id_artist_1",
-            "title":"Photo 3",
+            "author":{
+                "id":"ad_artist_1",
+                "name":"Sergey Sukhanov",
+                "avatar":"images/avatar1.jpg"
+            },
+            "title":"Photo 7",
             "description":"long text",
             "public":true,
-            "url":"images/image6.jpg",
+            "url":"images/photos/image7.jpg",
             "cost":10000,
             "datePublication":12458539487,
             "parent":"folder_1",
@@ -113,11 +153,15 @@
         },
         {
             "id":"photo_8",
-            "author":"id_artist_1",
-            "title":"Photo 6",
+            "author":{
+                "id":"ad_artist_1",
+                "name":"Sergey Sukhanov",
+                "avatar":"images/avatar1.jpg"
+            },
+            "title":"Photo 8",
             "description":"long text",
             "public":true,
-            "url":"images/image7.jpg",
+            "url":"images/photos/image8.jpg",
             "cost":10000,
             "datePublication":12458539487,
             "parent":"folder_1",
@@ -125,11 +169,15 @@
         },
         {
             "id":"photo_9",
-            "author":"id_artist_1",
-            "title":"Photo 4",
+            "author":{
+                "id":"ad_artist_1",
+                "name":"Sergey Sukhanov",
+                "avatar":"images/avatar1.jpg"
+            },
+            "title":"Photo 9",
             "description":"long text",
             "public":true,
-            "url":"images/image8.jpg",
+            "url":"images/photos/image9.jpg",
             "cost":10000,
             "datePublication":12458539487,
             "parent":null,
@@ -137,11 +185,15 @@
         },
         {
             "id":"photo_10",
-            "author":"id_artist_2",
-            "title":"Photo 12",
+            "author":{
+                "id":"ad_artist_1",
+                "name":"Sergey Sukhanov",
+                "avatar":"images/avatar1.jpg"
+            },
+            "title":"Photo 10",
             "description":"long text",
             "public":true,
-            "url":"images/image8.jpg",
+            "url":"images/photos/image10.jpg",
             "cost":10000,
             "datePublication":12458539487,
             "parent":null,
@@ -149,11 +201,15 @@
         },
         {
             "id":"photo_11",
-            "author":"id_artist_1",
-            "title":"Photo 42",
+            "author":{
+                "id":"ad_artist_1",
+                "name":"Sergey Sukhanov",
+                "avatar":"images/avatar1.jpg"
+            },
+            "title":"Photo 11",
             "description":"long text",
             "public":true,
-            "url":"images/image9.jpg",
+            "url":"images/photos/image11.jpg",
             "cost":10000,
             "datePublication":12458539487,
             "parent":null,
@@ -161,11 +217,303 @@
         },
         {
             "id":"photo_12",
-            "author":"id_artist_1",
-            "title":"Photo 441",
+            "author":{
+                "id":"ad_artist_1",
+                "name":"Sergey Sukhanov",
+                "avatar":"images/avatar1.jpg"
+            },
+            "title":"Photo 12",
             "description":"long text",
             "public":true,
-            "url":"images/image10.jpg",
+            "url":"images/photos/image12.jpg",
+            "cost":10000,
+            "datePublication":12458539487,
+            "parent":null,
+            "showType":"picture"
+        },
+        {
+            "id":"photo_13",
+            "author":{
+                "id":"ad_artist_1",
+                "name":"Sergey Sukhanov",
+                "avatar":"images/avatar1.jpg"
+            },
+            "title":"Photo 13",
+            "description":"long text",
+            "public":true,
+            "url":"images/photos/image13.jpg",
+            "cost":10000,
+            "datePublication":12458539487,
+            "parent":null,
+            "showType":"picture"
+        },
+        {
+            "id":"photo_14",
+            "author":{
+                "id":"ad_artist_1",
+                "name":"Sergey Sukhanov",
+                "avatar":"images/avatar1.jpg"
+            },
+            "title":"Photo 14",
+            "description":"long text",
+            "public":true,
+            "url":"images/photos/image14.jpeg",
+            "cost":10000,
+            "datePublication":12458539487,
+            "parent":null,
+            "showType":"picture"
+        },
+        {
+            "id":"photo_15",
+            "author":{
+                "id":"ad_artist_1",
+                "name":"Sergey Sukhanov",
+                "avatar":"images/avatar1.jpg"
+            },
+            "title":"Photo 15",
+            "description":"long text",
+            "public":true,
+            "url":"images/photos/image15.jpg",
+            "cost":10000,
+            "datePublication":12458539487,
+            "parent":null,
+            "showType":"picture"
+        },
+        {
+            "id":"photo_16",
+            "author":{
+                "id":"ad_artist_1",
+                "name":"Sergey Sukhanov",
+                "avatar":"images/avatar1.jpg"
+            },
+            "title":"Photo 16",
+            "description":"long text",
+            "public":true,
+            "url":"images/photos/image16.jpg",
+            "cost":10000,
+            "datePublication":12458539487,
+            "parent":null,
+            "showType":"picture"
+        },
+        {
+            "id":"photo_17",
+            "author":{
+                "id":"ad_artist_1",
+                "name":"Sergey Sukhanov",
+                "avatar":"images/avatar1.jpg"
+            },
+            "title":"Photo 17",
+            "description":"long text",
+            "public":true,
+            "url":"images/photos/image17.jpg",
+            "cost":10000,
+            "datePublication":12458539487,
+            "parent":null,
+            "showType":"picture"
+        },
+        {
+            "id":"photo_18",
+            "author":{
+                "id":"ad_artist_1",
+                "name":"Sergey Sukhanov",
+                "avatar":"images/avatar1.jpg"
+            },
+            "title":"Photo 18",
+            "description":"long text",
+            "public":true,
+            "url":"images/photos/image18.jpg",
+            "cost":10000,
+            "datePublication":12458539487,
+            "parent":null,
+            "showType":"picture"
+        },
+        {
+            "id":"photo_19",
+            "author":{
+                "id":"ad_artist_1",
+                "name":"Sergey Sukhanov",
+                "avatar":"images/avatar1.jpg"
+            },
+            "title":"Photo 19",
+            "description":"long text",
+            "public":true,
+            "url":"images/photos/image19.jpg",
+            "cost":10000,
+            "datePublication":12458539487,
+            "parent":null,
+            "showType":"picture"
+        },
+        {
+            "id":"photo_20",
+            "author":{
+                "id":"ad_artist_1",
+                "name":"Sergey Sukhanov",
+                "avatar":"images/avatar1.jpg"
+            },
+            "title":"Photo 20",
+            "description":"long text",
+            "public":true,
+            "url":"images/photos/image20.jpg",
+            "cost":10000,
+            "datePublication":12458539487,
+            "parent":null,
+            "showType":"picture"
+        },
+        {
+            "id":"photo_21",
+            "author":{
+                "id":"ad_artist_1",
+                "name":"Sergey Sukhanov",
+                "avatar":"images/avatar1.jpg"
+            },
+            "title":"Photo 21",
+            "description":"long text",
+            "public":true,
+            "url":"images/photos/image21.jpg",
+            "cost":10000,
+            "datePublication":12458539487,
+            "parent":null,
+            "showType":"picture"
+        },
+        {
+            "id":"photo_22",
+            "author":{
+                "id":"ad_artist_1",
+                "name":"Sergey Sukhanov",
+                "avatar":"images/avatar1.jpg"
+            },
+            "title":"Photo 22",
+            "description":"long text",
+            "public":true,
+            "url":"images/photos/image22.jpg",
+            "cost":10000,
+            "datePublication":12458539487,
+            "parent":null,
+            "showType":"picture"
+        },
+        {
+            "id":"photo_23",
+            "author":{
+                "id":"ad_artist_1",
+                "name":"Sergey Sukhanov",
+                "avatar":"images/avatar1.jpg"
+            },
+            "title":"Photo 23",
+            "description":"long text",
+            "public":true,
+            "url":"images/photos/image23.jpeg",
+            "cost":10000,
+            "datePublication":12458539487,
+            "parent":null,
+            "showType":"picture"
+        },
+        {
+            "id":"photo_24",
+            "author":{
+                "id":"id_artist_1",
+                "name":"Sergey Sukhanov",
+                "avatar":"images/avatar1.jpg"
+            },
+            "title":"Photo 24",
+            "description":"long text",
+            "public":true,
+            "url":"images/photos/image24.jpg",
+            "cost":10000,
+            "datePublication":12458539487,
+            "parent":null,
+            "showType":"picture"
+        },
+        {
+            "id":"photo_25",
+            "author":{
+                "id":"ad_artist_1",
+                "name":"Sergey Sukhanov",
+                "avatar":"images/avatar1.jpg"
+            },
+            "title":"Photo 25",
+            "description":"long text",
+            "public":true,
+            "url":"images/photos/image25.jpg",
+            "cost":10000,
+            "datePublication":12458539487,
+            "parent":null,
+            "showType":"picture"
+        },
+        {
+            "id":"photo_26",
+            "author":{
+                "id":"ad_artist_1",
+                "name":"Sergey Sukhanov",
+                "avatar":"images/avatar1.jpg"
+            },
+            "title":"Photo 26",
+            "description":"long text",
+            "public":true,
+            "url":"images/photos/image26.jpg",
+            "cost":10000,
+            "datePublication":12458539487,
+            "parent":null,
+            "showType":"picture"
+        },
+        {
+            "id":"photo_27",
+            "author":{
+                "id":"ad_artist_1",
+                "name":"Sergey Sukhanov",
+                "avatar":"images/avatar1.jpg"
+            },
+            "title":"Photo 27",
+            "description":"long text",
+            "public":true,
+            "url":"images/photos/image27.jpg",
+            "cost":10000,
+            "datePublication":12458539487,
+            "parent":null,
+            "showType":"picture"
+        },
+        {
+            "id":"photo_28",
+            "author":{
+                "id":"ad_artist_1",
+                "name":"Sergey Sukhanov",
+                "avatar":"images/avatar1.jpg"
+            },
+            "title":"Photo 28",
+            "description":"long text",
+            "public":true,
+            "url":"images/photos/image28.jpg",
+            "cost":10000,
+            "datePublication":12458539487,
+            "parent":null,
+            "showType":"picture"
+        },
+        {
+            "id":"photo_29",
+            "author":{
+                "id":"ad_artist_1",
+                "name":"Sergey Sukhanov",
+                "avatar":"images/avatar1.jpg"
+            },
+            "title":"Photo 29",
+            "description":"long text",
+            "public":true,
+            "url":"images/photos/image29.jpg",
+            "cost":10000,
+            "datePublication":12458539487,
+            "parent":null,
+            "showType":"picture"
+        },
+        {
+            "id":"photo_30",
+            "author":{
+                "id":"ad_artist_1",
+                "name":"Sergey Sukhanov",
+                "avatar":"images/avatar1.jpg"
+            },
+            "title":"Photo 30",
+            "description":"long text",
+            "public":true,
+            "url":"images/photos/image30.jpg",
             "cost":10000,
             "datePublication":12458539487,
             "parent":null,

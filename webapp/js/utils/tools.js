@@ -93,7 +93,7 @@ var tools = {
         var heightFooter = 50;
 
         workspace.css({
-            "min-height":heightWrapper - (heightHeader + heightFooter)
+            "min-height":heightWrapper - (heightFooter)
         });
     },
     calculateDashboardfeed:function(){

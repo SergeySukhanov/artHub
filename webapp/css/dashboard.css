@@ -23,6 +23,13 @@
     margin: 0;
 }
 
+.ah_pictures h2, .ah_artists h2{
+    font-size: 50px;
+    font-family: Oswald;
+    text-align: center;
+    color: #2b5994;
+}
+
 .ah_main-dashboard {
     padding-bottom: 40px;
 }
@@ -113,6 +120,10 @@
 .ah_picture-item {
     width: 200px;
     height: 200px;
+    position: relative;
+    z-index:2;
+    margin: 5px;
+    border: 2px solid #2b5994;
 }
 
 .ah_picture-item .ah_img-picture-item{
@@ -155,4 +166,65 @@
     overflow: hidden;
     text-overflow: ellipsis;
     margin-top: 100%;
+}
+
+.ah_picture-item .ah_top-action-item-picture{
+    display: block;
+    position: absolute;
+    height: 40px;
+    top: 0;
+    opacity: 0;
+    background: rgba(0, 0, 0, 0.38);
+    width: 100%;
+}
+
+.ah_picture-item .ah_bottom-action-item-picture{
+    display: block;
+    opacity: 0;
+    position: absolute;
+    background-color: rgba(35, 35, 35, 0.51);
+    height: 60px;
+    width: 100%;
+    bottom:0;
+}
+
+.ah_picture-item .ah_top-action-item-picture .ah_title-picture{
+    color: #ffffff;
+    font-size: 17px;
+    padding-left: 17px;
+    padding-top: 7px;
+    display: inline-block;
+}
+
+.ah_picture-item .ah_top-action-item-picture .ah_like-picture{
+    position: absolute;
+    display: inline-block;
+    right: 0;
+    top: 0;
+    color: #ffffff;
+    font-size: 25px;
+    margin-top: 0px;
+    margin-right: 9px;
+}
+
+.ah_picture-item .ah_bottom-action-item-picture .ah_avatar-author-picture{
+    width: 30px;
+    height: 30px;
+    border-radius: 50px;
+    box-shadow: 0px 0px 3px 1px #232323;
+    margin-top: 15px;
+    margin-left: 15px;
+}
+
+.ah_picture-item .ah_bottom-action-item-picture .ah_name-author-picture{
+    color: #ffffff;
+    font-size: 13px;
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 20px;
+    margin-left: 5px;
+}
+
+.ah_picture-item:hover .ah_action-item-picture{
+    opacity: 1;
 }

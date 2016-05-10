@@ -2,14 +2,14 @@
     <h3>Load picture</h3>
     <div class="ah_row">
         <label>Load file:
-            <input on-change="createPicture" type="file"/>
+            <input on-change="create" type="file"/>
         </label>
     </div>
     <div class="ah_row">
         <input id="namePhotoModal" type="text" value="{{data.picture.title}}"/>
     </div>
     <div class="ah_row">
-        <input type="button" value="Create folder" on-click="addPicture"/>
+        <input type="button" value="Create folder" on-click="add"/>
     </div>
     <div class="resultLoad">
         <img src="{{data.picture.url}}"/>

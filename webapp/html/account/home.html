@@ -1,48 +1,44 @@
 <div class="ah_inner-account-home small-12 clearfix">
-    <div class="small-10 columns ah_columns-clear">
-        <div class="ah_folders-account-tools">
-            <div class="ah_create-menu">
-                <a data-toggle="false" href="javascript:void(0)" on-click="openMenuCreate">New</a>
-                <div class="ah_create-menu-inner" style="display:none;">
-                    <a href="javascript:void(0);" on-click="newFolder">New folder</a>
-                    <a href="javascript:void(0);" on-click="newPicture">New picture</a>
-                </div>
-            </div>
+    <div class="ah_row">
+        <h3>Personal info:</h3>
+        <div class="ah_inner-block">
+            <ul>
+                <li>
+                    <span class="title">Location:</span>
+                    <span class="value">Russia, Saint-Petersburg</span>
+                </li>
+                <li>
+                    <span class="title">Activity:</span>
+                    <span class="value">artist</span>
+                </li>
+                <li>
+                    <span class="title">About me:</span>
+                    <span class="value">
+                        description. long long description. very long description.
+                    </span>
+                </li>
+            </ul>
         </div>
-        <div class="ah_folders-account">
-            {{#config.params.show}}
-            <a href="javascript:void(0)" on-click="backFolder">Back</a>
-            {{/config.params.parent}}
-            {{#currentFolder}}
-            {{#if showType === "folder"}}
-            <div data-id="{{id}}" class="ah_item-gallery ah_item-gallery-folder" on-doubleclick="openFolder" on-click="selectItem">
-                <div class="ah_edit-item">
-                    <a href="javascript:void(0)" on-click="editFolder: {{this}}">Edit</a>
-                    <a href="javascript:void(0)" on-click="removeFolder">Remove</a>
-                </div>
-                <div class="ah_img-item-gallery" style="background-image: url({{url}});"></div>
-                <p>{{title}}</p>
-            </div>
-            {{/if}}
-            {{#if showType === "picture"}}
-            <div data-id="{{id}}" class="ah_item-gallery ah_item-gallery-picture" on-doubleclick="showPicture:{{this}}" on-click="selectItem">
-                <div class="ah_edit-item">
-                    <a href="javascript:void(0)" on-click="editPicture:{{this}}">Edit</a>
-                    <a href="javascript:void(0)" on-click="removePicture">Remove</a>
-                </div>
-                <div class="ah_img-item-gallery" style="background-image: url({{url}});"></div>
-                <p>{{title}}</p>
-            </div>
-            {{/if}}
-            {{/currentFolder}}
+        <h3>Links:</h3>
+        <div class="ah_inner-block">
+            <ul>
+                <li>
+                    <span class="title">VK:</span>
+                    <span class="value"><a href="vk.com/id409391" target="_blank">Sergey Sukhanov</a></span>
+                </li>
+                <li>
+                    <span class="title">Skype:</span>
+                    <span class="value"><a href="javascript:void(0)">SergeySukhanov</a></span>
+                </li>
+                <li>
+                    <span class="title">Instagram:</span>
+                    <span class="value"><a href="javascript:void(0)">Sergey</a></span>
+                </li>
+            </ul>
         </div>
-    </div>
-    <div class="small-2 columns ah_columns-clear border-left">
-        <h3>Friends</h3>
-        <div class="ah_friends-account">
-            {{#friends}}
-                {{firstName}}
-            {{/friends}}
+        <h3>Gallery</h3>
+        <div class="ah_inner-block">
+
         </div>
     </div>
 </div>

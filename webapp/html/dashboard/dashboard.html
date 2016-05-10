@@ -1,43 +1,12 @@
-<div class="ah_dashboard-inner">
-    <div class="small-12 ah_top-dashboard">
+<div class="ah-inner-container">
+    <div class="ah_top-dashboard">
         <h2>ArtHub</h2>
     </div>
-    <div class="small-12 clearfix ah_main-dashboard">
-        <div class="small-12 columns ah_columns ah_columns-clear ah_columns-side border-right">
-            <div class="small-12 ah_articles-dashboard ah_section-dashboard">
-                <h3>Articles</h3>
-                <div id="articlesShortList" class="ah_inner-section-dashboard">
-                    {{> news}}
-                </div>
-            </div>
-            <div class="small-12 ah_events-dashboard ah_section-dashboard">
-                <h3>Events</h3>
-                <div id="eventsShortList"class="ah_inner-section-dashboard">
-                    {{> events}}
-                </div>
-            </div>
-        </div>
-        <div class="small-12 columns ah_columns ah_columns-clear ah_feed-dashboard">
-            <div class="small-12 ah_inner-feed-dashboard ah_section-dashboard">
-                <h3>Feed</h3>
-                <div id="picturesShortList" class="ah_inner-section-dashboard">
-                    {{> pictures}}
-                </div>
-            </div>
-        </div>
-        <div class="small-12 columns ah_columns ah_columns-clear ah_columns-side border-left">
-            <div class="small-12 ah_people-dashboard ah_section-dashboard">
-                <h3>People</h3>
-                <div id="peopleShortList" class="ah_inner-section-dashboard">
-                    {{> people}}
-                </div>
-            </div>
-            <div class="small-12 ah_lots-dashboard ah_section-dashboard">
-                <h3>Lots</h3>
-                <div id="lotsShortList" class="ah_inner-section-dashboard">
-                    {{> lots}}
-                </div>
-            </div>
-        </div>
+    <div class="ah_pictures">
+        <h2>Photos</h2>
+        {{> pictures}}
+    </div>
+    <div class="ah_artists">
+        <h2>Artists</h2>
     </div>
 </div>

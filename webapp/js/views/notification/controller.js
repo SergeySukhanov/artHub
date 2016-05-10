@@ -1,14 +1,15 @@
 /**
  *
  * @author SNSukhanov <sergey.n.sukhanov@firstlinesoftware.com>
- * @version 04/22/2016
+ * @version 05/10/2016
+ * @see
  *
  * © 2016 All Rights Reserved
  */
 
-var EditAccountController = function(){
+var NotificationsController = function(ins, name){
     var _initialize = function(){
-        console.log("editAccount")
+        console.log("success")
     };
 
     _initialize();

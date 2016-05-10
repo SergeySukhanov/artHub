@@ -21,7 +21,6 @@ var HeaderViewController = function(ins){
                     new ModalView({
                         template:"loadPicture",
                         size:"medium",
-                        controller:LoadPictureController,
                         data:{
                             picture:new PictureModel(),
                             gallery:data.gallery

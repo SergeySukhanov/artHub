@@ -10,6 +10,7 @@ var NotificationView = Backbone.View.extend({
     template:null,
     partial:null,
     controller:null,
+    name:null,
 
     render:function(){
         var self = this;
@@ -26,13 +27,13 @@ var NotificationView = Backbone.View.extend({
         });
 
         modal.on("complete", function(){
-            new self.controller(this);
+            new NotificationsController(this, self.name);
         })
     },
     initialize:function(options){
         var self = this;
-        self.controller = options.controller;
-        templateManager.load(["notifications/base", "notifications/" + options.template]).then(function(base, partial){
+        self.name = options.template;
+        templateManager.load(["notifications/base", "notifications/" + self.name]).then(function(base, partial){
             self.template = base;
             self.partial = partial;
             self.render();

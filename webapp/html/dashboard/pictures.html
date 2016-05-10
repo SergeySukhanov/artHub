@@ -1,8 +1,16 @@
 <div class="ah_pictures-shortlist">
     {{#pictures}}
-    <div class="ah_picture-item" on-click="showPicture:{{this}}">
-        <div data-id="{{id}}" class="ah_img-picture-item" style="background-image: url({{url}})">
-            <small>{{title}}</small>
+    <div class="ah_picture-item" on-click="showPicture: {{this}}" on-hover="hoverPicture">
+        <div class="ah_top-action-item-picture ah_action-item-picture">
+            <span class="ah_title-picture">{{title}}</span>
+            <span class="ah_like-picture">+</span>
+        </div>
+        <div data-id="{{id}}" class="ah_img-picture-item" style="background-image: url({{url}})"></div>
+        <div class="ah_bottom-action-item-picture ah_action-item-picture">
+            <div class="ah_author-picture">
+                <img class="ah_avatar-author-picture" src="{{author.avatar}}"/>
+                <a href="#{{author.id}}" class="ah_name-author-picture">{{author.name}}</a>
+            </div>
         </div>
     </div>
     {{/pictures}}

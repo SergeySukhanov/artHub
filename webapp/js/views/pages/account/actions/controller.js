@@ -30,7 +30,6 @@ var AccountActionsController = function(ins, view){
             newFolder:function(){
                 new ModalView({
                     template:"newFolder",
-                    controller:NewFolderController,
                     size:"medium",
                     data:{
                         currentFolder:ins.get("currentFolder"),
@@ -43,7 +42,6 @@ var AccountActionsController = function(ins, view){
             newPicture:function(){
                 new ModalView({
                     template:"loadPicture",
-                    controller:LoadPictureController,
                     size:"medium",
                     data:{
                         currentFolder:ins.get("currentFolder"),
@@ -78,7 +76,6 @@ var AccountActionsController = function(ins, view){
             showPicture:function(event, item){
                 new ModalView({
                     template:"showPicture",
-                    controller:ShowPictureController,
                     data:item
                 });
             },
@@ -86,7 +83,6 @@ var AccountActionsController = function(ins, view){
             editFolder:function(event, item){
                 new ModalView({
                     template:"editFolder",
-                    controller:EditFolderController,
                     size:"small",
                     data:{
                         item:item
@@ -105,7 +101,6 @@ var AccountActionsController = function(ins, view){
                 if(childElems.length){
                     new ModalView({
                         template:"confirmRemove",
-                        controller:ConfirmRemoveFolderController,
                         size:"small",
                         data:{
                             currentFolder:ins.get("currentFolder"),
@@ -169,11 +164,21 @@ var AccountActionsController = function(ins, view){
     var _parseAction = function(action){
         switch(action){
             case "friends":(function(){
-
+                API.user.users().then(function(data){
+                    var users = new UsersCollection(data.users);
+                    ins.set("friends", users);
+                });
             })();
                 break;
             case "gallery":(function(){
 
+                API.user.gallery().then(function(data){
+                    var gallery = data.gallery;
+                    var folders = new PicturesCollection(foldersModule.currentFolder(data.gallery, null));
+
+                    ins.set("currentFolder", folders);
+                    ins.set("gallery", gallery);
+                });
             })();
                 break;
             case "feedback":(function(){
@@ -198,8 +203,6 @@ var AccountActionsController = function(ins, view){
     };
 
     var _initialize = function(){
-        console.log(view);
-        console.log(ins);
         _parseAction(view.params.action);
         _render();
     };
