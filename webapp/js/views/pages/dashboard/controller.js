@@ -12,17 +12,14 @@ var DashboardController = function(ins){
         _handlers();
 
         _loadNews().then(function(data){
-            ins.set("news", new ArticlesCollection(data.articlesShortList));
-            tools.preloader.close("#articlesShortList");
+            ins.set("articles", new ArticlesCollection(data.articlesShortList));
         });
         _loadPictures().then(function(data){
             var pictures = foldersModule.onlyPhoto(data.gallery);
             ins.set("pictures", new PicturesCollection(pictures));
-            tools.preloader.close("#picturesShortList");
         });
         _loadPeople().then(function(data){
             ins.set("people", new UsersCollection(data.users));
-            tools.preloader.close("#peopleShortList");
         });
     };
 
@@ -40,29 +37,15 @@ var DashboardController = function(ins){
             userPage:function(event){
                 config.routers.mainRouter.navigate(event.context.id, {trigger:true});
             },
+            likePhoto:function(event){
 
+            },
             hoverPicture:function(event){
                 var photo = $(event.node).find(".ah_img-picture-item");
                 if(event.hover){
-                    $(event.node).css({
-                        "z-index":3
-                    });
-//                    photo.animate({
-//                        width:"120%",
-//                        height:"120%",
-//                        "margin-left":"-11%",
-//                        "margin-top":"-11%"
-//                    }, 100);
+
                 }else{
-                    $(event.node).css({
-                        "z-index":2
-                    });
-//                    photo.animate({
-//                        width:"100%",
-//                        height:"100%",
-//                        "margin-left":"0",
-//                        "margin-top":"0"
-//                    }, 100);
+
                 }
             }
         });
@@ -80,7 +63,7 @@ var DashboardController = function(ins){
 
     var _initialize = function(){
         templateManager.load(["dashboard/news", "dashboard/pictures", "dashboard/people", "dashboard/lots", "dashboard/events"]).then(function(news, pictures, people, lots, events){
-            ins.partials.news = news;
+            ins.partials.articles = news;
             ins.partials.pictures = pictures;
             ins.partials.people = people;
             ins.partials.lots = lots;

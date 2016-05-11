@@ -84,6 +84,38 @@ var tools = {
         })
     },
 
+    calculate:{
+        layout:function(){
+            var body = $("body");
+            var workspace = $("#workspace-container");
+
+            var heightWrapper = body.outerHeight();
+            var heightHeader = 50;
+            var heightFooter = 50;
+
+            workspace.css({
+                "min-height":heightWrapper - (heightFooter)
+            });
+        },
+
+        dashboardFeed:function(){
+            var wrapper = $(".ah_main-dashboard");
+            var feed = $(".ah_feed-dashboard");
+
+            feed.css({
+                width:wrapper.outerWidth() - 600
+            });
+        },
+
+        linkTop:function(){
+            var win = $(window).height();
+
+            $(".ah_layout-link-top").css({
+                top:win - 100
+            })
+        }
+    },
+
     calculateLayoutHeight:function(){
         var body = $("body");
         var workspace = $("#workspace-container");
@@ -96,6 +128,19 @@ var tools = {
             "min-height":heightWrapper - (heightFooter)
         });
     },
+
+    currentUser:function(){
+        if(config.models.currentUser){
+            return $.when(config.models.currentUser);
+        }else{
+            return API.user.currentUser()
+        }
+    },
+
+    getBasket:function(){
+
+    },
+
     calculateDashboardfeed:function(){
         var wrapper = $(".ah_main-dashboard");
         var feed = $(".ah_feed-dashboard");

@@ -4,13 +4,13 @@
     </div>
     <div class="small-7 columns ah_main-menu">
         <ul>
-            <li><a href="#articles">articles</a></li>
-            <li><a href="#gallery">gallery</a></li>
-            <li><a href="#people">people</a></li>
+            <li><a href="#articles"><i class="fa fa-newspaper-o" aria-hidden="true"></i>articles</a></li>
+            <li><a href="#gallery"><i class="fa fa-picture-o" aria-hidden="true"></i>gallery</a></li>
+            <li><a href="#people"><i class="fa fa-users" aria-hidden="true"></i>people</a></li>
             {{#config.startProperties.token}}
-            <li><a href="#settings">settings</a>
-            <li><a href="javascript:void(0);" class="ah_modal-button-header" on-click="loadPicture">Load picture</a></li>
+            <li><a href="javascript:void(0);" class="ah_modal-button-header" on-click="load"><i class="fa fa-download" aria-hidden="true"></i>Load picture</a></li>
             {{/config.startProperties.token}}
+            <li><a href="javascript:void(0)" on-click="basket"><i class="fa fa-shopping-basket" aria-hidden="true"></i>Basket</a></li>
         </ul>
     </div>
     <div class="small-3 columns ah_account-menu">

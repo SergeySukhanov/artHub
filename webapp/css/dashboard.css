@@ -23,7 +23,17 @@
     margin: 0;
 }
 
-.ah_pictures h2, .ah_artists h2{
+.ah_row-dashboard{
+    text-align: center;
+    border-bottom: 1px solid #2b5994;
+}
+
+.ah_row-dashboard .ah_button{
+    margin-top: 15px;
+    margin-bottom: 20px;
+}
+
+.ah_row h3{
     font-size: 50px;
     font-family: Oswald;
     text-align: center;
@@ -78,37 +88,40 @@
 
 /*articles*/
 .ah_article-item-short {
-    padding: 5px 10px;
-    border-bottom: 1px solid #bbbbbb;
-    height: 81px;
+    width: 370px;
+    height: 140px;
+    border: 1px solid #2b5994;
+    margin: 5px;
     position: relative;
 }
 
 .ah_article-item-short img {
     float: left;
-    width: 60px;
-    height: 60px;
+    width: 100%;
+    height: 100%;
     margin-right: 10px;
 }
 
 .ah_article-item-short h5 {
-    font-size: 13px;
     height: 55px;
+    text-align: left;
+    margin-left: 10px;
+    font-size: 15px;
+    padding-right: 5px;
 }
-
 .ah_article-item-short p {
-    font-size: 11px;
+    font-size: 12px;
     position: absolute;
-    bottom: 0;
     right: 0;
-    margin: 2px 16px;
+    margin: 6px 6px;
     color: #9a9a9a;
 }
 
 /*pictures*/
 
 .ah_pictures-shortlist,
-.ah_people-shortlist{
+.ah_people-shortlist,
+.ah_news-shortlist{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -142,19 +155,75 @@
     cursor: pointer;
 }
 
+.ah_wrap-img-people, .ah_wrap-img-article{
+    height: 100%;
+    padding: 0;
+}
+
 .ah_people-item {
-    width: 95px;
-    height: 95px;
-    margin-top: 10px;
+    width: 370px;
+    height: 140px;
+    border: 1px solid #2b5994;
+    margin: 5px;
+    position: relative;
 }
 
 .ah_img-people-item {
-    width: 80%;
-    height: 80%;
+    width: 100%;
+    height: 100%;
     background-repeat: no-repeat;
     background-size: cover;
     cursor: pointer;
     margin: 0 auto;
+    background-color: #232323;
+    background-position: 50% 0;
+}
+
+.ah_people-item p {
+    text-align: left;
+    margin: 0;
+}
+
+.ah_people-item .ah_name{
+    font-size: 25px;
+    color: #717171;
+    margin: 0;
+    margin-left: 10px;
+}
+
+.ah_people-item .ah_city{
+    font-size: 12px;
+    margin: 0;
+    color: #717171;
+    margin-left: 10px;
+}
+
+.ah_people-item .ah_type{
+    font-size: 15px;
+    color: #717171;
+    margin: 0;
+    margin-left: 10px;
+}
+
+.ah_people-item .ah_actions, .ah_article-item-short .ah_actions {
+    background-color: #20649e;
+    margin: 0;
+    position: absolute;
+    width: 100%;
+    height: 39px;
+    bottom: 0;
+}
+
+.ah_article-item-short .ah_actions a.ah_button{
+    font-size: 16px;
+}
+
+.ah_actions a.ah_button {
+    background-color: transparent;
+    color: #ffffff;
+    padding: 0 10px;
+    margin: 0;
+    margin-top: 7px;
 }
 
 .ah_img-people-item small {
@@ -203,8 +272,9 @@
     top: 0;
     color: #ffffff;
     font-size: 25px;
-    margin-top: 0px;
+    margin-top: 0;
     margin-right: 9px;
+    cursor: pointer;
 }
 
 .ah_picture-item .ah_bottom-action-item-picture .ah_avatar-author-picture{

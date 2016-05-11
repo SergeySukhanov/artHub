@@ -32,3 +32,11 @@ p.ah_empty {
 .border-right{
     border-right:1px solid #284467;
 }
+
+.ah_button {
+    padding: 10px 12px;
+    color: #ffffff;
+    background-color: #20649e;
+    display: inline-block;
+    text-align: center;
+}

@@ -5,3 +5,21 @@
 .ah_workspace-inner{
     height:100%;
 }
+
+.ah_layout-link-top {
+    position: fixed;
+    width: 56px;
+    height: 64px;
+    color: #ffffff;
+    top: 777px;
+    z-index: 3;
+    right: 0;
+    margin-right: 27px;
+    border-radius: 5px;
+    display: none;
+    background-color: #2b5994;
+}
+
+.ah_layout-link-top i{
+    color: #f4f4f4;
+}

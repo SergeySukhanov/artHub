@@ -31,13 +31,17 @@ var Router = Backbone.Router.extend({
             if(config.modal){
                 config.modal.fire("closeModal");
             }
+            if(!config.basket){
+                config.basket = new BasketCollection();
+            }
             if(token.getItem()){
-                API.user.currentUser().then(function(currentUser){
-                    config.models.currentUser = new UserModel(currentUser.user);
+                tools.currentUser().then(function(currentUser){
+                    if(!config.models.currentUser){
+                        config.models.currentUser = new UserModel(currentUser.user);
+                    }
                     if(frag === "auth"){
                         config.routers.mainRouter.navigate("dashboard", {trigger:true});
                     }
-
                     if(!tools.loadLayout(config.startProperties)){
                         tools.layoutComponents().then(function(){
                             tools.toggleLoadLayout(config.startProperties, true);
@@ -92,7 +96,7 @@ var Router = Backbone.Router.extend({
                     return {
                         config:config,
                         currentUser:config.models.currentUser,
-                        news:[],
+                        articles:[],
                         people:[],
                         pictures:[]
                     }

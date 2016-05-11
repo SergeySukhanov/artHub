@@ -16,17 +16,31 @@ var HeaderViewController = function(ins){
             logout:function(){
                 tools.logout();
             },
-            loadPicture:function(){
+            load:function(){
                 API.user.gallery().then(function(data){
                     new ModalView({
                         template:"loadPicture",
-                        size:"medium",
+                        horizontal:70,
+                        vertical:70,
+                        size:5,
                         data:{
                             picture:new PictureModel(),
                             gallery:data.gallery
                         }
                     });
                 })
+            },
+            basket:function(){
+                new ModalView({
+                    template:"basket",
+                    horizontal:80,
+                    vertical:70,
+                    size:2,
+                    data:{
+                        basket:{}
+                    }
+
+                });
             }
         });
     };

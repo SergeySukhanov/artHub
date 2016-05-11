@@ -1,13 +1,22 @@
 <div class="ah_news-shortlist">
-    {{#news}}
-        <div data-id="{{id}}" class="ah_article-item-short">
-            <img src="{{image}}"/>
-            {{#if url}}
-            <h5><a href="{{url}}">{{title}}</a></h5>
-            {{else}}
-            <h5><a href="#articles/{{id}}">{{title}}</a></h5>
-            {{/if}}
-            <p>{{this.dateArticle()}}</p>
+    {{#articles}}
+        <div data-id="{{id}}" class="ah_article-item-short clearfix">
+            <div class="small-4 columns ah_wrap-img-article">
+                <img src="{{image}}"/>
+            </div>
+            <div class="small-8 columns ah_wrap-img-article">
+                {{#if url}}
+                <h5><a href="{{url}}">{{title}}</a></h5>
+                {{else}}
+                <h5><a href="#articles/{{id}}">{{title}}</a></h5>
+                {{/if}}
+                <p>{{this.dateArticle()}}</p>
+                <p class="ah_actions">
+                    <a href="javascript:void(0)" class="ah_button">Show article</a>
+                    <a href="javascript:void(0)" class="ah_button">Show account</a>
+                </p>
+            </div>
         </div>
-    {{/news}}
+    {{/articles}}
 </div>
+<a href="javascript:void(0)" class="ah_button">Go in articles</a>

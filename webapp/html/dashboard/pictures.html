@@ -3,7 +3,7 @@
     <div class="ah_picture-item" on-click="showPicture: {{this}}" on-hover="hoverPicture">
         <div class="ah_top-action-item-picture ah_action-item-picture">
             <span class="ah_title-picture">{{title}}</span>
-            <span class="ah_like-picture">+</span>
+            <span class="ah_like-picture" on-click="likePhoto"><i class="fa fa-heart" aria-hidden="true"></i></span>
         </div>
         <div data-id="{{id}}" class="ah_img-picture-item" style="background-image: url({{url}})"></div>
         <div class="ah_bottom-action-item-picture ah_action-item-picture">
@@ -15,3 +15,4 @@
     </div>
     {{/pictures}}
 </div>
+<a href="javascript:void(0)" class="ah_button">Go in gallery</a>

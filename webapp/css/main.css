@@ -1,8 +1,10 @@
 @import url(https://fonts.googleapis.com/css?family=Oswald:400,300,700|Ubuntu+Condensed&subset=latin,cyrillic-ext);
+@import "font-awesome.min.css";
 @import "header.css";
 @import "footer.css";
 @import "workspace.css";
 @import "modals.css";
+@import "notifications.css";
 @import "common.css";
 
 *{
@@ -36,7 +38,6 @@ html, body{
     height: 100%;
     top: 0;
     left: 0;
-    overflow-y: auto;
 }
 
 #notifications-container {

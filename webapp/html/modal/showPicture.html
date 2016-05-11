@@ -6,21 +6,8 @@
             <img src="{{this.url}}"/>
         </div>
         <div class="small-3 columns">
-            <p class="ah_description">{{this.description}}</p>
-            <p class="ah_date-and-cost">
-                <span><b>Created:</b>{{this.datePicture()}}</span>
-                <span><b>Cost:</b>{{this.costPicture()}}</span>
-            </p>
-            <div class="ah_actions-item">
-                <div class="ah_put-in-basket">
-                    <a href="javascript:void(0)">Put in basket</a>
-                </div>
-                <div class="ah_go-page-picture">
-                    <a href="#gallery/{{id}}">Go picture's page</a>
-                </div>
-                <div class="ah_go-page-author">
-                    <a href="#{{author}}">Go author's page</a>
-                </div>
+            <div class="ah_actions-picture">
+                <a href="javascript:void(0)" class="ah_button" on-click="addBasket: {{data}}">add basket</a>
             </div>
         </div>
     </div>

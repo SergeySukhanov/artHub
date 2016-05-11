@@ -1,9 +1,20 @@
 <div class="ah_people-shortlist">
     {{#people}}
-    <div class="ah_people-item" on-click="userPage">
-            <div data-id="{{id}}" class="ah_img-people-item" style="background-image: url({{avatar}})">
-                <small>{{this.fullName()}}</small>
-            </div>
+    <div class="ah_people-item clearfix" on-click="userPage">
+        <div class="small-4 ah_wrap-img-people columns">
+            <div data-id="{{id}}" class="ah_img-people-item" style="background-image: url({{avatar}})"></div>
+        </div>
+        <div class="small-8 ah_wrap-img-people columns">
+            <p class="ah_name">{{this.fullName()}}</p>
+            <p class="ah_city">{{city}}</p>
+            <p class="ah_type">{{type}}</p>
+            <p class="ah_actions">
+                <a href="javascript:void(0)" class="ah_button">Show gallery</a>
+                <a href="javascript:void(0)" class="ah_button">Show account</a>
+            </p>
+        </div>
+
     </div>
     {{/people}}
 </div>
+<a href="javascript:void(0)" class="ah_button">Go in people</a>

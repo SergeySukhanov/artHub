@@ -41,7 +41,18 @@ var ModalController = function(ins, modal){
             })();
                 break;
             case "showPicture":(function(){
-
+                ins.on({
+                    addBasket:function(event, item){
+                        var itemBasket = new BasketModel();
+                        itemBasket.set("photo", item);
+                        config.modal.fire("closeModal");
+                        config.basket.add(itemBasket);
+                        new NotificationView({
+                            template:"addedItemBasket",
+                            data:item
+                        });
+                    }
+                });
             })();
                 break;
             case "editAccount":(function(){

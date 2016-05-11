@@ -52,6 +52,7 @@
             "url":"images/photos/image1.jpg",
             "cost":1000,
             "datePublication":12458539487,
+            "likes":0,
             "parent":null,
             "showType":"picture"
         },
