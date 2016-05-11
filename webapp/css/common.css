@@ -40,3 +40,7 @@ p.ah_empty {
     display: inline-block;
     text-align: center;
 }
+
+input[type=file]{
+    display: none;
+}

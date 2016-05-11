@@ -1,0 +1,67 @@
+<h3>Load picture</h3>
+<div class="small-12 clearfix ah_load-picture-form">
+    <div class="small-7 columns" on-dragndrop="drag">
+        <div class="ah_drop-area-download">
+            {{#data.picture.url}}
+            <span class="ah_remove-picture fa fa-times" on-click="removePicture" aria-hidden="true"></span>
+            <div class="ah_drop-area-download-sup" on-dragndrop="drag"></div>
+            <img src="{{data.picture.url}}"/>
+            {{else}}
+            <div class="ah_drop-area-text">
+                <p>Drag and drop photo</p>
+                <p class="or">or</p>
+                <label class="ah_image-label" for="loadPictureFile">
+                    <b>Load photo</b>
+                    <input id="loadPictureFile" type="file" on-change="load"/>
+                </label>
+            </div>
+            {{/data.picture.url}}
+        </div>
+        {{#data.picture.url}}
+        <label class="ah_image-label" for="loadPictureFile">
+            <b>Load photo</b>
+            <input id="loadPictureFile" type="file" on-change="load"/>
+        </label>
+        {{/data.picture.url}}
+    </div>
+    <div class="small-5 columns">
+        <div class="ah_row">
+            <label for="loadPictureTitle" class="ah_form-item">
+                <b>Title:</b>
+                <input id="loadPictureTitle" type="text" class="ah_control-text" value="{{data.picture.title}}"/>
+            </label>
+        </div>
+        <div class="ah_row">
+            <label for="loadPictureCost" class="ah_form-item">
+                <b>Cost:</b>
+                <input id="loadPictureCost" type="text" class="ah_control-text" value="{{data.picture.cost}}"/>
+            </label>
+        </div>
+        <div class="ah_row">
+            <label for="loadPictureDescription" class="ah_form-item">
+                <b>Description:</b>
+                <textarea id="loadPictureDescription" class="ah_control-textarea">
+                    {{data.picture.description}}
+                </textarea>
+            </label>
+        </div>
+        <div class="ah_row">
+            <label for="loadPictureTags">
+                <b>Tags:</b>
+                <input id="loadPictureTags" type="text" class="ah_control-text" on-keyup="createTag"/>
+            </label>
+            <div class="ah_tags-area">
+                {{#data.picture.tags}}
+                    <span class="ah_tag-item">
+                        <b class="ah_body-tag">{{this}}</b>
+                        <span class="ah_close-tag fa fa-times-circle" aria-hidden="true" on-click="closeTag"></span>
+                    </span>
+                {{/data.picture.tags}}
+            </div>
+        </div>
+    </div>
+</div>
+<div class="small-12 clearfix ah_load-picture-buttons">
+    <a href="javascript:void(0)" class="ah_button" on-click="add">Add photo</a>
+    <a href="javascript:void(0)" class="ah_button" on-click="cancel">Cancel</a>
+</div>

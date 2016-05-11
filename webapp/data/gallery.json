@@ -54,7 +54,9 @@
             "datePublication":12458539487,
             "likes":0,
             "parent":null,
-            "showType":"picture"
+            "showType":"picture",
+            "category":null,
+            "tags":[]
         },
         {
             "id":"photo_2",
@@ -70,7 +72,9 @@
             "cost":10000,
             "datePublication":12458539487,
             "parent":"folder_1",
-            "showType":"picture"
+            "showType":"picture",
+            "category":null,
+            "tags":[]
         },
         {
             "id":"photo_3",
@@ -86,7 +90,9 @@
             "cost":10000,
             "datePublication":12458539487,
             "parent":"folder_2",
-            "showType":"picture"
+            "showType":"picture",
+            "category":null,
+            "tags":[]
         },
         {
             "id":"photo_4",
@@ -102,7 +108,9 @@
             "cost":10000,
             "datePublication":12458539487,
             "parent":"folder_2",
-            "showType":"picture"
+            "showType":"picture",
+            "category":null,
+            "tags":[]
         },
         {
             "id":"photo_5",
@@ -118,7 +126,9 @@
             "cost":10000,
             "datePublication":12458539487,
             "parent":"folder_2",
-            "showType":"picture"
+            "showType":"picture",
+            "category":null,
+            "tags":[]
         },
         {
             "id":"photo_6",
@@ -134,7 +144,9 @@
             "cost":10000,
             "datePublication":12458539487,
             "parent":"folder_2",
-            "showType":"picture"
+            "showType":"picture",
+            "category":null,
+            "tags":[]
         },
         {
             "id":"photo_7",
@@ -150,7 +162,9 @@
             "cost":10000,
             "datePublication":12458539487,
             "parent":"folder_1",
-            "showType":"picture"
+            "showType":"picture",
+            "category":null,
+            "tags":[]
         },
         {
             "id":"photo_8",
@@ -166,7 +180,9 @@
             "cost":10000,
             "datePublication":12458539487,
             "parent":"folder_1",
-            "showType":"picture"
+            "showType":"picture",
+            "category":null,
+            "tags":[]
         },
         {
             "id":"photo_9",
@@ -182,7 +198,9 @@
             "cost":10000,
             "datePublication":12458539487,
             "parent":null,
-            "showType":"picture"
+            "showType":"picture",
+            "category":null,
+            "tags":[]
         },
         {
             "id":"photo_10",
@@ -198,7 +216,9 @@
             "cost":10000,
             "datePublication":12458539487,
             "parent":null,
-            "showType":"picture"
+            "showType":"picture",
+            "category":null,
+            "tags":[]
         },
         {
             "id":"photo_11",
@@ -214,7 +234,9 @@
             "cost":10000,
             "datePublication":12458539487,
             "parent":null,
-            "showType":"picture"
+            "showType":"picture",
+            "category":null,
+            "tags":[]
         },
         {
             "id":"photo_12",
@@ -230,7 +252,9 @@
             "cost":10000,
             "datePublication":12458539487,
             "parent":null,
-            "showType":"picture"
+            "showType":"picture",
+            "category":null,
+            "tags":[]
         },
         {
             "id":"photo_13",
@@ -246,7 +270,9 @@
             "cost":10000,
             "datePublication":12458539487,
             "parent":null,
-            "showType":"picture"
+            "showType":"picture",
+            "category":null,
+            "tags":[]
         },
         {
             "id":"photo_14",
@@ -262,7 +288,9 @@
             "cost":10000,
             "datePublication":12458539487,
             "parent":null,
-            "showType":"picture"
+            "showType":"picture",
+            "category":null,
+            "tags":[]
         },
         {
             "id":"photo_15",
@@ -278,7 +306,9 @@
             "cost":10000,
             "datePublication":12458539487,
             "parent":null,
-            "showType":"picture"
+            "showType":"picture",
+            "category":null,
+            "tags":[]
         },
         {
             "id":"photo_16",

@@ -40,6 +40,65 @@ var ModalController = function(ins, modal){
                 })
             })();
                 break;
+            case "load":(function(){
+                ins.on({
+                    drag:function(event){
+                        event.original.preventDefault();
+                        console.log(event);
+                        if(event.type === "enter"){
+                            console.log(event);
+                        }
+
+                        if(event.type === "over"){
+                            console.log(event);
+                        }
+
+                        if(event.type === "drop"){
+                            var files = event.original.dataTransfer.files;
+                            var model = ins.get("data.picture");
+                            foldersModule.loadFile(files[0]).then(function(url){
+                                model.set("url", url);
+                            })
+                        }
+
+                        if(event.type === "leave"){
+                            console.log(event);
+                        }
+                    },
+                    load:function(event){
+                        var model = ins.get("data.picture");
+                        foldersModule.loadFile(event.node.files[0]).then(function(url){
+                            model.set("url", url);
+                        })
+                    },
+                    removePicture:function(event){
+                        var model = ins.get("data.picture");
+                        model.set("url", null);
+                    },
+                    createTag:function(event){
+                        if(event.original.keyCode === 13){
+                            var tags = ins.get("data.picture.tags");
+                            tags.push(event.node.value);
+                            event.node.value = "";
+                        }
+                    },
+                    closeTag:function(event){
+                        var tags = ins.get("data.picture.tags");
+                        _.each(tags, function(elem, index){
+                            if(elem === event.context){
+                                tags.splice(index, 1);
+                            }
+                        });
+                    },
+                    add:function(event){
+                        console.log(event);
+                    },
+                    cancel:function(event){
+                        console.log(event);
+                    }
+                });
+            })();
+                break;
             case "showPicture":(function(){
                 ins.on({
                     addBasket:function(event, item){

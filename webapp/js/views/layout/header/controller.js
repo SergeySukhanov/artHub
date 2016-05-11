@@ -19,7 +19,7 @@ var HeaderViewController = function(ins){
             load:function(){
                 API.user.gallery().then(function(data){
                     new ModalView({
-                        template:"loadPicture",
+                        template:"load",
                         horizontal:70,
                         vertical:70,
                         size:5,
