@@ -210,6 +210,10 @@ var Router = Backbone.Router.extend({
                 template:tmpl,
                 params:{
                     controller:SettingsController
+                },
+                data:{
+                    config:config,
+                    currentUser:config.models.currentUser
                 }
             })
         });

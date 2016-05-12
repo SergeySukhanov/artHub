@@ -1,0 +1,32 @@
+ul.ah_header-tabs {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+ul.ah_header-tabs li {
+    display: inline-block;
+}
+
+ul.ah_header-tabs a {
+    display: block;
+    padding: 11px 20px;
+    background-color: #20649e;
+    color: #ffffff;
+    border-radius: 5px 5px 0 0;
+}
+
+.ah_body-tabs {
+    border-top: 2px solid #20649e;
+    padding-top: 30px;
+}
+
+.ah_body-tab {
+    display: none;
+}
+
+.ah_header-tabs .ah_active{
+    background-color: #0d2f4c;
+    padding-top: 18px;
+}

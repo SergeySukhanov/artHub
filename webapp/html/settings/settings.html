@@ -1,3 +1,87 @@
 <div class="ah_settings-inner">
-    settings
+    <h3>Settings</h3>
+    <div class="ah_tabs">
+        <ul class="ah_header-tabs">
+            <li><a data-header-id="tab-1" on-click="tabs" href="javascript:void(0)">Base settings</a></li>
+            <li><a data-header-id="tab-2" on-click="tabs" href="javascript:void(0)">Avatar settings</a></li>
+            <li><a data-header-id="tab-3" on-click="tabs" href="javascript:void(0)">Social links settings</a></li>
+            <li><a data-header-id="tab-4" on-click="tabs" href="javascript:void(0)">Private settings</a></li>
+        </ul>
+        <div class="ah_body-tabs">
+            <div data-body-id="tab-1" class="ah_body-tab">
+                {{#currentUser}}
+                <div class="ah_row small-12 clearfix">
+                    <div class="small-4 columns">
+                        <label for="inputUserFirstName">
+                            <b>First name:</b>
+                            <input id="inputUserFirstName" type="text" class="ah_control-text" value="{{firstName}}"/>
+                        </label>
+                    </div>
+                    <div class="small-4 columns">
+                        <label for="inputUserLastName">
+                            <b>Last name:</b>
+                            <input id="inputUserLastName" type="text" class="ah_control-text" value="{{lastName}}"/>
+                        </label>
+                    </div>
+                    <div class="small-offset-4">
+
+                    </div>
+                </div>
+                <div class="ah_row small-12 clearfix">
+                    <div class="small-7 columns">
+                        <label for="inputUserCity">
+                            <b>City:</b>
+                            <input id="inputUserCity" type="text" class="ah_control-text" value="{{city}}"/>
+                        </label>
+                    </div>
+                </div>
+                <div class="ah_row small-12 clearfix">
+                    <div class="small-7 columns">
+                        <label for="inputUserDateOfBirth">
+                            <b>Date of birth:</b>
+                            <input id="inputUserDateOfBirth" type="text" class="ah_control-text" value="{{dateOfBirth}}"/>
+                        </label>
+                    </div>
+                </div>
+                {{/currentUser}}
+            </div>
+            <div data-body-id="tab-2" class="ah_body-tab">
+                <div class="small-12 clearfix">
+                    <div class="small-5 columns">
+                        <div class="ah_drop-area-download">
+                            {{#currentUser.avatar}}
+                            <span class="ah_remove-picture fa fa-times" on-click="removePicture" aria-hidden="true"></span>
+                            <div class="ah_drop-area-download-sup" on-dragndrop="drag"></div>
+                            <img src="{{currentUser.avatar}}"/>
+                            {{else}}
+                            <div class="ah_drop-area-text">
+                                <p>Drag and drop photo</p>
+                                <p class="or">or</p>
+                                <label class="ah_image-label" for="loadPictureFile">
+                                    <b>Load photo</b>
+                                    <input id="loadPictureFile" type="file" on-change="load"/>
+                                </label>
+                            </div>
+                            {{/dcurrentUser.avatar}}
+                        </div>
+                        {{#currentUser.avatar}}
+                        <label class="ah_image-label" for="loadPictureFile">
+                            <b>Load photo</b>
+                            <input id="loadPictureFile" type="file" on-change="load"/>
+                        </label>
+                        {{/currentUser.avatar}}
+                    </div>
+                    <div class="small-7 columns">
+                        <h5>Photo tools</h5>
+                    </div>
+                </div>
+            </div>
+            <div data-body-id="tab-3" class="ah_body-tab">
+
+            </div>
+            <div data-body-id="tab-4" class="ah_body-tab">
+
+            </div>
+        </div>
+    </div>
 </div>

@@ -1,26 +1,35 @@
-<div class="ah_account-inner">
-    {{#user}}
-    <div class="ah_top_account">
-        <div class="ah_user-info small-10 columns">
-            <div class="ah_avatar" style="background-image:url({{avatar}})"></div>
-            <div class="ah_inner-user-info">
-                <p class="ah_name">{{firstName}} {{lastName}}</p>
-                <p class="ah_city">{{city}}</p>
-            </div>
+{{#user}}
+<div class="ah_top_account small-12 clearfix">
+    <div class="ah_user-info small-10 columns">
+        <div class="ah_inner-user-avatar">
+            <img class="ah_avatar" src="{{avatar}}"/>
         </div>
-
-        {{#if user.id === currentUser.id}}
-        <ul class="ah_my-menu small-2 columns">
+        <div class="ah_inner-user-info">
+            <p class="ah_name">{{this.fullName()}}</p>
+            <p class="ah_city">{{city}}</p>
+        </div>
+    </div>
+    {{#if user.id === currentUser.id}}
+    <div class="ah_private-my-menu small-2 columns">
+        <ul>
             <li><a href="#{{id}}">My account</a></li>
             <li><a href="#{{id}}/friends">My friends</a></li>
             <li><a href="#{{id}}/gallery">My gallery</a></li>
             <li><a href="#{{id}}/feedback">My feedback</a></li>
-            <li><a class="ah_edit-account" href="javascript:void(0)" on-click="editAccount">Edit account</a></li>
+            <li><a href="#settings" >My settings</a></li>
         </ul>
-        {{/if}}
     </div>
-    {{/user}}
-    <div class="ah_account-action">
+    {{/if}}
+    {{#if user.id !== currentUser.id}}
+    <div class="ah_public-my-menu small-12 columns">
+        <ul>
+            <li><a href="#{{id}}/info">Info</a></li>
+            <li><a href="#{{id}}/gallery">Gallery</a></li>
+        </ul>
+    </div>
+    {{/if}}
+</div>
+{{/user}}
+<div class="ah_bottom-account">
 
-    </div>
 </div>

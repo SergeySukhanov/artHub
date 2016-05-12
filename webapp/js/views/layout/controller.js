@@ -23,7 +23,7 @@ var LayoutViewController = function(ins){
             tools.calculate.linkTop();
         });
 
-        $(window).scroll(function(event){
+        $(window).scroll(function(){
             _scrollTop();
         });
 

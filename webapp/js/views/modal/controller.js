@@ -44,25 +44,24 @@ var ModalController = function(ins, modal){
                 ins.on({
                     drag:function(event){
                         event.original.preventDefault();
-                        console.log(event);
+                        var model = ins.get("data.picture");
                         if(event.type === "enter"){
-                            console.log(event);
+                            model.set("url", "images/defaultLoadPicture.png");
                         }
 
                         if(event.type === "over"){
-                            console.log(event);
+
                         }
 
                         if(event.type === "drop"){
                             var files = event.original.dataTransfer.files;
-                            var model = ins.get("data.picture");
                             foldersModule.loadFile(files[0]).then(function(url){
                                 model.set("url", url);
                             })
                         }
 
                         if(event.type === "leave"){
-                            console.log(event);
+                            model.set("url", null);
                         }
                     },
                     load:function(event){
@@ -90,11 +89,31 @@ var ModalController = function(ins, modal){
                             }
                         });
                     },
-                    add:function(event){
-                        console.log(event);
+                    add:function(){
+                        var currentFolder = ins.get("data.currentFolder");
+                        var model = ins.get("data.picture");
+                        var parent = ins.get("data.parent");
+                        var gallery = ins.get("data.gallery");
+                        var parentFolder = parent || null;
+
+                        model.set("id", "photo_" + foldersModule.maxPictureId(gallery));
+                        model.set("parent", parentFolder);
+                        model.set("author", {
+                            id:config.models.currentUser.get("id"),
+                            name:config.models.currentUser.fullName(),
+                            avatar:config.models.currentUser.get("avatar")
+                        });
+                        model.set("showType", "picture");
+                        model.set("datePublication", Date.now());
+
+                        gallery.push(model.attributes);
+                        if(currentFolder){
+                            currentFolder.add(model);
+                        }
+                        ins.fire("closeModal");
                     },
                     cancel:function(event){
-                        console.log(event);
+                        ins.fire("closeModal");
                     }
                 });
             })();

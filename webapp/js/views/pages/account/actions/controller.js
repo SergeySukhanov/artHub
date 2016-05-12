@@ -29,9 +29,6 @@ var AccountActionsController = function(ins, view){
                 }
             },
 
-            closeMenu:function(){
-
-            },
             newFolder:function(){
                 new ModalView({
                     template:"newFolder",
@@ -46,8 +43,10 @@ var AccountActionsController = function(ins, view){
             },
             newPicture:function(){
                 new ModalView({
-                    template:"loadPicture",
-                    size:"medium",
+                    template:"load",
+                    horizontal:70,
+                    vertical:70,
+                    size:5,
                     data:{
                         currentFolder:ins.get("currentFolder"),
                         gallery:ins.get("gallery"),

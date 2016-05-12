@@ -7,9 +7,12 @@
  */
 
 var AccountController = function(ins, view){
+
+
     var _render = function(){
-        _component();
-        _handlers()
+//        _component();
+//        _handlers();
+
     };
 
     var _component = function(){
@@ -56,41 +59,19 @@ var AccountController = function(ins, view){
         });
     };
 
+    var _isCurrentUser = function(view){
+        var user = view.ins.get("user");
+        var currentUser = view.ins.get("currentUser");
+        return user.get("id") === currentUser.get("id");
+    };
+
     var _initialize = function(){
-        _render();
+        if(_isCurrentUser(view)){
+            console.log("private");
+        }else{
+            console.log("public");
+        }
     };
 
     _initialize();
 };
-
-
-
-//later remove
-
-//var _galleryComponent = function(){
-//    templateManager.load(["components/galleryComponent", "components/treeGallery", "components/foldersGallery", "components/itemTree"]).then(function(gallery, tree, folders, item){
-//        API.user.gallery().then(function(data){
-//            var defaultCollectionOfPictures = new PicturesCollection(data.gallery);
-//            var treeCollection = new PicturesCollection(foldersModule.createTreeStruture(data.gallery));
-//            var foldersCollection = new PicturesCollection(foldersModule.currentFolder(data.gallery, null));
-//            new BaseView({
-//                id:"galleryComponent",
-//                el:".ah_gallery-component",
-//                data:{
-//                    tree:treeCollection,
-//                    currentFolder:foldersCollection,
-//                    defaultGallery:defaultCollectionOfPictures
-//                },
-//                template:gallery,
-//                partials:{
-//                    itemTree:item,
-//                    treeGallery:tree,
-//                    foldersGallery:folders
-//                },
-//                params:{
-//                    controller:FoldersController
-//                }
-//            });
-//        });
-//    });
-//};

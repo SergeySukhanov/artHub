@@ -110,6 +110,9 @@ var API = {
             return loader.get({
                 url:"../api"
             })
+        },
+        newAccount:function(){
+            return $.when(true);
         }
     }
 };
