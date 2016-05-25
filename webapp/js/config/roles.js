@@ -7,14 +7,14 @@
  * © 2016 All Rights Reserved
  */
 
-var Roles = {
+var roles = {
     artist:{
         account:{
-            publicView:{
+            "public":{
                 pages:["info", "gallery"]
             },
-            privateView:{
-                pages:["info", "gallery"]
+            "private":{
+                pages:["info", "gallery", "friends", "feedback"]
             }
         }
     },

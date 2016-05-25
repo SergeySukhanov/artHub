@@ -1,6 +1,6 @@
 .ah_top_account{
     position: relative;
-    height: 200px;
+    height: 196px;
     background: #2b5994;
     box-shadow: 0 -2px 4px -2px #404040 inset;
     z-index: 2;
@@ -11,20 +11,21 @@
     display: inline-block;
 }
 .ah_top_account .ah_inner-user-avatar{
+    position: relative;
     display: inline-block;
     width: 160px;
     height: 160px;
     border-radius: 250px;
     overflow: hidden;
-    box-shadow: 0px 0px 5px 4px #20649e;
-    margin-top: 20px;
+    box-shadow: 0 0 5px 4px #20649e;
+    margin-top: 16px;
     margin-left: 30px;
 }
 .ah_top_account .ah_inner-user-info{
     display: inline-block;
     vertical-align: top;
     color: #ffffff;
-    margin-top: 35px;
+    margin-top: 28px;
     margin-left: 20px;
 }
 .ah_top_account .ah_avatar{
@@ -38,229 +39,38 @@
     font-size: 25px;
     margin: 0;
 }
-.ah_top_account .ah_private-my-menu{
-
-}
-.ah_top_account .ah_private-my-menu ul{
-
-}
-.ah_top_account .ah_private-my-menu li{
-
-}
-.ah_top_account .ah_private-my-menu a{
-
-}
+.ah_top_account .ah_private-my-menu,
 .ah_top_account .ah_public-my-menu{
-
+    position: relative;
+    height: 99%;
+    display: inline-block;
+    background-color: #20649E;
+    padding: 0;
 }
+.ah_top_account .ah_private-my-menu ul,
 .ah_top_account .ah_public-my-menu ul{
-
+    margin: 0;
+    list-style-type: none;
+    height: 100%;
 }
+.ah_top_account .ah_private-my-menu li,
 .ah_top_account .ah_public-my-menu li{
 
 }
+.ah_top_account .ah_private-my-menu a,
 .ah_top_account .ah_public-my-menu a{
-
+    display: block;
+    color: #ffffff;
+    text-align: center;
+    padding: 7px 15px;
+}
+.ah_top_account .ah_private-my-menu a:hover,
+.ah_top_account .ah_public-my-menu a:hover{
+    background-color: #194062;
 }
 .ah_bottom-account{
 
 }
-
-
-/*ul.ah_private-my-menu a {*/
-    /*color: #ffffff;*/
-    /*display: block;*/
-    /*padding: 5px 0;*/
-    /*font-family: Oswald;*/
-    /*font-size: 15px;*/
-/*}*/
-
-/*ul.ah_private-my-menu a:hover{*/
-    /*background: #203e58;*/
-/*}*/
-
-/*ul.ah_private-my-menu a.ah_edit-account {*/
-    /*position: absolute;*/
-    /*right: 0;*/
-    /*bottom: 0;*/
-    /*margin-right: 26%;*/
-    /*margin-bottom: 20px;*/
-    /*color: #ffffff;*/
-    /*font-size: 15px;*/
-    /*background-color: #147D6E;*/
-    /*padding: 6px 20px;*/
-    /*font-family: Oswald;*/
-    /*border-radius: 4px;*/
-/*}*/
-
-
-/*ul.ah_private-my-menu {*/
-    /*display: inline-block;*/
-    /*position: relative;*/
-    /*vertical-align: top;*/
-    /*height: 99%;*/
-    /*margin: 0;*/
-    /*background: #20649e;*/
-    /*list-style-type: none;*/
-    /*text-align: center;*/
-    /*padding: 0;*/
-/*}*/
-
-/*.ah_avatar {*/
-    /*width: 150px;*/
-    /*height: 150px;*/
-    /*background-size: cover;*/
-    /*background-repeat: no-repeat;*/
-    /*background-color: #d4d4d4;*/
-    /*border-radius: 150px;*/
-    /*display: inline-block;*/
-    /*margin-top: 25px;*/
-    /*margin-left: 20px;*/
-/*}*/
-
-/*p.ah_name {*/
-    /*color: #ffffff;*/
-    /*vertical-align: top;*/
-    /*font-size: 45px;*/
-    /*margin: 0;*/
-/*}*/
-
-/*p.ah_city{*/
-    /*color: #ffffff;*/
-    /*vertical-align: top;*/
-    /*font-size: 25px;*/
-    /*margin: 0;*/
-    /*position: relative;*/
-    /*margin-top: -14px;*/
-/*}*/
-
-/*.ah_inner-user-info {*/
-    /*display: inline-block;*/
-    /*vertical-align: top;*/
-    /*margin-top: 38px;*/
-    /*margin-left: 20px;*/
-/*}*/
-
-/*a.ah_edit-account {*/
-    /*position: absolute;*/
-    /*right: 0;*/
-    /*bottom: 0;*/
-    /*margin-right: 20px;*/
-    /*margin-bottom: 20px;*/
-    /*color: #ffffff;*/
-    /*font-size: 15px;*/
-    /*background-color: #147D6E;*/
-    /*padding: 6px 20px;*/
-    /*font-family: Oswald;*/
-    /*border-radius: 4px;*/
-/*}*/
-
-/*.ah_create-menu{*/
-    /*display: inline-block;*/
-/*}*/
-
-/*.ah_inner-account-gallery h3{*/
-    /*background-color: #20649e;*/
-    /*margin: 0;*/
-    /*color: #ffffff;*/
-    /*font-family: Oswald;*/
-    /*font-size: 19px;*/
-    /*text-align: center;*/
-    /*padding: 1px 0px 2px;*/
-/*}*/
-
-/*.ah_folders-account {*/
-    /*position: relative;*/
-    /*z-index: 1;*/
-    /*padding: 25px 15px;*/
-/*}*/
-
-/*.ah_folders-account > a{*/
-    /*position: absolute;*/
-    /*top: 0;*/
-/*}*/
-
-/*.ah_folders-account-tools{*/
-    /*background-color: #20649e;*/
-    /*margin: 0;*/
-    /*position: relative;*/
-    /*z-index: 2;*/
-/*}*/
-
-/*.ah_folders-account-tools a {*/
-    /*color: #ffffff;*/
-    /*margin-left: 20px;*/
-    /*font-size: 14px;*/
-    /*text-decoration: underline;*/
-/*}*/
-
-/*.ah_create-menu > a {*/
-    /*display: block;*/
-    /*padding: 4px 25px 3px;*/
-    /*background-color: #147D6E;*/
-    /*text-decoration: none;*/
-    /*font-size: 15px;*/
-    /*font-family: Oswald;*/
-/*}*/
-
-/*.ah_create-menu-inner {*/
-    /*position: absolute;*/
-    /*background-color: #FFFFFF;*/
-    /*padding: 0px 0px;*/
-    /*left: 0;*/
-    /*width: 190px;*/
-    /*box-shadow: 0px 0px 6px 0px #616060;*/
-/*}*/
-
-/*.ah_create-menu-inner > a {*/
-    /*color: #232322;*/
-    /*display: block;*/
-    /*font-size: 18px;*/
-    /*text-decoration: none;*/
-    /*padding: 10px 21px;*/
-    /*border-bottom: 1px solid #9A9A9A;*/
-    /*margin: 0;*/
-/*}*/
-
-/*.ah_create-menu-inner > a:hover{*/
-    /*background-color: #147D6E;*/
-    /*color:#ffffff;*/
-/*}*/
-
-/*.ah_inner-account-home{*/
-    /*padding: 20px 30px;*/
-/*}*/
-
-/*.ah_inner-account-home h3{*/
-    /*font-family: Oswald;*/
-    /*color: #2B5994;*/
-    /*font-size: 24px;*/
-    /*text-align: left;*/
-/*}*/
-
-/*.ah_inner-block{*/
-    /*font-family: "Ubuntu Condensed";*/
-/*}*/
-
-/*.ah_inner-block ul{*/
-    /*list-style-type: none;*/
-    /*font-size: 20px;*/
-    /*margin: 0;*/
-/*}*/
-
-/*.ah_inner-block li{*/
-    /*padding: 7px 0px;*/
-/*}*/
-
-
-/*.ah_inner-block .title{*/
-    /*font-weight: 700;*/
-    /*display: block;*/
-/*}*/
-
-/*.ah_inner-block .value{*/
-
-/*}*/
 
 
 

@@ -19,9 +19,8 @@
             <li><a href="#settings" >My settings</a></li>
         </ul>
     </div>
-    {{/if}}
-    {{#if user.id !== currentUser.id}}
-    <div class="ah_public-my-menu small-12 columns">
+    {{else}}
+    <div class="ah_public-my-menu small-2 columns">
         <ul>
             <li><a href="#{{id}}/info">Info</a></li>
             <li><a href="#{{id}}/gallery">Gallery</a></li>
