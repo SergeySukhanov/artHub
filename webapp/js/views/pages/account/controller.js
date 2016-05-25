@@ -8,25 +8,35 @@
 
 var AccountController = function(ins, view){
 
+    var access = null;
+    var type = null;
+    var template = null;
+    var id = null;
 
     var _render = function(){
-//        _component();
-//        _handlers();
+        var actions = roles[type].account[access].pages;
+        if(!view.params.action){
+            template = "account/" + access + "/" + "info";
+        }
+        _.each(actions, function(elem, index){
+            if(elem === view.params.action){
+                template = "account/" + access + "/" + elem;
+            }
+        });
+        if(!template){
+            config.routers.mainRouter.navigate(id, {trigger:true});
+        }else{
+            _component();
+            _handlers();
+        }
 
     };
 
     var _component = function(){
-        var templates = [];
-        var action = view.params.action;
-        if(action){
-            templates.push("account/" + action);
-        }else{
-            templates.push("account/home");
-        }
-        templateManager.load(templates).then(function(tmpl){
+        templateManager.load(template).then(function(tmpl){
             new BaseView({
                 id:"accountComponent",
-                el:".ah_account-action",
+                el:".ah_bottom-account",
                 template:tmpl,
                 partials:{},
                 data:{
@@ -61,16 +71,20 @@ var AccountController = function(ins, view){
 
     var _isCurrentUser = function(view){
         var user = view.ins.get("user");
+            id = user.get("id");
+            type = user.get("type");
         var currentUser = view.ins.get("currentUser");
         return user.get("id") === currentUser.get("id");
     };
 
     var _initialize = function(){
         if(_isCurrentUser(view)){
-            console.log("private");
+            access = "private";
         }else{
-            console.log("public");
+            access = "public";
         }
+
+        _render();
     };
 
     _initialize();
