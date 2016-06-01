@@ -3,10 +3,10 @@
 @import "header.css";
 @import "footer.css";
 @import "workspace.css";
-/*@import "modals.css";*/
-/*@import "notifications.css";*/
-/*@import "common.css";*/
-/*@import "tabs.css";*/
+@import "modals.css";
+@import "notifications.css";
+@import "common.css";
+@import "tabs.css";
 
 *{
     margin:0;

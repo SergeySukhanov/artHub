@@ -148,7 +148,7 @@ var tools = {
         var top = $(".ah_top-dashboard");
 
         top.css({
-            "height":heightWrapper - 100
+            "height":heightWrapper - 50
         });
 
     },

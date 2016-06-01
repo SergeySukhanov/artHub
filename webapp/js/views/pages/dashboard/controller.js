@@ -21,8 +21,29 @@ var DashboardController = function(ins){
         _loadPeople().then(function(data){
             ins.set("people", new UsersCollection(data.users));
         });
+        setInterval(function(){
+            _animateDashboard(".ah_item_switcher-back-gallery")
+        }, 5000)
+
     };
 
+    var _animateDashboard = function(elems){
+        var visible = $(elems).filter(".show")
+        var id = visible.data("id");
+
+        var next = $(elems).filter("[data-id=" + (id+1) + "]")
+
+        if(!next.length){
+            next = $($(elems)[0]);
+        }
+
+        visible.fadeOut(1000, function(){
+            visible.removeClass("show");
+        });
+        next.fadeIn(1000, function(){
+            next.addClass("show");
+        });
+    };
     var _handlers = function(){
         ins.on({
             showPicture:function(event, item){

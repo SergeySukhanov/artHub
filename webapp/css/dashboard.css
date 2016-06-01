@@ -15,9 +15,9 @@
     display: none;
 }
 
-.ah_item_switcher-back-gallery.show{
-    display: block;
-}
+/*.ah_item_switcher-back-gallery.show{*/
+    /*display: block;*/
+/*}*/
 
 
 .ah_top-dashboard h2 {
@@ -27,20 +27,48 @@
     color: #20649E;
     text-decoration: underline;
 }
+.ah_item_switcher-back-gallery.first{
+    display:block;
+}
+
 
 .ah_item_switcher-back-gallery.first h2{
     font-size: 77px;
     margin-top: 5%;
     margin-left: 22%;
+    text-shadow: 0 0 2px #000000;
 }
 
-.ah_item_switcher-back-gallery.second h2{
+.ah_item_switcher-back-gallery.second h2 {
     font-size: 77px;
-    margin-top: 5%;
-    margin-left: 22%;
-    transform: rotateY(40deg);
+    margin-top: 17%;
+    margin-left: 12%;
+    transform: rotate(2deg);
+    text-shadow: 0 0 2px #000000;
 }
 
+.ah_item_switcher-back-gallery.third h2 {
+    font-size: 89px;
+    margin-left: 31%;
+    margin-top: 8%;
+    transform: rotate(-2deg);
+    text-shadow: 0 0 2px #000000;
+}
+
+.ah_item_switcher-back-gallery.fourth h2 {
+    font-size: 71px;
+    margin-left: 9%;
+    margin-top: 35%;
+    transform: rotate(2deg);
+    text-shadow: 0px 0px 15px #000;
+}
+
+.ah_item_switcher-back-gallery.fifth h2 {
+    font-size: 70px;
+    margin-left: 13%;
+    transform: rotate(3deg);
+    text-shadow: 0 0 2px #000000;
+}
 
 
 .ah_top-dashboard img{
