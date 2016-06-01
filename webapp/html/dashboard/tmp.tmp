@@ -41,3 +41,25 @@
         </div>
     </div>
 </div>
+
+
+
+
+<div class="ah-inner-container">
+    <div class="ah_top-dashboard">
+        <h2>ArtHub</h2>
+        <img src="images/pDash.png"/>
+    </div>
+    <div class="ah_row ah_row-dashboard">
+        <h3>Photos</h3>
+        {{> pictures}}
+    </div>
+    <div class="ah_row ah_row-dashboard">
+        <h3>Artists</h3>
+        {{> people}}
+    </div>
+    <div class="ah_row ah_row-dashboard">
+        <h3>Articles</h3>
+        {{> articles}}
+    </div>
+</div>

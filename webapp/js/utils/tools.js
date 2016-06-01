@@ -142,12 +142,15 @@ var tools = {
     },
 
     calculateDashboardfeed:function(){
-        var wrapper = $(".ah_main-dashboard");
-        var feed = $(".ah_feed-dashboard");
+        var body = $("body");
+        
+        var heightWrapper = body.outerHeight();
+        var top = $(".ah_top-dashboard");
 
-        feed.css({
-            width:wrapper.outerWidth() - 600
+        top.css({
+            "height":heightWrapper - 100
         });
+
     },
 
     restrictions:function(id, callback){

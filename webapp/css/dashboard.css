@@ -6,21 +6,47 @@
 }
 
 .ah_top-dashboard {
-    background: #2b5994;
-    height: 200px;
-    box-shadow: 0px -2px 4px -2px #232323 inset;
+    box-shadow: 0 -2px 4px -2px #232323 inset;
     z-index: 2;
     position: relative;
+    overflow: hidden;
+}
+.ah_item_switcher-back-gallery{
+    display: none;
 }
 
+.ah_item_switcher-back-gallery.show{
+    display: block;
+}
+
+
 .ah_top-dashboard h2 {
-    text-align: center;
-    color: #ffffff;
-    font-size: 83px;
+    position: absolute;
     font-family: Oswald;
-    padding-top: 50px;
-    text-decoration: overline;
-    margin: 0;
+    z-index: 2;
+    color: #20649E;
+    text-decoration: underline;
+}
+
+.ah_item_switcher-back-gallery.first h2{
+    font-size: 77px;
+    margin-top: 5%;
+    margin-left: 22%;
+}
+
+.ah_item_switcher-back-gallery.second h2{
+    font-size: 77px;
+    margin-top: 5%;
+    margin-left: 22%;
+    transform: rotateY(40deg);
+}
+
+
+
+.ah_top-dashboard img{
+    position: absolute;
+    width:100%;
+    height: 100%;
 }
 
 .ah_row-dashboard{
