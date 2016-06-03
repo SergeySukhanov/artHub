@@ -99,11 +99,14 @@ var tools = {
         },
 
         dashboardFeed:function(){
-            var wrapper = $(".ah_main-dashboard");
-            var feed = $(".ah_feed-dashboard");
+            var body = $("body");
 
-            feed.css({
-                width:wrapper.outerWidth() - 600
+            var heightWrapper = body.outerHeight();
+            var top = $(".ah_top-dashboard");
+
+
+            top.css({
+                "height":heightWrapper
             });
         },
 
@@ -113,7 +116,28 @@ var tools = {
             $(".ah_layout-link-top").css({
                 top:win - 100
             })
-        }
+        },
+
+        innerDashboardElems:function(){
+            var top = $(".ah_top-dashboard");
+            var header = top.find('h2');
+            var par = top.find('p');
+            var loadPic = top.find('.ah_load-pic');
+            var search = top.find('.ah_search');
+            var actionBlock = top.find(".ah_dashboard-action-block");
+
+            var widthTop = top.outerWidth();
+            var heightTop = top.outerHeight();
+
+            par.css({
+                "margin-top":(heightTop / 5) + 50,
+                "margin-left":(widthTop/4)
+            });
+
+            actionBlock.css({
+                "margin-top":(heightTop/2) + 50,
+                "height":(heightTop/2)
+            });        }
     },
 
     calculateLayoutHeight:function(){
@@ -148,7 +172,7 @@ var tools = {
         var top = $(".ah_top-dashboard");
 
         top.css({
-            "height":heightWrapper - 50
+            "height":heightWrapper
         });
 
     },

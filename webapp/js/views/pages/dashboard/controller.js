@@ -21,29 +21,91 @@ var DashboardController = function(ins){
         _loadPeople().then(function(data){
             ins.set("people", new UsersCollection(data.users));
         });
-        setInterval(function(){
-            _animateDashboard(".ah_item_switcher-back-gallery")
-        }, 5000)
+        //setInterval(function(){
+        //    _animateDashboard(".ah_item_switcher-back-gallery")
+        //}, 5000)
+
+        animDashboard();
 
     };
 
-    var _animateDashboard = function(elems){
-        var visible = $(elems).filter(".show")
-        var id = visible.data("id");
+    //var _animateDashboard = function(elems){
+    //    var visible = $(elems).filter(".show")
+    //    var id = visible.data("id");
+    //
+    //    var next = $(elems).filter("[data-id=" + (id+1) + "]")
+    //
+    //    if(!next.length){
+    //        next = $($(elems)[0]);
+    //    }
+    //
+    //    visible.fadeOut(1000, function(){
+    //        visible.removeClass("show");
+    //    });
+    //    next.fadeIn(1000, function(){
+    //        next.addClass("show");
+    //    });
+    //};
 
-        var next = $(elems).filter("[data-id=" + (id+1) + "]")
+    var initDashboard = function(){
+        var top = $(".ah_top-dashboard");
+        var header = top.find('h2');
+        var par = top.find('p');
+        var loadPic = top.find('.ah_load-pic');
+        var search = top.find('.ah_search');
+        var actionBlock = top.find(".ah_dashboard-action-block");
 
-        if(!next.length){
-            next = $($(elems)[0]);
-        }
+        var widthTop = top.outerWidth();
+        var heightTop = top.outerHeight();
 
-        visible.fadeOut(1000, function(){
-            visible.removeClass("show");
+        par.css({
+            "margin-top":(heightTop / 5) + 50,
+            "margin-left":(widthTop/4)
         });
-        next.fadeIn(1000, function(){
-            next.addClass("show");
+
+        actionBlock.css({
+            "margin-top":(heightTop/2) + 50,
+            "height":(heightTop/2)
         });
+
     };
+    var animDashboard = function(){
+        var top = $(".ah_top-dashboard");
+        var header = top.find('h2');
+        var par = top.find('p');
+        var loadPic = top.find('.ah_load-pic');
+        var search = top.find('.ah_search');
+        var actionBlock = top.find(".ah_dashboard-action-block");
+
+        var widthTop = top.outerWidth();
+        var heightTop = top.outerHeight();
+
+        par.css({
+            "margin-top":(heightTop / 5) + 50,
+            "margin-left":(widthTop/4)
+        });
+
+        actionBlock.css({
+            "margin-top":(heightTop/2) + 50,
+            "height":(heightTop/2)
+        });
+
+        header.animate({
+           "margin-top":(heightTop / 5),
+            "margin-left":(widthTop/10)
+        }, 500, "easeInOutBack", function(){
+            par.animate({
+                "font-size":"50px"
+            }, 500, "easeOutQuint", function(){
+
+            });
+            search.fadeIn(300, function(){
+                loadPic.fadeIn(300);
+            })
+        });
+
+    };
+
     var _handlers = function(){
         ins.on({
             showPicture:function(event, item){
@@ -89,8 +151,8 @@ var DashboardController = function(ins){
             ins.partials.people = people;
             ins.partials.lots = lots;
             ins.partials.events = events;
-            _render();
             tools.calculateDashboardfeed();
+            _render();
         });
     };
 

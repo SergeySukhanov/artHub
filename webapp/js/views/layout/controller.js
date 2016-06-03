@@ -21,6 +21,7 @@ var LayoutViewController = function(ins){
         $(window).resize(function(){
             tools.calculate.layout();
             tools.calculate.linkTop();
+            tools.calculate.dashboardFeed();
         });
 
         $(window).scroll(function(){

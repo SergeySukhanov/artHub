@@ -1,55 +1,27 @@
 <div class="ah-inner-container">
-    <section class="ah_top-dashboard">
-        <div class="ah_switcher-back-gallery">
-            <div data-id="1" class="ah_item_switcher-back-gallery first show">
-                <h2>ArtHub</h2>
-                <img src="images/dashboard/dashboard1.jpg"/>
+    <div class="ah_top-dashboard small-12 clearfix">
+        <img src="images/dashboard/dashboard_back1.jpg"/>
+        <h2>ArtHub</h2>
+        <p>It's just Art.<br/> Nothing personal</p>
+        <div class="small-12 ah_dashboard-action-block clearfix">
+            <div class="small-6 columns ah_search">
+                <label>
+                    <b>Search photo:</b>
+                    <input type="text" placeholder="Find photo..."/>
+                </label>
             </div>
-            <div data-id="2" class="ah_item_switcher-back-gallery second">
-                <h2>ArtHub</h2>
-                <img src="images/dashboard/dashboard2.jpg"/>
-            </div>
-            <div data-id="3" class="ah_item_switcher-back-gallery third">
-                <h2>ArtHub</h2>
-                <img src="images/dashboard/dashboard3.jpg"/>
-            </div>
-            <div data-id="4" class="ah_item_switcher-back-gallery fourth">
-                <h2>ArtHub</h2>
-                <img src="images/dashboard/dashboard4.jpg"/>
-            </div>
-            <div data-id="5" class="ah_item_switcher-back-gallery fifth">
-                <h2>ArtHub</h2>
-                <img src="images/dashboard/dashboard5.jpg"/>
+            <div class="small-6 columns ah_load-pic">
+                <div class="ah_inner-load-pic">
+                    <h4>Load photo and create account</h4>
+                    <input type="button" value="Load photo"/>
+                </div>
             </div>
         </div>
-    </section>
-    <section class="ah_center-dashboard">
-        <nav>
+    </div>
+    <div class="ah_center-dashboard">
+        {{> pictures}}
+    </div>
+    <div class="ah_bottom-dashboard">
 
-        </nav>
-        <div class="ah_pictures-section">
-            <div class="ah_section ah_section-half small-12 clearfix">
-                <div class="ah_section-item small-6 columns"></div>
-                <div class="ah_section-item small-6 columns"></div>
-            </div>
-            <div class="ah_section ah_section-single small-12 clearfix">
-                <div class="ah_section-item small-12 columns"></div>
-            </div>
-            <div class="ah_section ah_section-triple small-12 clearfix">
-                <div class="ah_section-item small-4 columns"></div>
-                <div class="ah_section-item small-4 columns"></div>
-                <div class="ah_section-item small-4 columns"></div>
-            </div>
-            <div class="ah_section ah_section-multi small-12 clearfix">
-                <div class="ah_section-item"></div>
-                <div class="ah_section-item"></div>
-                <div class="ah_section-item"></div>
-                <div class="ah_section-item"></div>
-                <div class="ah_section-item"></div>
-                <div class="ah_section-item"></div>
-                <div class="ah_section-item"></div>
-                <div class="ah_section-item"></div>
-            </div>
-        </div>
-    </section>
+    </div>
 </div>
